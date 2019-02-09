@@ -35,7 +35,14 @@ editor: DChapman
 <body>
 
     <h2>CSS Transitions, Transformations and Animations</h2>
-    <h3>CSS Transition</h3>
+    <h3>Here you learn about:</h3>
+    <ul class="ul-none">
+        <li><a href="#transitions">Transitions</a></li>
+        <li><a href="#transformations">Transformations</a></li>
+        <li><a href="#animation">Animation</a></li>
+    </ul>
+
+    <h3 id="transitions">CSS Transition</h3>
     <p>CSS transition are a part of the CSS3 language to add dynamic content to a web page.</p>
     <div>
         <h3>CSS Transition Property</h3>
@@ -71,8 +78,7 @@ editor: DChapman
         <p>This feature may be considered to have the greatest impact upon the transition. Hover over the circles
             to see how they change:</p>
 
-        <div class="
-                col-container">
+        <div class="col-container">
             <p>Linear: Creates an effect with the same speed through out the transition</p>
             <div class="circle circle0"></div>
             <p>Ease: Creates an effect that starts slow, increases in speed, then ends slowly</p>
@@ -89,7 +95,7 @@ editor: DChapman
     </div>
 
     <div>
-        <h3>CSS Transformation</h3>
+        <h3 id="transformations">CSS Transformation</h3>
         <p>The CSS Transformation property provides a way to create effects and interactions with the object. This is a
             simple example how a Transformation can be applied to an image. <br>
             Hover over the football to the effect.</p>
@@ -114,7 +120,7 @@ editor: DChapman
     </div>
 
     <div>
-        <h3>CSS Animation</h3>
+        <h3 id="animation">CSS Animation</h3>
         <p>CSS Animations are more sophisticated form of a transition.</p>
         <ul>
             <li>Animations can repeat infinitely</li>
@@ -143,7 +149,23 @@ editor: DChapman
     <div>
         <h3 id="score"></h3>
     </div>
-
+    <br>
+    <p>Code to create a basic animation could look something like this:</p>
+    <ul class="codeExample">
+        <li>#ball{</li>
+        <li class="indentOne">animation: color 3s ease-in;</li>
+        <li>}</li>
+        <li>@keyframes color{</li>
+        <li class="indentOne">0%{</li>
+        <li class="indentTwo">background-color: blue;</li>
+        <li class="indentTwo">color: white;</li>
+        <li class="indentOne">}</li>
+        <li class="intentOne">100%{</li>
+        <li class="indentTwo">background-color: white;</li>
+        <li class="indentTwo">color: blue;</li>
+        <li class="indentOne">}</li>
+        <li>}</li>
+    </ul>
 
 
 </body>
