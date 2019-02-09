@@ -10,15 +10,12 @@
 }
 
 .box1 {
-   height: 50px;
+   height: 60px;
    width: 300px;
    display: flex;
    justify-content: center;
    align-content: center;
    background-color: rgb(51, 58, 153);
-   ;
-
-
 }
 
 .box1 p {
@@ -35,13 +32,13 @@
 }
 
 .box2 {
-   height: 50px;
+   height: 60px;
    width: 300px;
    display: flex;
    justify-content: center;
    align-content: center;
    background-color: rgb(51, 58, 153);
-   transition: all 1s ease;
+   transition: all 1s ease-in-out;
 
 }
 
@@ -131,11 +128,11 @@
 
 .circle.circle5 {
    background-color: thistle;
-   -webkit-transition: all 3s cubic-bezier(0, 2, .75, 3);
-   -moz-transition: all 3s cubic-bezier(0, 2, .75, 3);
-   -ms-transition: all 3s cubic-bezier(0, 2, .75, 3);
-   -o-transition: all 3s cubic-bezier(0, 2, .75, 3);
-   transition: all 3s cubic-bezier(0, 2, .75, 3);
+   -webkit-transition: all 3s cubic-bezier(0, .2, .75, .3);
+   -moz-transition: all 3s cubic-bezier(0, .2, .75, .3);
+   -ms-transition: all 3s cubic-bezier(0, .2, .75, .3);
+   -o-transition: all 3s cubic-bezier(0, .2, .75, .3);
+   transition: all 3s cubic-bezier(0, .2, .75, .3);
 }
 
 
@@ -165,7 +162,7 @@
 /*animation*/
 .row1 {
    display: flex;
-   flex-direction: row;
+   flex-direction: row wrap;
    justify-content: flex-start;
    flex-grow: 1;
    height: 6em;
@@ -180,6 +177,11 @@
 
 .col2 {
    align-content: flex-end;
+}
+
+.col3 {
+   flex-grow: 3;
+   align-content: center;
 }
 
 

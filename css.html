@@ -40,8 +40,7 @@ editor: DChapman
     <div>
         <h3>CSS Transition Property</h3>
         <p>CSS transitions create a way to change a property value over a certain duration of time. This gradual
-            change
-            is usually more aesthetically pleasing to the viewer. Here is an example of a value change to a box
+            change is usually more aesthetically pleasing to the viewer. Here is an example of a value change to a box
             with
             and without the transition applied</p>
         <div class="row-container">
@@ -59,6 +58,12 @@ editor: DChapman
             <li>Duration-Timing-function: This determines the speed of the transition</li>
             <li>Delay: This is an optional feature that determines the start time of the transition.</li>
         </ul>
+        <p>Here is an example of what the code would look like in CSS: <br></p>
+        <ul class="codeExample">
+            <li>.box{</li>
+            <li class="indentOne">transtion: all 3s ease-in-out;</li>
+            <li>}</li>
+        </ul>
     </div>
 
     <div>
@@ -66,7 +71,8 @@ editor: DChapman
         <p>This feature may be considered to have the greatest impact upon the transition. Hover over the circles
             to see how they change:</p>
 
-        <div class="col-container">
+        <div class="
+                col-container">
             <p>Linear: Creates an effect with the same speed through out the transition</p>
             <div class="circle circle0"></div>
             <p>Ease: Creates an effect that starts slow, increases in speed, then ends slowly</p>
@@ -84,15 +90,21 @@ editor: DChapman
 
     <div>
         <h3>CSS Transformation</h3>
-        <p>The CSS Transformation property provides a way to create effects and interactions with the object. <br>
-            This is a simple example how a Transformation can be applied to an image. Hover over the football to
-            see
-            what I mean.</p>
+        <p>The CSS Transformation property provides a way to create effects and interactions with the object. This is a
+            simple example how a Transformation can be applied to an image. <br>
+            Hover over the football to the effect.</p>
         <div id="axis">
             <div id="image">
                 <img src="/img/football.png" alt="image of football" class="football">
             </div>
         </div>
+        <p>There are several transform properties, such as: rotate, translate, scale and skew. Below is an example of
+            rotate.</p>
+        <ul class="codeExample">
+            <li>.football{</li>
+            <li class="indentOne">transform: rotate(360deg);</li>
+            <li>}</li>
+        </ul>
     </div>
 
     <div>
@@ -116,10 +128,11 @@ editor: DChapman
     <div class="row1">
 
         <div class="col1">
-            <button onclick="kick()" id="play">Kick the Ball</button><br><br>
+            <button onclick="kick()" id="play">Kick the Ball</button><button onclick="reset()">Reset Game</button><br><br>
             <div id="kick1">
                 <div id="lift1">
                     <img src="/img/football.png" id="football1" class="football2" alt="image of football. Click to kick">
+
                 </div>
             </div>
         </div>
@@ -129,8 +142,8 @@ editor: DChapman
     </div>
     <div>
         <h3 id="score"></h3>
-        <button onclick="reset()">Reset Game</button>
     </div>
+
 
 
 </body>
