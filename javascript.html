@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+<head>
+    <title>Bootcamp for CIT261</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/script.js" defer></script>
+    <!-- <link rel="stylesheet" href="css/style_small.css" />
+    <link rel="stylesheet" href="css/style_med.css" /> -->
+    <link rel="stylesheet" href="css/style_large.css" />
+</head>
+
+<nav>
+    <hr />
+    <ul class="navigation">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="htmlFile.html">HTML</a></li>
+        <li><a href="css.html">CSS</a></li>
+        <li><a href="javascript.html">JavaScript</a></li>
+        <li><a href="objects.html">Objects</a></li>
+        <li><a href="dom.html">DOM</a></li>
+        <li><a href="json.html">JSON</a></li>
+        <li><a href="ajax.html">AJAX</a></li>
+    </ul>
+</nav>
+<header class="heading">
+    <h1>JavaScript BOOTCAMP</h1>
+</header>
+
+<body>
+    <div>
+
+        <h3>Here you learn about:</h3>
+        <ul class="ul-none">
+            <li><a href="#variables">Variables</a></li>
+            <li><a href="#loops">Loops</a></li>
+            <li><a href="#conditional">Conditional Statements</a></li>
+            <li><a href="#functions">Functions & Parameters</a></li>
+            <li><a href="#arrays">Arrays</a></li>
+            <li><a href="#associative">Associative Arrays</a></li>
+        </ul>
+    </div>
+
+    <div>
+        <h2 id="variables">Variables</h2>
+        <p>To understand JavaScript, we need to understand how JavaScript stores information. The simplest way is
+            through creating variables. A variable in JavaScript is easily created by placing the keyword \"var\" in
+            front of a unique name, known as an
+            identifier. For example: var text = \"This is some text\". Variables must follow simple rules, such as:</p>
+        <ul>
+            <li>Variables may include letters (a-z, A-Z) or numbers (0-9). It only allows the symbols $ (dollar sign)
+                and _ (underscore)</li>
+            <li>No other characters, spaces or punctuation is allowed.</li>
+            <li>The first character can only be a letter, the $ sign or _</li>
+            <li>Names are case-sensitive. For instance: Text, text and TEXT are not the same identifiers.</li>
+            <li>There are no set limits on variable names, but they should reflect the item to be defined.</li>
+            <li>Camel-case variable names are strongly suggested in defining a variable name, such as: var = firstName.</li>
+        </ul>
+        <br>
+        <p>Click the button to see examples of variable naming conventions</p>
+        <button onclick="variableExample()">Click Here</button>
+        <br>
+        <p id="varExample"></p>
+        <hr>
+    </div>
+
+    <div>
+        <h2 id="loops">Loops</h2>
+        <p>There are several types of loops. We'll look at a few with some test code.</p>
+        <h3>While Loop</h3>
+        <p>The while loop code looks something like this: </p><br>
+        <ul class="codeExample">
+            <li>var text;</li>
+            <li>var count = 0;</li>
+            <li>while(count < 10) {</li> <li class="indentOne">text += "&ltbr&gt The number is: " + count;</li>
+            <li class="indentOne">count++;</li>
+            <li class="indentOne">}</li>
+        </ul>
+
+
+        <p>To see the a while loop in action, click on the button</p>
+        <button onclick="whileLoop()">Click Here</button>
+        <p id="whileLoop"></p>
+
+        <h3>Do-While Loops</h3>
+        <p>Do-while loops are similar to loops, except it will iterate once through the code before any test is made.
+            The code will look similar to this:</p>
+        <ul class="codeExample">
+            <li> var text = "";</li>
+            <li> var count = 1;</li>
+            <li class="indentOne">do{</li>
+            <li class="indentTwo">text += (count + " times 7 is " + count * 7 + "&ltbr&gt")</li>
+            <li class="indentOne">}while (++count <= 10);</li> </ul> <p>To see how a do-while loop works, click on the
+                    button</p>
+                    <button onclick="doWhileLoop()">Click Here</button>
+                    <p id="doWhileLoop"></p>
+
+                    <p>Loops are helpful, but perhaps the most useful loop is the For Loop. The For Loop accepts three
+                        parameters for each statement. This construction is especially helpful when working with an
+                        array. See below for information regarding For Loops and
+                        <a href="#arrays">arrays</a>.
+
+                        <hr>
+    </div>
+    <br>
+
+    <div>
+        <h2 id="conditional">Conditional Statements</h2>
+        <p>Conditional statements alter the program's flow. It provides the programmer to ask questions and receive
+            responses, sometimes with input from the user. There are three types of of non-looping conditionals: the if
+            statement, the switch statement and the ? operator.</p>
+        <h3>The If Statement:</h3>
+        <ul class="codeExample">
+            <li>var a = 100;</li>
+            <li>var b = 10;</li>
+            <li>if(a === b){</li>
+            <li>document.write("a is equal to b");</li>
+        </ul>
+
+        <h3>The If...Else Statement</h3>
+        <p>We can add an else statement to this code that allows for an alternative response</p>
+        <ul class="codeExample">
+            <li>var a = 100;</li>
+            <li>var b = 10;</li>
+            <li>if(a === b){</li>
+            <li>document.write("a is equal to b");</li>
+            <li>else {</li>
+            <li>document.write("a is not equal to be")</li>
+            <li>}</li>
+        </ul>
+
+        <h3>The ? Operator</h3>
+        <p>We can simplify the ternary operation by using the question mark (?) and the colon (:) symbols: where the ?
+            is equivalent to the if statement, and the colon is the else statement.</p>
+        <ul class="codeExample">
+            <li>size = a <=5 ? "short" : "long" ;</li> </ul> <h3>Find the Needle in the Haystack</h3>
+                    <p>Here is a fun little game using conditional statements.<br>
+                        Choose a number between 1 and 10</p>
+                    <input id="haystack" type="number" name="haystack" min='1' max='10'>
+                    <button type="button" onclick="haystackGame()">Submit</button>
+                    <p id="haystackResponse"></p>
+
+                    <h3>The Switch Statement</h3>
+                    <p>Another conditional statement is called the switch. It compares one variable to certain to
+                        multiple case values. If the case is true, its code is executed. For example:</p>
+
+                    <fieldset>
+                        <legend>Select your favorite Super Hero?</legend>
+                        <label><input type="radio" id="superman" name="hero" value="superman">Superman</label>
+                        <br>
+                        <label><input type="radio" id="batman" name="hero" value="batman">Batman</label>
+                        <br>
+                        <label><input type="radio" id="wonderWoman" name="hero" value="wonderWoman">Wonder Woman</label>
+                        <br>
+                        <label><input type="radio" id="ironMan" name="hero" value="ironMan">Iron Man</label>
+                        <br>
+                        <label><input type="radio" id="captain" name="hero" value="captain">Captain America</label>
+                        <br>
+                        <label><input type="radio" id="spiderMan" name="hero" value="spiderMan">Spider Man</label>
+                        <br>
+                        <br>
+                        <button onclick="superHero()">Click Here</button>
+                        <p id="comics"></p>
+                    </fieldset>
+                    <hr>
+    </div>
+
+    <div>
+        <h2 id="functions">Functions & Parameters</h2>
+        <p>The primary purpose of JavaScript is to provide dynamic content to a website. This is made possible
+            primarily through the use of functions. JavaScript is a C-based program, high-level programming language,
+            so it is relatively easy to learn in comparison to many lower-level languages. Understanding how to create
+            simple to complex functions is an essential skill for any JavaScript programmer.<br>
+            Functions are used to separate and organize code into smaller, reusable blocks. A simple function is
+            created as follows: </p>
+        <ul class="codeExample">
+            <li>&ltscript&gt</li>
+            <li class="indentOne">function sample(a, b) { </li>
+            <li class="indentTwo">return a*b</li>
+            <li class="indentOne">}</li>
+            <li>&lt/script&gt</li>
+        </ul>
+        <p>This function passes two parameters (a and b). It then acts upon the variables by multiplying the variables
+            and returning the result back to the main flow of the program. Parameters make it possible for the function
+            to return different values when the function is once again called.</p>
+        <p>Here is a little game to see how a function works.</p>
+        <h3>The Craps Game</h3>
+        <p>Here are the rules:</p>
+        <ol>
+            <li>Roll a 7 or an 11 and you automatically win</li>
+            <li>Roll a 2, 3 or 12 and you automatically lose.</li>
+            <li>Roll 4, 5, 6, or 10 and you can roll again.</li>
+        </ol>
+        <p>Click on the dice to see if you win. Good luck!</p>
+        <div>
+            <img onclick="dice()" alt="image of dice" src="img/dice.png">
+            <ul class="ul-none">
+                <li>First dice number:</li>
+                <li id="die1" class="dice"></li>
+                <br>
+                <li>Second dice number:</li>
+                <li id="die2" class="dice"></li>
+            </ul>
+        </div>
+        <h3 id="status"></h3>
+        <hr>
+    </div>
+
+    <div>
+        <h2 id="arrays">Arrays</h2>
+        <p>Arrays are designed to save a multitude of values in a single variable. Each value is delimited and indexed
+            into a point of memory that is accessible by the variable name and index number. For example: </p>
+        <ul class="codeExample">
+            <li>Creating an array name is easily accomplished using the following syntax:</li>
+            <li>arrayName = new Array();</li>
+            <br>
+            <li>The shorthand form is:</li>
+            <li>arrayName = [];</li>
+            <li>arrayName = ['Element 1', 'Element2'];</li>
+            <br>
+            <li>JavaScript uses the push method to assign element values, for instance:</li>
+            <li>arrayName.push("Element 1");</li>
+            <li>arrayName.push("Element 2");</li>
+            <br>
+            <li>Another option is to place the element into a specific location, such as:</li>
+            <li>arrayName[0] = "Element 1";</li>
+            <li>arrayName[1] = "Element 2";</li>
+            <br>
+            <li>To locate an element in an array, one can use the indexOf or the forEach method.</li>
+            <li>indexOf Method:</li>
+            <li>animals = ['cat', 'dog', 'cow', 'horse'];</li>
+            <li>offset = animals.indexOf('cow');</li>
+            <br>
+            <li>forEach Method:</li>
+            <li>animals.forEach(output);</li>
+            <li>function output(element, index, array){</li>
+            <li>document.write("Element at index " + index + " has the value " + element + "&ltbr&gt);}</li>
+        </ul>
+        <p>Because JavaScript is a loosely scripted language, an array can hold a different variable types, such as
+            strings, numbers, characters, etc.</p>
+
+        <h3>Multi-Dimensional Array</h3>
+        <p>JavaScript also allows for multi-dimensional arrays, which is an array of arrays. One use for a
+            multi-dimensional array is to create a matrix for mapping an area on the screen or in a game, for instance.
+            Here is one example on how to create multi-dimensional array.</p>
+
+        <ul class="codeExample">
+            <li>map = [</li>
+            <li class="indentOne">[l, 2, 3],</li>
+            <li class="indentOne">[4, 5, 6],</li>
+            <li class="indentOne">[7, 8, 9]</li>
+            <li>];</li>
+        </ul>
+
+        <p>Let's play a game. <br>
+            Choose two numbers between 1 and 3, and see what happens.</p>
+        <input type=text id="num1" placeholder="1-3">
+        <input type=text id="num2" placeholder="1-3">
+        <button onclick="map()">Submit</button>
+        <p id=mapOutput></p>
+        <p id=mapResult></p>
+
+
+        <hr>
+    </div>
+
+
+    <div>
+        <h2 id="associative">Associative Arrays</h2>
+        <p>When working with large multi-dimensional arrays, it is often useful to transform the array into an
+            associative array, also known as objects as associative arrays. Associate arrays allow elements in an array
+            to be referenced by name rather than by an integer. In JavaScript, that option is achieved by creating an
+            object with properties that act as an associative array.<br>
+            To create this array, a block of elements is defined within curly braces. Each element is placed with a key
+            on the left and the contents on the right, separated by a semi-colon, as seen below.</p>
+
+        <ul class="codeExample">
+            <li>&ltscript&gt</li>
+            <li class="indentOne">sports = { "golf": "Needs a club, golf ball, and 18-holes", </li>
+            <li class="indentOne">"tennis": "Needs a racket, tennis ball, court and net",</li>
+            <li class="indentOne">"basketball": "Needs a hoop, basketball, and court"</li>
+            <li class="indentOne">"football" : "Need helmet and pads, football, and field"}</li>
+            <br>
+            <li>//Use a for loop to access the information in the array</li>
+            <li class="indentOne">for(sport in sports)</li>
+            <li class="indentOne">document.write(sport + " = " + sports[sport] + "&ltbr&gt)</li>
+            <li>&lt/script&gt</li>
+        </ul>
+
+        <p>Let's see what that looks like in action:<br>
+            <!--  What is your favorite sport, from the following choices:</p> -->
+            <p>See a list of sports</p>
+            <fieldset>
+                <label><input type="radio" id="golf" value="golf" name="sport">Golf</label><br>
+                <label><input type="radio" id="tennis" value="tennis" name="sport">Tennis</label><br>
+                <label><input type="radio" id="basketball" value="basketball" name="sport">Basketball</label><br>
+                <label><input type="radio" id="football" value="football" name="sport">Football</label><br><br>
+                <button onclick="assocArray()">Submit</button>
+                <p id="assocArray"></p>
+            </fieldset>
+
+
+            <p>We will demonstrate how a JavaScript associative arrays work by examining more closely <a href="objects.html">JavaScript
+                    objects.</a></p>
+
+            <hr>
+    </div>
+
+
+
+    <footer></footer>
+</body>
+
+</html>

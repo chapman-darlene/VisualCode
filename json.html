@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+editor: DChapman
+-->
+
+<head>
+    <title>Bootcamp for CIT261</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/script.js" defer></script>
+    <!-- <link rel="stylesheet" href="css/style_small.css" />
+    <link rel="stylesheet" href="css/style_med.css" /> -->
+    <link rel="stylesheet" href="css/style_large.css" />
+</head>
+
+<nav>
+    <hr />
+    <ul class="navigation">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="htmlFile.html">HTML</a></li>
+        <li><a href="css.html">CSS</a></li>
+        <li><a href="javascript.html">JavaScript</a></li>
+        <li><a href="objects.html">Objects</a></li>
+        <li><a href="dom.html">DOM</a></li>
+        <li><a href="json.html">JSON</a></li>
+        <li><a href="ajax.html">AJAX</a></li>
+    </ul>
+</nav>
+<header class="heading">
+    <h1>JSON BOOTCAMP</h1>
+</header>
+
+<body>
+    <h2>JSON Parse</h2>
+    <p>"JSON or JavaScript Object Notation is a very popular data interchange format. It was developed by Douglas
+        Crockford. JSON is text-based, lightweight, and human-readable format for data exchange between clients and
+        servers. ('JavaScript and JSON Essentials, Sai Srinivas Sriparasa, p.64')"<br>
+        An example of a JSON object can be seen below:</p>
+    <h3>Choose your favorite classical book</h3>
+    <select id="bookSelection" class="bookSelection" onchange="selection()">
+        <option value="Classical Titles" selected>Classical Titles</option>
+        <option value="9781420922530">Hamlet</option>
+        <option value="9780199535569">Pride and Prejudice</option>
+        <option value="9780141321103">The Adventures of Tom Sawyer</option>
+        <option value="9781853260391">A Tale of Two Cities</option>
+        <option value="9781853260193">Vanity Fair</option>
+    </select>
+    <p id="json_parse" class="json_parse"></p>
+    <br>
+    <hr>
+
+
+    <br>
+    <h2>JSON Stringify</h2>
+    <p>When it is necessary to transfer data to or from a web server, and the data needs to be in a string format, JSON
+        uses a method called stringify to transform the data. The following code demonstrates how this is done.</p>
+    <ul class="codeExample">
+        <li>var autos = [{style: "hybrid", name: "Toyota Prius c", model: "LE", year: "2019", basePrice: "$22,955"},</li>
+        <li class="indentOne"> {style: "hybrid", name: "Honda Insight Touring", model: "E-CVT", year: "2019",
+            basePrice: "$28,190"},</li>
+        <li class="indentOne"> {style: "hybrid", name: "Chevy Malibu", model: "FWD Hybrid", year: "2019", basePrice:
+            "$28,590"},</li>
+        <li class="indentOne"> {style: "hybrid", name: "Subaru Crosstrek", model: "hybrid", year: "2019", basePrice:
+            "$38,470"}];</li>
+        <br>
+        <li>var jsonAuto = JSON.stringify(autos);</li>
+    </ul>
+    <p>The string object for the autos variable would look like this:</p>
+    <button onclick="autoStringify()">Object</button>
+    <p id="autoOutput"></p>
+
+    <hr>
+
+    <p>To see what the classical book array looks like when the stringify method is applied, click here. </p>
+    <button onclick="json_stringify()">Stringify</button>
+    <p id="json_stringify"></p>
+
+
+</body>
+<footer>
+
+</footer>
+
+</html>

@@ -1,0 +1,229 @@
+@charset "utf-8";
+
+/*box transition*/
+.row-container {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+
+
+}
+
+.box1 {
+   height: 50px;
+   width: 300px;
+   display: flex;
+   justify-content: center;
+   align-content: center;
+   background-color: rgb(51, 58, 153);
+   ;
+
+
+}
+
+.box1 p {
+   text-align: center;
+   color: beige;
+   font-size: 1.25em;
+}
+
+.box1:hover {
+   height: 50px;
+   width: 300px;
+   background-color: skyblue;
+
+}
+
+.box2 {
+   height: 50px;
+   width: 300px;
+   display: flex;
+   justify-content: center;
+   align-content: center;
+   background-color: rgb(51, 58, 153);
+   transition: all 1s ease;
+
+}
+
+.box2 p {
+   text-align: center;
+   color: beige;
+   font-size: 1.25em;
+}
+
+.box2:hover {
+   height: 50px;
+   width: 300px;
+   background-color: skyblue;
+}
+
+
+
+/*circle transitions*/
+.col-container {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   margin-left: 10px;
+
+}
+
+.circle {
+   height: 72px;
+   width: 72px;
+   border-radius: 50%;
+
+}
+
+
+.circle:hover {
+   margin-left: 500px;
+}
+
+.circle.circle0 {
+   background-color: PaleTurquoise;
+   -webkit-transition: background-color 2s linear;
+   -moz-transition: all 2s linear;
+   -ms-transition: all 2s linear;
+   -o-transition: all 2s linear;
+   transition: all 2s linear;
+}
+
+
+.circle.circle1 {
+   background-color: salmon;
+   -webkit-transition: all 3s ease;
+   -moz-transition: all 3s ease;
+   -ms-transition: all 3s ease;
+   -o-transition: all 3s ease;
+   transition: all 3s ease;
+}
+
+
+.circle.circle2 {
+
+   background-color: lightskyblue;
+   -webkit-transition: all 3s ease-in;
+   -moz-transition: all 3s ease-in;
+   -ms-transition: all 3s ease-in;
+   -o-transition: all 3s ease-in;
+   transition: all 3s ease-in;
+}
+
+.circle.circle3 {
+
+   background-color: khaki;
+   -webkit-transition: all 3s ease-out;
+   -moz-transition: all 3s ease-out;
+   -ms-transition: all 3s ease-out;
+   -o-transition: all 3s ease-out;
+   transition: all 3s ease-out;
+}
+
+.circle.circle4 {
+   background-color: mediumturquoise;
+   -webkit-transition: all 3s ease-in-out;
+   -moz-transition: all 3s ease-in-out;
+   -ms-transition: all 3s ease-in-out;
+   -o-transition: all 3s ease-in-out;
+   transition: all 3s ease-in-out;
+}
+
+.circle.circle5 {
+   background-color: thistle;
+   -webkit-transition: all 3s cubic-bezier(0, 2, .75, 3);
+   -moz-transition: all 3s cubic-bezier(0, 2, .75, 3);
+   -ms-transition: all 3s cubic-bezier(0, 2, .75, 3);
+   -o-transition: all 3s cubic-bezier(0, 2, .75, 3);
+   transition: all 3s cubic-bezier(0, 2, .75, 3);
+}
+
+
+/* transformation Styles */
+
+.football {
+   height: 75px;
+   margin-left: 50px;
+   object-position: left;
+   transition: all 2s linear;
+   -webkit-transition: all 2s linear;
+   -ms-transition: all 2s linear;
+   -moz-transition: all 2s linear;
+   -o-transition: all 2s linear;
+
+}
+
+.football:hover {
+
+   -webkit-transform: rotate(720deg);
+   -moz-transform: rotate(720deg);
+   -ms-transform: rotate(720deg);
+   -o-transform: rotate(720deg);
+   transform: rotate(720deg);
+}
+
+/*animation*/
+.row1 {
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+   flex-grow: 1;
+   height: 6em;
+   width: 100%;
+}
+
+.col1 {
+   flex-grow: 2;
+   align-content: flex-start;
+   align-items: baseline;
+}
+
+.col2 {
+   align-content: flex-end;
+}
+
+
+img.football2 {
+   align-items: baseline;
+   height: 50px;
+}
+
+/*--animation--*/
+#football2 {
+
+   animation: rotate 3s ease-in;
+   /*  animation-duration: 3s;
+   animation-timing-function: ease-in; */
+   /*  animation-play-state: paused;
+   -webkit-animation-play-state: paused; */
+}
+
+#lift {
+   animation: lift 3s ease-in;
+}
+
+#kick {
+   animation: kick 3s ease-in;
+}
+
+@keyframes kick {
+   100% {
+      transform: translateX(100%);
+   }
+}
+
+@keyframes lift {
+   0% {
+      transform: translateY(0px);
+   }
+
+   100% {
+      transform: translateY(-100px);
+   }
+}
+
+@keyframes rotate {
+   100% {
+      transform: rotate(1440deg);
+   }
+}

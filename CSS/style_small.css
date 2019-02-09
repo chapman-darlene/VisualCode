@@ -1,0 +1,95 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+
+
+/*
+    Created on : Jan 14, 2019, 1:51:55 PM
+    Author     : dchap
+
+    color scheme:
+    #000000 -- black
+    #3a6b96 -- blue
+    #808080 -- Grey
+    #f4efc5 -- yellow
+    #d88960 -- rust
+    #ffffff -- white
+*/
+
+@media screen and (min-width: 300px) and (max-width: 812px) {
+    @font-face {
+        font-family: "Lato";
+        src: url('../fonts/Lato-Regular.ttf');
+    }
+    html {
+        width: 100%;
+    }
+    body {
+        background-color: white;
+        margin: 2em;
+        padding: 1em;
+    }
+    .navigation {
+        list-style-type: none;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-end;
+        font-size: 1.1em;
+        padding-right: 1em;
+        padding-left: .5em;
+    }
+    header {
+        margin: 0;
+        display: flex;
+        justify-content: flex-start;
+        height: auto;
+        padding: 0em;
+    }
+    a {
+        color: #d88960;
+        text-decoration: none;
+    }
+    a:hover {
+        color: #fbbc3c;
+        text-decoration: underline;
+    }
+    a:visited {
+        color: #808080;
+        text-decoration: none;
+    }
+    a:active {
+        text-decoration: underline;
+    }
+    .navigation li {
+        padding-right: 1em;
+    }
+    h1 {
+        color: #D5797A;
+        font-family: 'Lato';
+        font-size: 3.5em;
+    }
+    h2 {
+        color: #3a6b96;
+        font-family: 'Lato';
+        font-weight: bold;
+        font-size: 2.5em;
+    }
+    h3 {
+        color: #fbbc3c;
+        font-size: 1.5em;
+    }
+    p {
+        color: #000000;
+        font-family: 'Lato';
+        font-size: 1em;
+    }
+    .bodyText {
+        padding-left: .5em;
+        padding-top: 1em;
+    }
+    #listTag {
+        font-weight: bold;
+    }
+}

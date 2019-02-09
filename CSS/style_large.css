@@ -1,0 +1,171 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+
+
+/*
+  Created on : Jan 14, 2019, 1:51:55 PM
+  Author     : D Chapman
+
+  color scheme:
+  #000000 -- black
+  #3a6b96 -- blue
+  #808080 -- Grey
+  #fbbc3c -- yellow
+  #d88960 -- rust
+  #ffffff -- white
+  #64704C -- green
+*/
+
+@font-face {
+    font-family: "Lato";
+    src: url('../fonts/Lato-Regular.ttf');
+    font-family: "Lato-light";
+    src: url('../fonts/Lato-Light.ttf');
+    /* font-family: "Grunge";
+    src: url('../fonts/BADGRUNGE.ttf'); */
+    font-family: "Army";
+    src: url('../fonts/ArmyWide.ttf');
+}
+
+html {
+    width: 100%;
+    background-image: url("../img/camo_wallpaper.jpg");
+}
+
+body {
+    background-color: white;
+    margin: 2em;
+    padding-left: 2.5em;
+    padding-top: 1.5em;
+    padding-right: 2.5em;
+    padding-bottom: 3em;
+}
+
+.navigation {
+    font-family: 'Lato-Light';
+    list-style-type: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    font-size: 1.1em;
+    padding-right: 1em;
+    padding-left: .5em;
+}
+
+header {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    padding: 0em;
+}
+
+a {
+    color: #d88960;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #fbbc3c;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #808080;
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: underline;
+}
+
+.navigation li {
+    padding-right: 1em;
+}
+
+h1 {
+    color: #64704C;
+    font-family: 'Army';
+    font-size: 4em;
+    font-stretch: semi-expanded;
+}
+
+h2 {
+    color: #3a6b96;
+    font-size: 2.5em;
+}
+
+h3 {
+    color: #fbbc3c;
+    font-size: 1.5em;
+}
+
+p {
+    color: #000000;
+    font-family: 'Lato-light';
+    font-size: 1em;
+}
+
+li {
+    font-family: 'Lato-light';
+}
+
+#listTag {
+    font-weight: bold;
+    font-family: 'Lato-light';
+}
+
+.indentOne {
+    text-indent: 1em;
+}
+
+.indentTwo {
+    text-indent: 2em;
+}
+
+.codeExample li {
+    list-style: none;
+
+}
+
+.codeExample {
+    background-color: #f0f0f0;
+    border-style: solid;
+    border-width: .15em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+.ul-none {
+    list-style: none;
+}
+
+
+.button {
+    font-size: 1.25em;
+    background-color: #3a6b96;
+    color: #f0f0f0;
+    padding: .5em;
+    text-align: center;
+    width: 5.5em;
+}
+
+.arrayContainer {
+    display: flex;
+    flex-direction: "row";
+}
+
+.flex-container {
+    margin-bottom: 2em;
+    display: flex;
+    justify-content:
+}
+
+.flex-item {
+    border: 1px solid #808080;
+    padding: 1em;
+    width: 100%;
+}

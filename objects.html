@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!--
+editor: DChapman
+-->
+
+<head>
+    <title>Bootcamp for CIT261</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/script.js" defer></script>
+    <script src="js/object_script.js" defer></script>
+    <!--  <link rel="stylesheet" href="css/style_small.css" />
+    <link rel="stylesheet" href="css/style_med.css" /> -->
+    <link rel="stylesheet" href="css/style_large.css" />
+</head>
+
+<nav>
+    <hr />
+    <ul class="navigation">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="htmlFile.html">HTML</a></li>
+        <li><a href="css.html">CSS</a></li>
+        <li><a href="javascript.html">JavaScript</a></li>
+        <li><a href="objects.html">Objects</a></li>
+        <li><a href="dom.html">DOM</a></li>
+        <li><a href="json.html">JSON</a></li>
+        <li><a href="ajax.html">AJAX</a></li>
+    </ul>
+</nav>
+<header class="heading">
+    <h1>Objects BOOTCAMP</h1>
+</header>
+
+<body>
+    <div>
+        <h3>Here you learn about:</h3>
+        <ul class="ul-none">
+            <li><a href="#objects">JavaScript Objects</a></li>
+            <li><a href="#loops">Loops</a></li>
+            <li><a href="#conditional">Conditional Statements</a></li>
+            <li><a href="#functions">Functions & Parameters</a></li>
+            <li><a href="#arrays">Arrays</a></li>
+            <li><a href="#associative">Associative Arrays</a></li>
+        </ul>
+    </div>
+
+    <div>
+        <!--begin new object-->
+        <h2 id="objects">JavaScript Objects</h2>
+
+        <p>\"JavaScript Objects fundamental datatype is the object.\" It allows yo to store and retrieve values by its
+            name. It is a collection of unordered properties. The property names are strings, so it makes objects able
+            to
+            map strings to values. This feature is similar to another structure called an associative array.<br>
+            JavaScript object also inherit the properties of another object, known as a prototype. This \"prototypal
+            inheritance\" is a key feature of JavaScript.</p>
+
+        <p>Each JavaScript object has a name and value, as well as property attributes. Every object has three
+            associated
+            object attributes. Here are basic object examples: </p>
+
+        <ul class='codeExample'>
+            <li>Here is one way to an empty object:</li>
+            <li class='indentOne'>var object1 = new Object();</li><br>
+            <li>You can also use a method to create a new object, and pass values as parameters into an object</li>
+            <li class='indentOne'>var object2 = Object.create({x:1, y:2});</li><br>
+            <li>An object array is created like this</li>
+            <li class='indentOne'>var array1 = new Array();</li><br>
+            <li>This is a date object</li>
+            <li class="indentOne">var date1 = Date();</li><br>
+
+        </ul>
+        <p>You can use array notation to access properties of an object with string expressions.<br>
+            Here is a little demonstration on the power of objects.</p>
+    </div>
+
+    <div>
+        <!--begin new object-->
+        <h3>Demonstration of a Stock Search and Purchase App</h3>
+        <h4>Current Tech Stocks Price per Share</h4>
+
+        <div class="flex-container">
+            <div class="flex-item">
+                <ul class="ul-none">
+                    <li><button id="amazon" class="button" onclick="stock()" value="AMZN">Amazon</li>
+                    <li><button id="apple" class="button" onclick="stock()" value="AAPL">Apple</li>
+                    <li><button Id="facebook" class="button" onclick="stock()" value="FB">Facebook</li>
+                    <li><button Id="ibm" class="button" onclick="stock()" value="IBM">IBM</li>
+                    <li><button id="microsoft" class="button" onclick="stock()" value="MSFT">Microsoft</li>
+                </ul>
+            </div>
+            <div class="flex-item">
+                <p id="stockInfo"></p>
+                <p>If you were to purchase this stock at this price, how many shares
+                    you would you purchase?</p><br>
+                <input type=number id="stockQuantity">
+                <button onclick="stockPurchase()">Submit</button>
+                <p id="stockResult"></p>
+            </div>
+
+        </div>
+        <!--end flex-->
+    </div>
+
+    <div>
+        <!--begin new object-->
+        <h2>JavaScript Array of Strings</h2>
+        <p>Let's play a game. <br>
+            Choose from the following:</p>
+        <br>
+        <div class="flex-container">
+            <div class="flex-item1">
+                <button id="assocButton" onclick="assocMap()" value="property">Property</button><br>
+                <button id="assocButton" onclick="assocMap()" value="lobby">Lobby</button><br>
+                <button id="assocButton" onclick="assocMap()" value="dining">Dining</button><br>
+                <button id="assocButton" onclick="assocMap()" value="spa">Spa </button><br>
+                <button id="assocButton" onclick="assocMap()" value="pool">Pool</button><br>
+                <button id="assocButton" onclick="assocMap()" value="gym">Gym</button><br>
+                <button id="assocButton" onclick="assocMap()" value="rooms">Rooms</button><br>
+                <button id="assocButton" onclick="assocMap()" value="view">View</button><br>
+                </ul>
+            </div>
+            <div class="flex-item2">
+                <p id="assocArray"></p>
+            </div>
+        </div>
+        <!--end flex-->
+    </div>
+
+</body>
+<footer>
+
+</footer>
+
+</html>

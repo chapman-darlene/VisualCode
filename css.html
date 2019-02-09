@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--
+editor: DChapman
+-->
+
+<head>
+    <title>Bootcamp for CIT261</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/script.js" defer></script>
+    <script src="js/css_elements.js" defer></script>
+    <!-- <link rel="stylesheet" href="css/style_small.css" />
+    <link rel="stylesheet" href="css/style_med.css" /> -->
+    <link rel="stylesheet" href="css/style_large.css" />
+    <link rel="stylesheet" href="css/css_elements.css" />
+</head>
+
+<nav>
+    <hr />
+    <ul class="navigation">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="htmlFile.html">HTML</a></li>
+        <li><a href="css.html">CSS</a></li>
+        <li><a href="javascript.html">JavaScript</a></li>
+        <li><a href="objects.html">Objects</a></li>
+        <li><a href="dom.html">DOM</a></li>
+        <li><a href="json.html">JSON</a></li>
+        <li><a href="ajax.html">AJAX</a></li>
+    </ul>
+</nav>
+<header class="heading">
+    <h1>CSS BOOTCAMP</h1>
+</header>
+
+<body>
+
+    <h2>CSS Transitions, Transformations and Animations</h2>
+    <h3>CSS Transition</h3>
+    <p>CSS transition are a part of the CSS3 language to add dynamic content to a web page.</p>
+    <div>
+        <h3>CSS Transition Property</h3>
+        <p>CSS transitions create a way to change a property value over a certain duration of time. This gradual
+            change
+            is usually more aesthetically pleasing to the viewer. Here is an example of a value change to a box
+            with
+            and without the transition applied</p>
+        <div class="row-container">
+            <div class="box1">
+                <p>Box change without Transition</p>
+            </div>
+            <div class="box2">
+                <p>Box change with Transition</p>
+            </div>
+        </div>
+        <p>Transitions have four components or features. They are:</p>
+        <ul>
+            <li>Property: This determines what is to be transitioned, transformed or animated.</li>
+            <li>Duration: This is the length of time between the beginning and end of the transition.</li>
+            <li>Duration-Timing-function: This determines the speed of the transition</li>
+            <li>Delay: This is an optional feature that determines the start time of the transition.</li>
+        </ul>
+    </div>
+
+    <div>
+        <h3>CSS Duration-Timing-function</h3>
+        <p>This feature may be considered to have the greatest impact upon the transition. Hover over the circles
+            to see how they change:</p>
+
+        <div class="col-container">
+            <p>Linear: Creates an effect with the same speed through out the transition</p>
+            <div class="circle circle0"></div>
+            <p>Ease: Creates an effect that starts slow, increases in speed, then ends slowly</p>
+            <div class="circle circle1"></div>
+            <p>Ease-in: Creates an effect that starts slowly</p>
+            <div class="circle circle2"></div>
+            <p>Ease-out: Creates an effect with a slow ending</p>
+            <div class="circle circle3"></div>
+            <p>Ease-in-out: Is an effect that starts and end slowly </p>
+            <div class="circle circle4"></div>
+            <p>Cubic-bezier: The user can define their own values</p>
+            <div class="circle circle5"></div>
+        </div>
+    </div>
+
+    <div>
+        <h3>CSS Transformation</h3>
+        <p>The CSS Transformation property provides a way to create effects and interactions with the object. <br>
+            This is a simple example how a Transformation can be applied to an image. Hover over the football to
+            see
+            what I mean.</p>
+        <div id="axis">
+            <div id="image">
+                <img src="/img/football.png" alt="image of football" class="football">
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h3>Playground</h3>
+        <p>Now it's your turn. See what you can create with the use of <a href="canvas.html">transitions and
+                transformations.</a></p>
+    </div>
+
+    <div>
+        <h3>CSS Animation</h3>
+        <p>CSS Animations are more sophisticated form of a transition.</p>
+        <ul>
+            <li>Animations can repeat infinitely</li>
+            <li>Animations use keyframes</li>
+            <li>Animations can be paused</li>
+            <li>Animations don’t degrade gracefully</li>
+        </ul>
+        <p>Let's put all of the three elements together to see how they interact.</p>
+    </div>
+
+    <div class="row1">
+
+        <div class="col1">
+            <button onclick="kick()" id="play">Kick the Ball</button><br><br>
+            <div id="kick1">
+                <div id="lift1">
+                    <img src="/img/football.png" id="football1" class="football2" alt="image of football. Click to kick">
+                </div>
+            </div>
+        </div>
+        <div class="col2">
+            <img src="img/footballPost.png" alt="football goal post">
+        </div>
+    </div>
+    <div>
+        <h3 id="score"></h3>
+        <button onclick="reset()">Reset Game</button>
+    </div>
+
+
+</body>
+<footer>
+
+</footer>
+
+</html>
