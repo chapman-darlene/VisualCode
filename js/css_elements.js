@@ -29,7 +29,7 @@ function scoreResult() {
     console.log(score);
 
     if (score === 1) {
-        document.getElementById("score").innerHTML = "Your kick was good!"
+        document.getElementById("score").innerHTML = "Your kick was good! You scored 3 points"
     } else {
         document.getElementById("score").innerHTML = "Sorry, the ball didn't go through the uprights!"
     }

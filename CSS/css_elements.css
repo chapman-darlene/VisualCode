@@ -25,7 +25,7 @@
 }
 
 .box1:hover {
-   height: 50px;
+   height: 60px;
    width: 300px;
    background-color: skyblue;
 
@@ -49,11 +49,10 @@
 }
 
 .box2:hover {
-   height: 50px;
+   height: 60px;
    width: 300px;
    background-color: skyblue;
 }
-
 
 
 /*circle transitions*/
