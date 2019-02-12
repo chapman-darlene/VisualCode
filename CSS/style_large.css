@@ -44,15 +44,17 @@ body {
     padding-bottom: 3em;
 }
 
+
+
 .navigation {
     font-family: 'Lato-Light';
     list-style-type: none;
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-end;
-    font-size: 1.1em;
+    font-size: 1em;
     padding-right: 1em;
-    padding-left: .5em;
+    padding-left: .25em;
 }
 
 header {
@@ -61,6 +63,7 @@ header {
     justify-content: center;
     height: auto;
     padding: 0em;
+    filter: alpha(opacity=60);
 }
 
 a {
@@ -161,7 +164,6 @@ li {
 .flex-container {
     margin-bottom: 2em;
     display: flex;
-    justify-content:
 }
 
 .flex-item {

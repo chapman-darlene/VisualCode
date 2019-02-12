@@ -11,19 +11,22 @@ editor: DChapman
     <!-- <link rel="stylesheet" href="css/style_small.css" />
     <link rel="stylesheet" href="css/style_med.css" /> -->
     <link rel="stylesheet" href="css/style_large.css" />
+    <link rel="stylesheet" href="css/canvas.css" />
 </head>
 
 <nav>
     <hr />
     <ul class="navigation">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="htmlFile.html">HTML</a></li>
+        <li><a href="index.html">Main</a></li>
+        <li><a href="ajax.html">Ajax</a></li>
+        <li><a href="canvas.html">Canvas</a></li>
         <li><a href="css.html">CSS</a></li>
-        <li><a href="javascript.html">JavaScript</a></li>
-        <li><a href="objects.html">JavaScript Objects</a></li>
         <li><a href="dom.html">DOM</a></li>
+        <li><a href="htmlFile.html">HTML</a></li>
+        <li><a href="javascript.html">JavaScript</a></li>
         <li><a href="json.html">JSON</a></li>
-        <li><a href="ajax.html">AJAX</a></li>
+        <li><a href="objects.html">Objects</a></li>
+        <li><a href="localStorage.html">Local Storage</a></li>
     </ul>
 </nav>
 <header class="heading">
@@ -32,31 +35,49 @@ editor: DChapman
 
 <body>
     <h2>Canvas Playground</h2>
-    <h3>It's your turn to play with CSS Transitions, Transformations, and Animation</h3>
+    <h3>Play with CSS Transitions, Transformations, and Animation</h3>
+    <div class="flex-container-canvas">
+        <div class="row1-canvas">
+            <!--row1, column 1-->
+            <div class="col1">
+                <select class="select1">
+                    <option name="Select a Shape" selected>Select A Shape</option>
+                    <option value="circle" id="circle">Circle</option>
+                    <option value="square" id="square">Square</option>
+                    <option value="rectangle" id="rectangle">Rectangle</option>
+                </select>
+            </div>
+            <!--row1, column 2-->
+            <div class="col2">
+                <select class="select2">
+                    <option name="Color" selected>Select a Color</option>
+                    <option value="red" id="red">Red</option>
+                    <option value="blue" id="blue">Blue</option>
+                    <option value="pink" id="pink">Pink</option>
+                    <option value="yellow" id="yellow">Yellow</option>
+                    <option value="purple" id="purple">Purple</option>
+                    <option value="orange" id="orange">Orange</option>
+                </select>
+            </div>
+            <!--row1, column 3-->
+            <div class="col3">
+                <select class="select3">
+                    <option name="animate" selected>Animate Shape</option>
+                    <option value="upDown" id="upDown">Up and Down</option>
+                    <option value="LeftRight" id="leftRight">Left and Right</option>
+                </select>
+            </div>
 
-    <div id="row1">
-        <div id="section1">
-            <p>Choose a shape beginning shape:</p>
-            <li id="circle">Circle</li>
-            <li id="square">Squire</li>
-            <li id="rectangle">Rectangle</li>
-            <li id="oval">Oval</li>
-
-        </div>
-        <div id="canvasSection>
-            <canvas id=" canvas" width="400" height="300"></canvas>
 
         </div>
     </div>
+    <!--end flex-container-->
 
-    <div id="row2">
-        <div id=section2>
-
-        </div>
-        <div id="section3">
-
-        </div>
+    <div class="canvas-container">
+        <canvas id="canvas1">Your browser does not support canvas</canvas>
     </div>
+
+
 
 
 
