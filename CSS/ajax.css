@@ -1,11 +1,4 @@
 /*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-
-
-/*
   Created on : Jan 14, 2019, 1:51:55 PM
   Author     : D Chapman
 
@@ -13,7 +6,7 @@ and open the template in the editor.
   #000000 -- black
   #3a6b96 -- blue
   #808080 -- Grey
-  #f0a103 -- gold
+  #fbbc3c -- yellow
   #d88960 -- rust
   #ffffff -- white
   #64704C -- green
@@ -24,19 +17,22 @@ and open the template in the editor.
     src: url('../fonts/Lato-Regular.ttf');
     font-family: "Lato-light";
     src: url('../fonts/Lato-Light.ttf');
-    font-family: 'capture';
-    src: url('../fonts/Capture_it.ttf');
-
+    font-family: "Army";
+    src: url('../fonts/Army\ Wide.ttf');
 }
+
 
 html {
     width: 100%;
-    background-image: url("../img/camo_wallpaper.jpg");
+    background-image: url("../img/galaxy1.jpg");
+    background-repeat: no-repeat;
 }
 
 body {
-    background-color: rgb(255, 255, 255);
-    margin: 2em;
+    background-color: rgba(83, 83, 83, 0.8);
+    margin-top: 2em;
+    margin-left: 5em;
+    margin-right: 5em;
     padding-left: 2.5em;
     padding-top: 1.5em;
     padding-right: 2.5em;
@@ -71,7 +67,7 @@ a {
 }
 
 a:hover {
-    color: #f0a103;
+    color: #fbbc3c;
     text-decoration: underline;
 }
 
@@ -90,7 +86,7 @@ a:active {
 
 h1 {
     color: #64704C;
-    font-family: "capture", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Army';
     font-size: 4em;
     font-stretch: semi-expanded;
 }
@@ -101,13 +97,8 @@ h2 {
 }
 
 h3 {
-    color: #f0a103;
+    color: #fbbc3c;
     font-size: 1.5em;
-}
-
-h4 {
-    color: #d88960;
-    font-size: 1.30;
 }
 
 p {
@@ -174,4 +165,14 @@ li {
     border: 1px solid #808080;
     padding: 1em;
     width: 100%;
+}
+
+.body-container {
+    display: flex;
+    background-color: #ffffff;
+}
+
+.row1 {
+    display: flex;
+    justify-content: center;
 }

@@ -32,10 +32,8 @@
 
 #canvas1 {
     width: 90%;
-    height: 60%;
+    height: 600px;
     margin-top: 2em;
     border: solid .5em #64704C;
     background-color: #fdf4e0;
-
-
 }

@@ -7,7 +7,6 @@ editor: DChapman
     <title>Bootcamp for CIT261</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/script.js" defer></script>
     <script src="js/css_elements.js" defer></script>
     <!-- <link rel="stylesheet" href="css/style_small.css" />
     <link rel="stylesheet" href="css/style_med.css" /> -->
@@ -30,13 +29,14 @@ editor: DChapman
         <li><a href="localStorage.html">Local Storage</a></li>
     </ul>
 </nav>
+
 <header class="heading">
     <h1>CSS BOOTCAMP</h1>
 </header>
 
 <body>
-
-    <h2>CSS Transitions, Transformations and Animations</h2>
+    <hr>
+    <h2>CSS</h2>
     <h3>Here you learn about:</h3>
     <ul class="ul-none">
         <li><a href="#transitions">Transitions</a></li>
@@ -47,7 +47,7 @@ editor: DChapman
     <h3 id="transitions">CSS Transition</h3>
     <p>CSS transition are a part of the CSS3 language to add dynamic content to a web page.</p>
     <div>
-        <h3>CSS Transition Property</h3>
+        <h4>CSS Transition Property</h4>
         <p>CSS transitions create a way to change a property value over a certain duration of time. This gradual
             change is usually more aesthetically pleasing to the viewer. Here is an example of a value change to a box
             with
@@ -76,29 +76,34 @@ editor: DChapman
     </div>
 
     <div>
-        <h3>CSS Duration-Timing-function</h3>
-        <p>This feature may be considered to have the greatest impact upon the transition. Hover over the circles
-            to see how they change:</p>
+        <h4>CSS Duration-Timing-function</h4>
+        <p>This feature may be considered to have the greatest impact upon the transition. Hover over a car to see how
+            it changes:</p>
 
-        <div class="col-container">
+
+        <div id="car-start">
+            <!--  <div id="carButtons">
+                <button id="car-start" onclick="carMove()">Start your engines</button>
+                <button onclick="resetCar()">Reset</button>
+            </div> -->
+            <h4>Move the Cars</h4>
             <p>Linear: Creates an effect with the same speed through out the transition</p>
-            <div class="circle circle0"></div>
+            <div id="car1"><img src="img/car1.png" alt="car image"></div>
             <p>Ease: Creates an effect that starts slow, increases in speed, then ends slowly</p>
-            <div class="circle circle1"></div>
+            <div id="car2"><img src="img/car2.png" alt="car image"></div>
             <p>Ease-in: Creates an effect that starts slowly</p>
-            <div class="circle circle2"></div>
-            <p>Ease-out: Creates an effect with a slow ending</p>
-            <div class="circle circle3"></div>
-            <p>Ease-in-out: Is an effect that starts and end slowly </p>
-            <div class="circle circle4"></div>
-            <p>Cubic-bezier: The user can define their own values</p>
-            <div class="circle circle5"></div>
+            <div id="car3"><img src="img/car3.png" alt="car image"></div>
+            <p>Ease-out: Creates an effect that ends slowly</p>
+            <div id="car4"><img src="img/car4.png" alt="car image"></div>
+            <p>Ease-in-out: Is an effect that starts and ends slowly </p>
+            <div id="car5"><img src="img/car5.png" alt="car image"></div>
         </div>
     </div>
 
     <div>
         <h3 id="transformations">CSS Transformation</h3>
-        <p>The CSS Transformation property provides a way to create effects and interactions with the object. This is a
+        <p>The CSS Transformation property provides a way to create effects and interactions with the object. This
+            is a
             simple example how a Transformation can be applied to an image. <br>
             Hover over the football to the effect.</p>
         <div id="axis">
@@ -154,22 +159,33 @@ editor: DChapman
         </div>
     </div>
     <br>
-    <p>Code to create a basic animation could look something like this:</p>
-    <ul class="codeExample">
-        <li>#ball{</li>
-        <li class="indentOne">animation: color 3s ease-in;</li>
-        <li>}</li>
-        <li>@keyframes color{</li>
-        <li class="indentOne">0%{</li>
-        <li class="indentTwo">background-color: blue;</li>
-        <li class="indentTwo">color: white;</li>
-        <li class="indentOne">}</li>
-        <li class="intentOne">100%{</li>
-        <li class="indentTwo">background-color: white;</li>
-        <li class="indentTwo">color: blue;</li>
-        <li class="indentOne">}</li>
-        <li>}</li>
-    </ul>
+    <div>
+        <p>Code to create a basic animation could look something like this:</p>
+        <ul class="codeExample">
+            <li>#ball{</li>
+            <li class="indentOne">animation: color 3s ease-in;</li>
+            <li>}</li>
+            <li>@keyframes color{</li>
+            <li class="indentOne">0%{</li>
+            <li class="indentTwo">background-color: blue;</li>
+            <li class="indentTwo">color: white;</li>
+            <li class="indentOne">}</li>
+            <li class="intentOne">100%{</li>
+            <li class="indentTwo">background-color: white;</li>
+            <li class="indentTwo">color: blue;</li>
+            <li class="indentOne">}</li>
+            <li>}</li>
+        </ul>
+    </div>
+
+    <button onclick="launch()" id="rocket">Start</button>
+
+    <div class="row-container">
+        <div id="rocket1"><img src="img/rocket1.png" alt="rocket image"></div>
+        <div id="rocket2"><img src="img/rocket2.png" alt="rocket image"></div>
+        <div id="rocket3"><img src="img/rocket3.png" alt="rocket image"></div>
+        <div id="rocket4"><img src="img/rocket4.png" alt="rocket image"></div>
+    </div>
 
 
 </body>

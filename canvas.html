@@ -7,7 +7,7 @@ editor: DChapman
     <title>Bootcamp for CIT261</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/script.js" defer></script>
+    <script src="js/canvas.js" defer></script>
     <!-- <link rel="stylesheet" href="css/style_small.css" />
     <link rel="stylesheet" href="css/style_med.css" /> -->
     <link rel="stylesheet" href="css/style_large.css" />
@@ -36,12 +36,15 @@ editor: DChapman
 <body>
     <h2>Canvas Playground</h2>
     <h3>Play with CSS Transitions, Transformations, and Animation</h3>
-    <div class="flex-container-canvas">
+    <div class="
+        flex-container-canvas">
         <div class="row1-canvas">
             <!--row1, column 1-->
             <div class="col1">
-                <select class="select1">
-                    <option name="Select a Shape" selected>Select A Shape</option>
+                <label for=select1>Select a Shape</label>
+                <br>
+                <select id="select1" onclick="selectShape()">
+                    <option name="shape" selected>Select Shape</option>
                     <option value="circle" id="circle">Circle</option>
                     <option value="square" id="square">Square</option>
                     <option value="rectangle" id="rectangle">Rectangle</option>
@@ -49,26 +52,26 @@ editor: DChapman
             </div>
             <!--row1, column 2-->
             <div class="col2">
+                <label for=select2>Move object</label>
+                <br>
                 <select class="select2">
-                    <option name="Color" selected>Select a Color</option>
-                    <option value="red" id="red">Red</option>
-                    <option value="blue" id="blue">Blue</option>
-                    <option value="pink" id="pink">Pink</option>
-                    <option value="yellow" id="yellow">Yellow</option>
-                    <option value="purple" id="purple">Purple</option>
-                    <option value="orange" id="orange">Orange</option>
+                    <option name="move" selected>Move Object</option>
+                    <option value="lr" id="lr">Left to Right</option>
+                    <option value="ud" id="ud">Up Down</option>
+                    <option value="circle" id="circle">Circle</option>
+
                 </select>
             </div>
             <!--row1, column 3-->
             <div class="col3">
+                <label for=select4>Transform the shape</label>
+                <br>
                 <select class="select3">
-                    <option name="animate" selected>Animate Shape</option>
-                    <option value="upDown" id="upDown">Up and Down</option>
-                    <option value="LeftRight" id="leftRight">Left and Right</option>
+                    <option value="scale" id="scale">Scale</option>
+                    <option value="rotate" id="rotate">Rotate</option>
+                    <option value="skew" id="skew">Skew</option>
                 </select>
             </div>
-
-
         </div>
     </div>
     <!--end flex-container-->
@@ -76,10 +79,6 @@ editor: DChapman
     <div class="canvas-container">
         <canvas id="canvas1">Your browser does not support canvas</canvas>
     </div>
-
-
-
-
 
 </body>
 <footer>
