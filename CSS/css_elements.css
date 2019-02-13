@@ -7,35 +7,6 @@
    justify-content: space-evenly;
 }
 
-.rocket-container {
-   display: flex;
-   flex-direction: row;
-   justify-content: space-evenly;
-
-}
-
-#rocket1 {
-   margin-top: 8em;
-   transition: all 2s linear;
-}
-
-#rocket2 {
-   margin-top: 8em;
-   transition: all 2s ease;
-}
-
-#rocket3 {
-   margin-top: 8em;
-   transition: all 2s ease-in;
-}
-
-
-#rocket4 {
-   margin-top: 8em;
-   transition: all 2s ease-in-out;
-}
-
-
 .box1 {
    height: 60px;
    width: 300px;
@@ -80,6 +51,8 @@
    height: 60px;
    width: 300px;
    background-color: skyblue;
+   border-radius: 25px;
+   transform: scale(1.3);
 }
 
 #carButtons {
@@ -92,7 +65,7 @@
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-   margin-left: 0%;
+
 }
 
 #car-start:hover img {
@@ -100,51 +73,47 @@
 }
 
 #car1 {
-   background-color: turquoise;
-   transition: all 10s linear;
-   -moz-transition: all 10s linear;
-   -ms-transition: all 10s linear;
-   -o-transition: all 10s linear;
+   margin-left: 0%;
+   transition: all 5s linear;
+   -moz-transition: all 5s linear;
+   -ms-transition: all 5s linear;
+   -o-transition: all 5s linear;
 
 }
 
 #car2 {
-   background-color: salmon;
-   transition: all 10s ease;
-   -webkit-transition: all 10s ease;
-   -moz-transition: all 10s ease;
-   -ms-transition: all 10s ease;
-   -o-transition: all 10s ease;
+   transition: all 5s ease;
+   -webkit-transition: all 5s ease;
+   -moz-transition: all 5s ease;
+   -ms-transition: all 5s ease;
+   -o-transition: all 5s ease;
 
 }
 
 #car3 {
-   background-color: lightskyblue;
-   transition: all 10s ease-in;
-   -webkit-transition: all 10s ease-in;
-   -moz-transition: all 10s ease-in;
-   -ms-transition: all 10s ease-in;
-   -o-transition: all 10s ease-in;
+   transition: all 5s ease-in;
+   -webkit-transition: all 5s ease-in;
+   -moz-transition: all 5s ease-in;
+   -ms-transition: all 5s ease-in;
+   -o-transition: all 5s ease-in;
 
 }
 
 #car4 {
-   background-color: khaki;
-   transition: all 10s ease-out;
-   -webkit-transition: all 10s ease-out;
-   -moz-transition: all 10s ease-out;
-   -ms-transition: all 10s ease-out;
-   -o-transition: all 10s ease-out;
+   transition: all 5s ease-out;
+   -webkit-transition: all 5s ease-out;
+   -moz-transition: all 5s ease-out;
+   -ms-transition: all 5s ease-out;
+   -o-transition: all 5s ease-out;
 
 }
 
 #car5 {
-   background-color: mediumturquoise;
-   transition: all 10s ease-in-out;
-   -webkit-transition: all 10s ease-in-out;
-   -moz-transition: all 10s ease-in-out;
-   -ms-transition: all 10s ease-in-out;
-   -o-transition: all 10s ease-in-out;
+   transition: all 5s ease-in-out;
+   -webkit-transition: all 5s ease-in-out;
+   -moz-transition: all 5s ease-in-out;
+   -ms-transition: all 5s ease-in-out;
+   -o-transition: all 5s ease-in-out;
 
 }
 
@@ -161,7 +130,6 @@
 }
 
 .football:hover {
-
    -webkit-transform: rotate(720deg);
    -moz-transform: rotate(720deg);
    -ms-transform: rotate(720deg);
@@ -170,12 +138,12 @@
 }
 
 /*animation*/
-.row1 {
+.football-container {
    display: flex;
    flex-direction: row wrap;
    justify-content: flex-start;
-   flex-grow: 1;
-   height: 6em;
+   margin-top: 50px;
+   height: 200px;
    width: 100%;
 }
 
@@ -183,7 +151,9 @@ h3#score {
    display: flex;
    flex-direction: row;
    justify-content: center;
+   margin: 0;
 }
+
 
 .col1 {
    flex-grow: 2;
@@ -195,23 +165,17 @@ h3#score {
    align-content: flex-end;
 }
 
-.col3 {
-   flex-grow: 3;
-   align-content: center;
-}
-
 
 img.football2 {
    align-items: baseline;
    height: 50px;
+   margin-top: 75px;
 }
 
 /*--animation--*/
 #football2 {
-
    animation: rotate 3s ease-in;
    -webkit-animation: rotate 3s ease-in;
-
 }
 
 #lift {
@@ -247,5 +211,164 @@ img.football2 {
    100% {
       transform: rotate(1440deg);
       -webkit-transform: rotate(1440deg);
+   }
+}
+
+/*Rocket*/
+
+.rocket-container {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+}
+
+
+#background {
+   position: absolute;
+   margin: 0;
+   border-width: 100%;
+}
+
+#rocket1 {
+   margin-top: 200px;
+   animation: rocket1 3s ease .5s infinite;
+   /* animation-duration: 3s;
+   animation-delay: .5s;
+   animation-timing-function: ease;
+   animation-iteration-count: infinite; */
+}
+
+@keyframes rocket1 {
+   0% {
+      transform: translateY(0px);
+      transform: rotate(-3deg);
+   }
+
+   10% {
+      transform: rotate(0);
+   }
+
+   20% {
+      transform: rotate(3deg);
+   }
+
+   40% {
+      transform: rotate(0);
+   }
+
+   60% {
+      transform: translateY(10px);
+   }
+
+   100% {
+      transform: translateY(-200px);
+   }
+}
+
+#rocket2 {
+   margin-top: 200px;
+   animation: rocket2;
+   animation-duration: 3s;
+   animation-delay: .5s;
+   animation-timing-function: ease;
+   animation-iteration-count: infinite;
+}
+
+
+@keyframes rocket2 {
+   0% {
+      transform: translateY(0px);
+      transform: skew(-5px);
+   }
+
+   10% {
+      transform: skew(0);
+   }
+
+   20% {
+      transform: translateY(-10px);
+   }
+
+   40% {
+      transform: translateY(0);
+   }
+
+
+   100% {
+      transform: translateY(-200px);
+   }
+}
+
+#rocket3 {
+   margin-top: 200px;
+   animation: rocket3;
+   animation-duration: 3s;
+   animation-delay: .5s;
+   animation-timing-function: ease;
+   animation-iteration-count: infinite;
+}
+
+
+@keyframes rocket3 {
+   0% {
+      transform: translateY(0px);
+      transform: rotate(-4deg);
+   }
+
+   10% {
+      transform: rotate(0);
+   }
+
+   20% {
+      transform: rotate(4deg);
+   }
+
+   40% {
+      transform: rotate(0);
+      transform: translateX(-3px);
+   }
+
+   50% {
+      transform: translateX(0px);
+   }
+
+
+   100% {
+      transform: translateY(-180px);
+   }
+}
+
+#rocket4 {
+   margin-top: 200px;
+   animation: rocket4;
+   animation-duration: 3s;
+   animation-delay: .5s;
+   animation-timing-function: ease;
+   animation-iteration-count: infinite;
+}
+
+
+@keyframes rocket4 {
+   0% {
+      transform: translateY(0px);
+      transform: rotate(4deg);
+   }
+
+   10% {
+      transform: translateY(-10px);
+      transform: rotate(0);
+   }
+
+   20% {
+      transform: translateY(0px);
+      transform: rotate(-4deg);
+   }
+
+   40% {
+      transform: rotate(0);
+   }
+
+   100% {
+      transform: translateY(-200px);
    }
 }

@@ -88,15 +88,15 @@ editor: DChapman
             </div> -->
             <h4>Move the Cars</h4>
             <p>Linear: Creates an effect with the same speed through out the transition</p>
-            <div id="car1"><img src="img/car1.png" alt="car image"></div>
+            <div><img src="img/car1.png" alt="car image" id="car1"></div>
             <p>Ease: Creates an effect that starts slow, increases in speed, then ends slowly</p>
-            <div id="car2"><img src="img/car2.png" alt="car image"></div>
+            <div><img src="img/car2.png" alt="car image" id="car2"></div>
             <p>Ease-in: Creates an effect that starts slowly</p>
-            <div id="car3"><img src="img/car3.png" alt="car image"></div>
+            <div><img src="img/car3.png" alt="car image" id="car3"></div>
             <p>Ease-out: Creates an effect that ends slowly</p>
-            <div id="car4"><img src="img/car4.png" alt="car image"></div>
+            <div><img src="img/car4.png" alt="car image" id="car4"></div>
             <p>Ease-in-out: Is an effect that starts and ends slowly </p>
-            <div id="car5"><img src="img/car5.png" alt="car image"></div>
+            <div><img src="img/car5.png" alt="car image" id="car4"></div>
         </div>
     </div>
 
@@ -135,17 +135,26 @@ editor: DChapman
             <li>Animations can be paused</li>
             <li>Animations don’t degrade gracefully</li>
         </ul>
-        <p>Let's put all of the three elements together to see how they interact.</p>
+        <p>Let's put all of the three elements together to see how they interact. First we have animation created by a
+            hover event. The second animation is created by a click through JavaScript.</p>
     </div>
 
-    <div class="row1">
+    <div class="rocket-container">
+        <div id="background"><img src="img/sky.png" alt="image of ground and sky"></div>
+        <div><img src="img/rocket1.png" alt="rocket image" id="rocket1"></div>
+        <div><img src="img/rocket2.png" alt="rocket image" id="rocket2"></div>
+        <div><img src="img/rocket3.png" alt="rocket image" id="rocket3"></div>
+        <div><img src="img/rocket4.png" alt="rocket image" id="rocket4"></div>
+    </div>
+
+
+    <div class="football-container">
 
         <div class="col1">
-            <button onclick="kick()" id="play">Kick the Ball</button><button onclick="reset()">Reset Game</button><br><br>
+            <button onclick="kick()" id="play">Kick the Ball</button><button onclick="reset()">Reset Game</button>
             <div id="kick1">
                 <div id="lift1">
                     <img src="/img/football.png" id="football1" class="football2" alt="image of football. Click to kick">
-
                 </div>
             </div>
         </div>
@@ -153,12 +162,15 @@ editor: DChapman
             <img src="img/footballPost.png" alt="football goal post">
         </div>
     </div>
+
     <div class="row2">
         <div class="col1">
             <h3 id="score"></h3>
         </div>
     </div>
-    <br>
+
+
+
     <div>
         <p>Code to create a basic animation could look something like this:</p>
         <ul class="codeExample">
@@ -176,15 +188,6 @@ editor: DChapman
             <li class="indentOne">}</li>
             <li>}</li>
         </ul>
-    </div>
-
-    <button onclick="launch()" id="rocket">Start</button>
-
-    <div class="row-container">
-        <div id="rocket1"><img src="img/rocket1.png" alt="rocket image"></div>
-        <div id="rocket2"><img src="img/rocket2.png" alt="rocket image"></div>
-        <div id="rocket3"><img src="img/rocket3.png" alt="rocket image"></div>
-        <div id="rocket4"><img src="img/rocket4.png" alt="rocket image"></div>
     </div>
 
 

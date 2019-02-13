@@ -20,12 +20,12 @@ and open the template in the editor.
 */
 
 @font-face {
-    font-family: "Lato";
+    font-family: Lato;
     src: url('../fonts/Lato-Regular.ttf');
-    font-family: "Lato-light";
+    font-family: Lato-light;
     src: url('../fonts/Lato-Light.ttf');
-    font-family: 'capture';
-    src: url('../fonts/Capture_it.ttf');
+    font-family: army;
+    src: url('../fonts/Army_Wide.ttf');
 
 }
 
@@ -46,7 +46,7 @@ body {
 
 
 .navigation {
-    font-family: 'Lato-Light';
+    font-family: Lato-Light;
     list-style-type: none;
     display: flex;
     flex-flow: row wrap;
@@ -90,7 +90,7 @@ a:active {
 
 h1 {
     color: #64704C;
-    font-family: "capture", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: army, Impact, 'Arial Narrow Bold', sans-serif;
     font-size: 4em;
     font-stretch: semi-expanded;
 }
@@ -112,17 +112,17 @@ h4 {
 
 p {
     color: #000000;
-    font-family: 'Lato-light';
+    font-family: Lato-light;
     font-size: 1em;
 }
 
 li {
-    font-family: 'Lato-light';
+    font-family: Lato-light;
 }
 
 #listTag {
     font-weight: bold;
-    font-family: 'Lato-light';
+    font-family: Lato-light;
 }
 
 .indentOne {
