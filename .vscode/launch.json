@@ -9,8 +9,8 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/app.js"
-        },      
+            "program": "${workspaceFolder}/.vscode/app.js"
+        },
 
         {
             "type": "node",
@@ -24,7 +24,7 @@
             ],
             "port": 9229
         },
-        
+
 
         {
             "type": "chrome",

@@ -13,8 +13,8 @@ function reset() {
     var kick = document.getElementById("kick");
     var lift = document.getElementById("lift");
     var football = document.getElementById("football2");
-    kick.id = "";
-    lift.id = "";
+    kick.id = "kick1";
+    lift.id = "lift1";
     football.id = "football1";
 
     clear();
@@ -29,8 +29,11 @@ function scoreResult() {
     console.log(score);
 
     if (score === 1) {
-        document.getElementById("score").innerHTML = "You Won!";
+        /*  document.getElementById("score").innerHTML = "You Won!"; */
+        document.getElementById("score").innerHTML = "<img src='img/winner.png'>";
     } else {
-        document.getElementById("score").innerHTML = "You Missed";
+        /* 
+                document.getElementById("score").innerHTML = "You Missed"; */
+        document.getElementById("score").innerHTML = "<img src='img/loser.png'>";
     }
 }
