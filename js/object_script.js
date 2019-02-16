@@ -1,62 +1,61 @@
-//get api
+//get api info
 var data = {};
-let vantage =
 
 
 
-    //market object
+//market object
 
 
 
-    var stock = [{
-            symbol: "AMZN",
-            name: "Amazon.com, Inc.",
-            type: "equity",
-            region: "United States",
-            marketOpen: "09:30",
-            marketClose: "16:00",
-            timeZone: "UTC-5",
-            currency: "USD",
-            price: "1626.23",
-            date: "01 February 2019"
-        },
-        {
-            symbol: "AAPL",
-            name: "Apple, Inc.",
-            type: "equity",
-            region: "United States",
-            marketOpen: "09:30",
-            marketClose: "16:00",
-            timeZone: "UTC-5",
-            currency: "USD",
-            price: "166.52",
-            date: "01 February 2019"
-        },
-        {
-            symbol: "FB",
-            name: "Facebook",
-            type: "Equity",
-            region: "United States",
-            marketOpen: "09:30",
-            marketClose: "16:00",
-            timeZone: "UTC-5",
-            currency: "USD",
-            price: "165.71",
-            date: "01 February 2019"
-        },
-        {
-            symbol: "FB",
-            name: "Facebook",
-            type: "Equity",
-            region: "United States",
-            marketOpen: "09:30",
-            marketClose: "16:00",
-            timeZone: "UTC-5",
-            currency: "USD",
-            price: "165.71",
-            date: "01 February 2019"
-        }
-    ];
+var stock = [{
+        symbol: "AMZN",
+        name: "Amazon.com, Inc.",
+        type: "equity",
+        region: "United States",
+        marketOpen: "09:30",
+        marketClose: "16:00",
+        timeZone: "UTC-5",
+        currency: "USD",
+        price: "1626.23",
+        date: "01 February 2019"
+    },
+    {
+        symbol: "AAPL",
+        name: "Apple, Inc.",
+        type: "equity",
+        region: "United States",
+        marketOpen: "09:30",
+        marketClose: "16:00",
+        timeZone: "UTC-5",
+        currency: "USD",
+        price: "166.52",
+        date: "01 February 2019"
+    },
+    {
+        symbol: "FB",
+        name: "Facebook",
+        type: "Equity",
+        region: "United States",
+        marketOpen: "09:30",
+        marketClose: "16:00",
+        timeZone: "UTC-5",
+        currency: "USD",
+        price: "165.71",
+        date: "01 February 2019"
+    },
+    {
+        symbol: "FB",
+        name: "Facebook",
+        type: "Equity",
+        region: "United States",
+        marketOpen: "09:30",
+        marketClose: "16:00",
+        timeZone: "UTC-5",
+        currency: "USD",
+        price: "165.71",
+        date: "01 February 2019"
+    }
+];
 
 function stock() {
     document.getElementById("amazon").nodeValue;
