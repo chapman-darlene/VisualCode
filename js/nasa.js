@@ -10,6 +10,11 @@ const title = document.getElementById("title");
 const date = document.getElementById("date");
 
 var data = {};
+/* var d = new Date();
+var startDate = d.toISOString().slice(0, 10);
+var priorDate = d.setDate(d.toISOString().slice(0, 10) - 30);
+ */
+console.log(startDate + priorDate);
 const arch_url = "https://api.nasa.gov/planetary/apod?api_key=" + apiKey + "&count=10";
 
 function arch_load() {
@@ -31,9 +36,14 @@ function arch_load() {
                 //console.log(listArray);                
             }
 
+
             var select = document.getElementById('dateSelect')
+
             for (var j = 0; j < data.length; j++) {
-                select.innerHTML = select.innerHTML + '<option value ="' + '">' + data[i].date + '</option>';
+                select.innerHTML = select.innerHTML + '<option value ="' + '">' + data[j].date + '</option>';
+                //select.options[select.selectedIndex].value;
+                console.log(select.options[select.selectedIndex].value);
+                console.log(data[j].date);
             }
         }
     };
@@ -41,6 +51,8 @@ function arch_load() {
 }
 
 arch_load();
+
+
 
 /* 
 function slideshow() {
