@@ -8,7 +8,7 @@ editor: DChapman
     <title>Coding Bootcamp for CIT261</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/ajax.js" defer></script>
+    <script src="js/nasa.js" defer></script>
     <!-- <link rel="stylesheet" href="css/style_small.css" />
     <link rel="stylesheet" href="css/style_med.css" /> -->
     <link rel="stylesheet" href="css/ajax.css" />
@@ -34,28 +34,30 @@ editor: DChapman
             </ul>
         </nav>
         <header class="heading">
-            <h1 id="headTitle">Space Exploration</h1>
+            <h1>Space Exploration</h1>
         </header>
     </div>
 
     <hr>
 
-    <div class="flex-container">
-        <h2>NASA'S Picture of the Day</h2>
-        <h3 id="title"></h3>
-        <p id="explanation"></p>
+    <div class="row-container">
 
-        <img id="image" src="img/black.jpg">
+        <h3>View Archived NASA Information</h3>
+        <br>
+        <div class="flex-item">
+            <select id="dateSelect" onchange="show(this)">
+                <option value=""></option>
+            </select>
 
-        <iframe id="video" type="text/html"></iframe>
+            <canvas id="slider"></canvas>
+        </div>
+
+    </div>
+    <div class="slideshow">
+
+        <canvas id="showCanvas">Sorry, your browser does not support canvas.</canvas>
     </div>
 
-
-
-    <div class="flex-container">
-        <h4>Click <a href="nasa_archive.html">here</a> to see additional archived images from NASA</h4>
-    </div>
-    <!--end table-container-->
     <footer>
 
     </footer>

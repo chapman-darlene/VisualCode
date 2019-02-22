@@ -1,12 +1,38 @@
-//get api info
-var data = {};
+//create symbol_data search object
+var symbol_data = {};
+//create quote_data result object
+var quote_data = {};
+//create api key variable
+//var apiKey = "QFPJWVPFU3XA9OBM";
+//obtain search information from user
+var name = document.getElementById("searchText").nodeValue;
+//request JSON data from AlphaVantage
+var url_name = "https://alphavantange.co/query?function=SYMBOL_SEARCH&keywords" + name + "&apikey=" + apiKey;
 
+function nameRequest() {
+    var request = new XMLHttpRequest();
+    request.open("GET", url_name, true);
+    request.send();
+}
+//parse request data
+/* request.onload = function () {
+    if (request.status == 200) {
+        symbol_data = JSON.parse(response.text);
+    } else {
+        alert("There was a communication error.");
+    }
+} */
 
+var symbol_name = document.getElementById("symbol").nodeValue;
+var url_quote = "https://alphavantage.co/query?function=GLOBAL_QUOTE&symbol=" + symbol_name + "&apikey=" + apiKey;
+
+//display search names
+function globalData() {
+    var request = new XMLHttpRequest();
+    request.open("GET", url_quote, true);
+}
 
 //market object
-
-
-
 var stock = [{
         symbol: "AMZN",
         name: "Amazon.com, Inc.",
@@ -66,31 +92,3 @@ function stock() {
 
 
 }
-
-
-
-/* 
-    function show_Result() {
-        var picArray = new Array(3)
-
-        picArray[0][0].src = "../img/main_lobby.jpg";
-        picArray[0][1].src = "../img/front_desk.jpg";
-        picArray[0][2].src = "../img/resort_elevator.jpg";
-        picArray[1][0].src = "../img/resort_spa.jpg";
-        picArray[1][1].src = "../img/pool.jpg";
-        picArray[1][2].src = "../img/gym.jpg";
-        picArray[2][0].src = "../img/room_1.jpg";
-        picArray[2][1].src = "../img/room_2.jpg";
-        picArray[2][2].src = "../img/room_3.jpg";
-
-        for (i = 0; i < picArray.length; i++) {
-            picArray[i] = new Array(3)
-            for (j = 0; j < 3; j++) {
-                show_img(picArray[i])
-            }
-        }
-
-        document.getElementById("picResult").innerHTML = picArray[input1][input2];
-
-    }
- */

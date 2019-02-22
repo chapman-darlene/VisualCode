@@ -12,67 +12,60 @@
   #64704C -- green
 */
 
-@font-face {
-    font-family: Lato;
-    src: url('../fonts/Lato-Regular.ttf');
-    font-family: Lato-light;
-    src: url('../fonts/Lato-Light.ttf');
-    font-family: army;
-    src: url('../fonts/Army_Wide.ttf');
-}
 
 
-html {
-    width: 100%;
-    background-image: url("../img/galaxy1.jpg");
-    background-repeat: no-repeat;
-}
 
 body {
-    background-color: rgba(83, 83, 83, 0.8);
-    margin-top: 2em;
-    margin-left: 5em;
-    margin-right: 5em;
-    padding-left: 2.5em;
-    padding-top: 1.5em;
-    padding-right: 2.5em;
-    padding-bottom: 3em;
+    background-color: #000;
+    font-family: 'Roboto Slab', serif;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Stardos Stencil', cursive;
+    font-family: 'Raleway Dots', cursive;
+    color: #f0ecec;
 }
 
+.heading-container {
+    background-image: url("../img/apod.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 300px;
+}
 
 
 .navigation {
-    font-family: Lato-Light;
+    font-family: 'Lato';
     list-style-type: none;
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-end;
     font-size: 1em;
+    font-style: thin;
     padding-right: 1em;
     padding-left: .25em;
 }
 
 header {
-    margin: 0;
+
     display: flex;
     justify-content: center;
-    height: auto;
+    align-items: center;
     padding: 0em;
-    filter: alpha(opacity=60);
+    /*filter: alpha(opacity=60);*/
 }
 
 a {
-    color: #d88960;
+    color: #f74914;
     text-decoration: none;
 }
 
 a:hover {
-    color: #fbbc3c;
+    color: #f0a612;
     text-decoration: underline;
 }
 
 a:visited {
-    color: #808080;
+    color: #ecc74c;
     text-decoration: none;
 }
 
@@ -85,56 +78,45 @@ a:active {
 }
 
 h1 {
-    color: #64704C;
-    font-family: army;
+    color: #f0ecec;
+    font-family: 'Roboto Slab';
+    font-stretch: extra-expanded;
     font-size: 4em;
-    font-stretch: semi-expanded;
+    font-style: bold;
 }
 
 h2 {
-    color: #3a6b96;
+    color: #6486a3;
     font-size: 2.5em;
+    font-family: 'Raleway Dots';
 }
 
 h3 {
-    color: #fbbc3c;
+    color: #e25954;
     font-size: 1.5em;
+    font-family: 'Raleway;
+
+}
+
+h4 {
+    color: #6486a3;
+    font-size: 1.10em;
+    font-family: 'Raleway'
 }
 
 p {
-    color: #000000;
-    font-family: Lato-light;
+    color: #f0ecec;
+    font-family: 'Lato';
     font-size: 1em;
 }
 
 li {
-    font-family: Lato-light;
+    font-family: 'Lato';
 }
 
 #listTag {
     font-weight: bold;
-    font-family: Lato-light;
-}
-
-.indentOne {
-    text-indent: 1em;
-}
-
-.indentTwo {
-    text-indent: 2em;
-}
-
-.codeExample li {
-    list-style: none;
-
-}
-
-.codeExample {
-    background-color: #f0f0f0;
-    border-style: solid;
-    border-width: .15em;
-    padding-top: .5em;
-    padding-bottom: .5em;
+    font-family: 'Lato';
 }
 
 .ul-none {
@@ -142,37 +124,45 @@ li {
 }
 
 
-.button {
-    font-size: 1.25em;
-    background-color: #3a6b96;
-    color: #f0f0f0;
-    padding: .5em;
-    text-align: center;
-    width: 5.5em;
-}
-
-.arrayContainer {
-    display: flex;
-    flex-direction: "row";
-}
-
 .flex-container {
-    margin-bottom: 2em;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 2em;
+    margin-right: 2em;
 }
 
 .flex-item {
-    border: 1px solid #808080;
-    padding: 1em;
-    width: 100%;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: space-evenly;
+    justify-items: center;
 }
 
-.body-container {
+
+.flex-row {
     display: flex;
-    background-color: #ffffff;
+    justify-content: space-between;
+    flex-flow: wrap;
 }
 
-.row1 {
-    display: flex;
+
+img {
     justify-content: center;
+    justify-self: center;
+    width: 100%;
+    height: auto;
+
+}
+
+iframe {
+    width: 640px;
+    height: 385px;
+    border: #808080 solid 1em;
+}
+
+.slider {
+    width: 500px;
+    height: 500px;
+    overflow: y;
 }
