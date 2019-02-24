@@ -13,8 +13,6 @@
 */
 
 
-
-
 body {
     background-color: #000;
     font-family: 'Roboto Slab', serif;
@@ -23,6 +21,7 @@ body {
     font-family: 'Stardos Stencil', cursive;
     font-family: 'Raleway Dots', cursive;
     color: #f0ecec;
+    margin: 0 2em;
 }
 
 .heading-container {
@@ -30,6 +29,7 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     height: 300px;
+    margin: 0;
 }
 
 
@@ -114,11 +114,6 @@ li {
     font-family: 'Lato';
 }
 
-#listTag {
-    font-weight: bold;
-    font-family: 'Lato';
-}
-
 .ul-none {
     list-style: none;
 }
@@ -133,9 +128,6 @@ li {
 }
 
 .flex-item {
-    flex-direction: row;
-    flex-wrap: row wrap;
-    justify-content: space-evenly;
     justify-items: center;
 }
 
@@ -144,26 +136,44 @@ li {
     display: flex;
     flex-direction: row;
     flex-wrap: row wrap;
-    align-items: center;
+
     padding: 0 4px;
+    margin: 0 1em;
 }
 
 .flex-figure {
-    flex: 50%;
-    justify-items: center;
-    max-width: 300px;
+    justify-content: space-between;
+    max-width: 500px;
     max-height: auto;
     margin-right: 0;
     padding: 0 4px;
+    cursor: pointer;
 }
 
 .flex-figure img {
     vertical-align: center;
 }
 
+figcaption {
+    justify-items: center;
+}
+
 img {
     justify-content: center;
     justify-self: center;
+    width: 100%;
+    height: auto;
+}
+
+.apod-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 4em;
+}
+
+.apod-img {
+    align-items: center;
     width: 100%;
     height: auto;
 
@@ -181,18 +191,34 @@ iframe {
     overflow: y;
 }
 
-ul {
-    margin: 0 auto;
-    padding: 0;
+.dateSelect {
+    margin: 0;
+    padding: .5em;
+    color: #f0ecec;
+    font-family: 'Lato';
+    font-size: 1em;
+    background-color: #6486a3;
+    size: 3em;
 }
 
-ul li {
-    list-style: none;
-    display: inline-block;
-    cursor: pointer;
+table {
+    width: 100%;
 }
 
-ul li img {
-    max-width: 300px;
-    border: 1px solid #FCF4DC;
+table td {
+    padding-right: 1em;
+    padding-top: 1.5em;
+    font-family: 'Lato';
+    text-align: left;
+    vertical-align: top;
+
+}
+
+td img {
+    width: 400px;
+    height: auto;
+}
+
+td#title {
+    width: 10%;
 }

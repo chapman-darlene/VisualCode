@@ -17,6 +17,7 @@ editor: DChapman
 </head>
 
 <body>
+    <div><img id="waiting" /></div>
     <div class="heading-container">
         <nav>
             <hr />
@@ -25,8 +26,8 @@ editor: DChapman
                 <li><a href="nasa_home.html">Nasa Home</a></li>
                 <li><a href="apod.html">Image of the Day</a></li>
                 <li><a href="nasa_archive.html">Archive</a></li>
-                <li><a href="solar.html">CSS</a></li>
-                <li><a href="sound.html">DOM</a></li>
+                <li><a href="solar.html">Solar System</a></li>
+                <li><a href="sound.html">Sounds of Space</a></li>
             </ul>
         </nav>
         <header class="heading">
@@ -35,22 +36,32 @@ editor: DChapman
     </div>
 
     <hr>
-
+    <h2>View Archived NASA Information</h2>
     <div class="row-container">
+        <div class="flex-row">
+            <br>
+            <div class="flex-item">
+                <select id="dateSelect" class="dateSelect" onChange="addInfo()">
+                    <option selected>Archive Date</option>
+                </select>
+            </div>
+            <div id="flex-item">
+                <table>
+                    <tr>
+                        <td id="title"></td>
+                        <td><img id="url" /></td>
+                        <td id="explanation"></td>
+                    </tr>
+                </table>
 
-        <h3>View Archived NASA Information</h3>
-        <br>
-        <div class="flex-item">
-            <select id="dateSelect" onchange="show(this)">
-                <option value=""></option>
-            </select>
+            </div>
 
-            
         </div>
-
     </div>
+    <hr>
+    <h2>Gallery</h2>
+    <p>Under Construction</p>
     <div class="slideshow">
-
         <canvas id="showCanvas">Sorry, your browser does not support canvas.</canvas>
     </div>
 
