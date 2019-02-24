@@ -43,6 +43,7 @@ function arch_load() {
                 obj.value = j;
                 obj.innerHTML = data[j].date;
                 select.appendChild(obj);
+
             }
         } else {
             document.getElementById('waiting').innerHTML = '<img src="img/solar.gif alt="rotating galaxy/>"';
@@ -59,6 +60,13 @@ function addInfo() {
     document.getElementById("url").src = data[selection].url;
     document.getElementById("explanation").innerHTML = data[selection].explanation;
 }
+
+function removeInfo() {
+    td = document.getElementsByTagName('td');
+    console.log(td);
+    document.getElementById("remove").innerHTML = "Under Construction"
+}
+
 
 /* function slideshow() {
 
