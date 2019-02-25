@@ -12,14 +12,20 @@
   #64704C -- green
 */
 
+@font-face {
+    font-family: 'Lato';
+    src: url("fonts/Lato-Regular.ttf");
+    font-face: 'Lato-Light';
+    src: url("fonts/Lato-Light.ttf");
+    font-family: 'Raleway';
+    src: url("fonts/Raleway-ExtraBold.ttf");
+    font-family: 'Raleway Dots';
+    src: url("fonts/RalewayDots-Regular.ttf");
+
+}
 
 body {
     background-color: #000;
-    font-family: 'Roboto Slab', serif;
-    font-family: 'Lato', sans-serif;
-    font-family: 'Raleway', sans-serif;
-    font-family: 'Stardos Stencil', cursive;
-    font-family: 'Raleway Dots', cursive;
     color: #f0ecec;
     margin: 0 2em;
 }
@@ -34,7 +40,7 @@ body {
 
 
 .navigation {
-    font-family: 'Lato';
+    font-family: 'Lato-Light';
     list-style-type: none;
     display: flex;
     flex-flow: row wrap;
@@ -79,8 +85,7 @@ a:active {
 
 h1 {
     color: #f0ecec;
-    font-family: 'Roboto Slab';
-    font-stretch: extra-expanded;
+    font-family: 'Raleway';
     font-size: 4em;
     font-style: bold;
 }
@@ -94,14 +99,15 @@ h2 {
 h3 {
     color: #e25954;
     font-size: 1.5em;
-    font-family: 'Raleway;
+    font-weight: bold;
+    font-family: 'Lato;
 
 }
 
 h4 {
     color: #6486a3;
     font-size: 1.10em;
-    font-family: 'Raleway'
+    font-family: 'Lato'
 }
 
 p {
@@ -111,7 +117,7 @@ p {
 }
 
 li {
-    font-family: 'Lato';
+    font-family: 'Lato-Light';
 }
 
 .ul-none {
@@ -185,11 +191,6 @@ iframe {
     border: #808080 solid 1em;
 }
 
-.slider {
-    width: 500px;
-    height: 500px;
-    overflow: y;
-}
 
 .dateSelect {
     margin: 0;
@@ -208,7 +209,7 @@ table {
 table td {
     padding-right: 1em;
     padding-top: 1.5em;
-    font-family: 'Lato';
+    font-family: 'Lato-Light';
     text-align: left;
     vertical-align: top;
 
@@ -221,4 +222,34 @@ td img {
 
 td#title {
     width: 10%;
+}
+
+#gallery {
+    width: 500px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: flex;
+    flex-direction: row wrap;
+}
+
+ul {
+    margin: 0 auto;
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+    /*display: inline-block;*/
+    cursor: pointer;
+}
+
+ul li img {
+    width: 300px;
+    border: 1px solid #6486a3;
+}
+
+#waiting {
+    visibility: hidden;
 }

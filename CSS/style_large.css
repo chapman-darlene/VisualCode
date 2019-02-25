@@ -19,7 +19,16 @@ and open the template in the editor.
   #64704C -- green
 */
 
-
+@font-face {
+    font-family: 'Lato';
+    src: url("fonts/Lato-Regular.ttf");
+    font-face: 'Lato-Light';
+    src: url("fonts/Lato-Light.ttf");
+    font-family: 'Raleway Dots';
+    src: url("fonts/RalewayDots-Regular.ttf");
+    font-family: 'Stardos';
+    scr: url(fonts/StardosStencil-Bold.ttf)
+}
 
 html {
     width: 100%;
@@ -33,17 +42,12 @@ body {
     padding-top: 1.5em;
     padding-right: 2.5em;
     padding-bottom: 3em;
-
-    font-family: 'Roboto Slab', serif;
-    font-family: 'Lato', sans-serif;
-    font-family: 'Raleway', sans-serif;
-    font-family: 'Stardos Stencil', cursive;
 }
 
 
 
 .navigation {
-    font-family: 'Lato';
+    font-family: 'Lato-Light';
     list-style-type: none;
     display: flex;
     flex-flow: row wrap;
@@ -87,7 +91,7 @@ a:active {
 
 h1 {
     color: #64704C;
-    font-family: 'Stardos Stencil';
+    font-family: 'Stardos';
     font-size: 4em;
     font-weight: bold;
     font-stretch: expanded;
@@ -116,7 +120,7 @@ p {
 }
 
 li {
-    font-family: 'Lato';
+    font-family: 'Lato-Light';
 }
 
 #listTag {

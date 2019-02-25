@@ -12,12 +12,14 @@ editor: DChapman
     <!-- <link rel="stylesheet" href="css/style_small.css" />
     <link rel="stylesheet" href="css/style_med.css" /> -->
     <link rel="stylesheet" href="css/nasa.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato|Raleway|Raleway+Dots|Roboto+Slab|Stardos+Stencil">
+
 
 </head>
 
 <body>
-    <div><img id="waiting" /></div>
+    <div id="waiting">
+        <img src="img/solar.gif" alt="swirling galaxy" hidden />
+    </div>
     <div class="heading-container">
         <nav>
             <hr />
@@ -57,17 +59,19 @@ editor: DChapman
 
         </div>
     </div>
-    <div class="flex-item">
-        <button id="hide" onclick="removeInfo()">Hide Data</button>
-        <p id="remove"></p>
-    </div>
+
 
     <hr>
     <h2>Gallery</h2>
-    <p>Under Construction</p>
-    <div class="slideshow">
-        <canvas id="showCanvas">Sorry, your browser does not support canvas.</canvas>
+    <div id="gallery">
+        <p>Pick your favorite picture through the process of elimination. <br>
+            Click on the image you like least and wish to remove.</p>
+        <ul class="grid">
+            <li id="nasaImg"></li>
+
+        </ul>
     </div>
+
 
     <footer>
 

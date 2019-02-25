@@ -16,12 +16,13 @@ var priorDate = d.setDate(d.toISOString().slice(0, 10) - 30);
 
 console.log(startDate + priorDate); */
 
-const arch_url = "https://api.nasa.gov/planetary/apod?api_key=" + apiKey + "&count=20";
+const arch_url = "https://api.nasa.gov/planetary/apod?api_key=" + apiKey + "&count=10";
 
 function arch_load() {
     const arch = new XMLHttpRequest();
     arch.open("GET", arch_url, true);
     //onload of window load status and parse data
+    document.getElementById("waiting").style.visibility = "visible";
     arch.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
             data = JSON.parse(this.responseText);
@@ -38,15 +39,22 @@ function arch_load() {
 
             var select = document.getElementById("dateSelect")
             for (var j = 0; j < data.length; j++) {
-                //select.innerHTML = select.innerHTML + '<option value ="' + j + '">' + data[j].date + '</option>';
-                var obj = document.createElement("option");
-                obj.value = j;
-                obj.innerHTML = data[j].date;
-                select.appendChild(obj);
-
+                if (data[j].media_type == "image") {
+                    //select.innerHTML = select.innerHTML + '<option value ="' + j + '">' + data[j].date + '</option>';
+                    var obj = document.createElement("option");
+                    obj.value = j;
+                    obj.innerHTML = data[j].date;
+                    select.appendChild(obj);
+                }
             }
-        } else {
-            document.getElementById('waiting').innerHTML = '<img src="img/solar.gif alt="rotating galaxy/>"';
+            var images = document.getElementById("nasaImg");
+            for (var x = 0; x < data.length; x++) {
+                if (data[x].media_type == "image") {
+                    var nasaImg = document.createElement("img");
+                    nasaImg.src = data[x].url;
+                    images.appendChild(nasaImg);
+                }
+            }
         }
     };
     arch.send();
@@ -61,11 +69,11 @@ function addInfo() {
     document.getElementById("explanation").innerHTML = data[selection].explanation;
 }
 
-function removeInfo() {
-    td = document.getElementsByTagName('td');
-    console.log(td);
-    document.getElementById("remove").innerHTML = "Under Construction"
-}
+/* document.querySelector('.grid').addEventListener('click', function (e) {
+    console.log(e);
+}); */
+
+
 
 
 /* function slideshow() {
