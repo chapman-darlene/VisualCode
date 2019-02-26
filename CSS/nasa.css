@@ -40,7 +40,7 @@ body {
 
 
 .navigation {
-    font-family: 'Lato-Light';
+    font-family: 'Lato';
     list-style-type: none;
     display: flex;
     flex-flow: row wrap;
@@ -100,7 +100,7 @@ h3 {
     color: #e25954;
     font-size: 1.5em;
     font-weight: bold;
-    font-family: 'Lato;
+    font-family: 'Lato';
 
 }
 
@@ -117,7 +117,7 @@ p {
 }
 
 li {
-    font-family: 'Lato-Light';
+    font-family: 'Lato';
 }
 
 .ul-none {
@@ -209,7 +209,7 @@ table {
 table td {
     padding-right: 1em;
     padding-top: 1.5em;
-    font-family: 'Lato-Light';
+    font-family: 'Lato';
     text-align: left;
     vertical-align: top;
 
@@ -258,7 +258,13 @@ ul li img {
 
 audio {
     padding-bottom: 2em;
-    width: 50%;
+    width: 25%;
+}
+
+.audioTags li{
+    font-size: 1.25em;
+    color: #6486a3;
+    font-family: 'Lato';
 }
 
 video{
@@ -269,6 +275,6 @@ video{
 
 .videoTags li{
     font-size: 1.25em;
-    font-family: 'Lato-Light';
+    font-family: 'Lato';
     color: #6486a3;
 }
