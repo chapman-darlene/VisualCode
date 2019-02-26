@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 <!--
 editor: DChapman
 -->
@@ -11,32 +12,29 @@ editor: DChapman
     <!-- <link rel="stylesheet" href="css/style_small.css" />
     <link rel="stylesheet" href="css/style_med.css" /> -->
     <link rel="stylesheet" href="css/style_large.css" />
-    <link rel="stylesheet" href="css/canvas.css" />
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Lato|Raleway|Raleway+Dots|Stardos+Stencil');
-    </style>
+
 </head>
 
-<nav>
-    <hr />
-    <ul class="navigation">
-        <li><a href="index.html">Main</a></li>
-        <li><a href="nasa_home.html">Nasa Site</a></li>
-        <li><a href="canvas.html">Canvas</a></li>
-        <li><a href="css.html">CSS</a></li>
-        <li><a href="dom.html">DOM</a></li>
-        <li><a href="htmlFile.html">HTML</a></li>
-        <li><a href="javascript.html">JavaScript</a></li>
-        <li><a href="json.html">JSON</a></li>
-        <li><a href="objects.html">Objects</a></li>
-        <li><a href="localStorage.html">Local Storage</a></li>
-    </ul>
-</nav>
-<header class="heading">
-    <h1>Coding Bootcamp</h1>
-</header>
-
 <body>
+    <nav>
+        <hr />
+        <ul class="navigation">
+            <li><a href="index.html">Main</a></li>
+            <li><a href="nasa_home.html">Nasa Site</a></li>
+            <li><a href="canvas.html">Canvas</a></li>
+            <li><a href="css.html">CSS</a></li>
+            <li><a href="dom.html">DOM</a></li>
+            <li><a href="htmlFile.html">HTML</a></li>
+            <li><a href="javascript.html">JavaScript</a></li>
+            <li><a href="json.html">JSON</a></li>
+            <li><a href="objects.html">Objects</a></li>
+            <li><a href="localStorage.html">Local Storage</a></li>
+        </ul>
+    </nav>
+    <header class="heading">
+        <h1>Coding Bootcamp</h1>
+    </header>
+
     <h2>Canvas Playground</h2>
     <h3>Play with CSS Transitions, Transformations, and Animation</h3>
     <div class="
@@ -44,10 +42,10 @@ editor: DChapman
         <div class="row1-canvas">
             <!--row1, column 1-->
             <div class="col1">
-                <label for=select1>Select a Shape</label>
+                <label>Select a Shape</label>
                 <br>
                 <select id="select1" onclick="selectShape()">
-                    <option name="shape" selected>Select Shape</option>
+                    <option id="shape" selected>Select Shape</option>
                     <option value="circle" id="circle">Circle</option>
                     <option value="square" id="square">Square</option>
                     <option value="rectangle" id="rectangle">Rectangle</option>
@@ -55,19 +53,18 @@ editor: DChapman
             </div>
             <!--row1, column 2-->
             <div class="col2">
-                <label for=select2>Move object</label>
+                <label>Move object</label>
                 <br>
                 <select class="select2">
-                    <option name="move" selected>Move Object</option>
+                    <option id="move" selected>Move Object</option>
                     <option value="lr" id="lr">Left to Right</option>
                     <option value="ud" id="ud">Up Down</option>
-                    <option value="circle" id="circle">Circle</option>
 
                 </select>
             </div>
             <!--row1, column 3-->
             <div class="col3">
-                <label for=select4>Transform the shape</label>
+                <label>Transform the shape</label>
                 <br>
                 <select class="select3">
                     <option value="scale" id="scale">Scale</option>
@@ -83,9 +80,10 @@ editor: DChapman
         <canvas id="canvas1">Your browser does not support canvas</canvas>
     </div>
 
-</body>
-<footer>
 
-</footer>
+    <footer>
+
+    </footer>
+</body>
 
 </html>

@@ -17,9 +17,6 @@ editor: DChapman
 </head>
 
 <body>
-    <div id="waiting">
-        <img src="img/solar.gif" alt="swirling galaxy" hidden />
-    </div>
     <div class="heading-container">
         <nav>
             <hr />
@@ -28,8 +25,8 @@ editor: DChapman
                 <li><a href="nasa_home.html">Nasa Home</a></li>
                 <li><a href="apod.html">Image of the Day</a></li>
                 <li><a href="nasa_archive.html">Archive</a></li>
-                <li><a href="solar.html">Solar System</a></li>
-                <li><a href="sound.html">Sounds of Space</a></li>
+                <li><a href="galaxy.html">Video/Audio Library</a></li>
+                <li><a href="techport.html">Tech Port</a></li>
             </ul>
         </nav>
         <header class="heading">
@@ -38,6 +35,11 @@ editor: DChapman
     </div>
 
     <hr>
+    <div id="loading">
+        <img src="img/solar.gif" alt="swirling galaxy" id="loading-image" />
+    </div>
+
+
     <h2>View Archived NASA Information</h2>
     <div class="row-container">
         <div class="flex-row">
@@ -68,8 +70,8 @@ editor: DChapman
             Click on the image you like least and wish to remove.</p>
         <ul class="grid">
             <li id="nasaImg"></li>
-
         </ul>
+        <p id="imgResult"></p>
     </div>
 
 

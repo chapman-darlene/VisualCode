@@ -14,13 +14,13 @@
 
 @font-face {
     font-family: 'Lato';
-    src: url("fonts/Lato-Regular.ttf");
+    src: url("/fonts/Lato-Regular.ttf");
     font-face: 'Lato-Light';
-    src: url("fonts/Lato-Light.ttf");
+    src: url("/fonts/Lato-Light.ttf");
     font-family: 'Raleway';
-    src: url("fonts/Raleway-ExtraBold.ttf");
-    font-family: 'Raleway Dots';
-    src: url("fonts/RalewayDots-Regular.ttf");
+    src: url("/fonts/Raleway-ExtraBold.ttf");
+    font-family: 'Spaceman';
+    src: url("/fonts/SPACEMAN.TTF")
 
 }
 
@@ -85,7 +85,7 @@ a:active {
 
 h1 {
     color: #f0ecec;
-    font-family: 'Raleway';
+    font-family: 'Spaceman';
     font-size: 4em;
     font-style: bold;
 }
@@ -93,7 +93,7 @@ h1 {
 h2 {
     color: #6486a3;
     font-size: 2.5em;
-    font-family: 'Raleway Dots';
+    font-family: 'Lato';
 }
 
 h3 {
@@ -230,8 +230,7 @@ td#title {
 }
 
 .grid {
-    display: flex;
-    flex-direction: row wrap;
+    display: inline-block;
 }
 
 ul {
@@ -246,10 +245,30 @@ ul li {
 }
 
 ul li img {
-    width: 300px;
+    width: 400px;
     border: 1px solid #6486a3;
 }
 
-#waiting {
-    visibility: hidden;
+#loading {
+    width: 50%;
+    height: auto;
+    display: block;
+    z-index: 99;
+}
+
+audio {
+    padding-bottom: 2em;
+    width: 50%;
+}
+
+video{
+    width: 25%;
+    height: auto;
+    padding-bottom: 2em;
+}
+
+.videoTags li{
+    font-size: 1.25em;
+    font-family: 'Lato-Light';
+    color: #6486a3;
 }

@@ -15,27 +15,23 @@ var startDate = d.toISOString().slice(0, 10);
 var priorDate = d.setDate(d.toISOString().slice(0, 10) - 30);
 
 console.log(startDate + priorDate); */
-
+window.onload = function () {
+    document.getElementById("loading").style.display = "none";
+}
 const arch_url = "https://api.nasa.gov/planetary/apod?api_key=" + apiKey + "&count=10";
 
 function arch_load() {
     const arch = new XMLHttpRequest();
     arch.open("GET", arch_url, true);
     //onload of window load status and parse data
-    document.getElementById("waiting").style.visibility = "visible";
+
+
     arch.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
             data = JSON.parse(this.responseText);
             console.log(data);
 
-            //stringify data
-            var listArray = new Array();
-            for (var i = 0; i < data.length; i++) {
-                /* if (data[i].media_type == "image") { */
-                listArray.push(data[i]);
-            }
-            localStorage.setItem("listArray", JSON.stringify(listArray));
-            //console.log(listArray);
+            DataStorage(data);
 
             var select = document.getElementById("dateSelect")
             for (var j = 0; j < data.length; j++) {
@@ -47,19 +43,47 @@ function arch_load() {
                     select.appendChild(obj);
                 }
             }
-            var images = document.getElementById("nasaImg");
-            for (var x = 0; x < data.length; x++) {
-                if (data[x].media_type == "image") {
-                    var nasaImg = document.createElement("img");
-                    nasaImg.src = data[x].url;
-                    images.appendChild(nasaImg);
-                }
-            }
+
+            imgGallery(data);
+            /* 
+                        var images = document.getElementById("nasaImg");
+                        for (var x = 0; x < data.length; x++) {
+                            if (data[x].media_type == "image") {
+                                var nasaImg = document.createElement("img");
+                                nasaImg.src = data[x].url;
+                                nasaImg.alt = data[x].title;
+                                images.appendChild(nasaImg);
+                            }
+                        } */
         }
     };
     arch.send();
 }
 arch_load();
+
+function DataStorage(data) {
+    var dataArray = [];
+    dataArray.push(data);
+    localStorage.setItem('data_key', JSON.stringify(dataArray));
+    //console.log(dataArray);
+
+    //dataArray = JSON.parse(localStorage.getItem('data_key'));
+}
+
+function imgGallery(data) {
+    console.log(data);
+    var images = document.getElementById("nasaImg");
+    for (var x = 0; x < data.length; x++) {
+        if (data[x].media_type == "image") {
+            var nasaImg = document.createElement("img");
+            nasaImg.src = data[x].url;
+            nasaImg.alt = data[x].title;
+            images.appendChild(nasaImg);
+        }
+    }
+}
+
+
 
 function addInfo() {
     var selection = document.getElementById("dateSelect").value;
@@ -69,9 +93,36 @@ function addInfo() {
     document.getElementById("explanation").innerHTML = data[selection].explanation;
 }
 
-/* document.querySelector('.grid').addEventListener('click', function (e) {
-    console.log(e);
-}); */
+
+document.querySelector('#nasaImg').addEventListener('mouseover', function (e) {
+    console.dir(e);
+    if (e.target.tagName === "IMG") {
+
+        var images = this.querySelectorAll('IMG').length;
+        console.log(images);
+    }
+}, false);
+
+
+
+document.querySelector('.grid').addEventListener('click', function (e) {
+
+    if (e.target.tagName === "IMG") {
+
+        var howMany = this.querySelectorAll('IMG').length;
+        console.log(howMany);
+        if (howMany > 1) {
+            var alt = e.target.alt;
+            var li = e.target;
+            var listItems = document.querySelector("li");
+            var ul = document.getElementById("ul");
+            li.parentNode.removeChild(li);
+            document.getElementById('imgResult').innerHTML = "You chose " + alt + " as your favorite image.";
+        }
+    }
+}, false);
+
+
 
 
 

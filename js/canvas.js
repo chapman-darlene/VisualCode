@@ -7,6 +7,8 @@ function selectShape() {
         case "square":
             shape.strokeStyle = "black";
             shape.lineWidth = "2";
+            shape.fillStyle = "#fbbc3c";
+            shape.fill();
             shape.strokeRect(25, 25, 25, 25);
             break;
 
@@ -20,49 +22,13 @@ function selectShape() {
             break;
 
         case "rectangle":
-            shape.rect(20, 20, 50, 25);
+            //shape.rect(225, 20, 50, 85);           
             shape.strokeStyle = "black";
             shape.lineWidth = "1.5";
-            shape.fillStyle = "#d88960"
-            shape.stroke();
-
+            shape.fillStyle = "#d88960";
+            shape.fill();
+            shape.strokeRect(225, 20, 50, 85);
             break;
     }
 }
 
-
-
-
-
-
-
-/* window.addEventListener("load", function () {
-
-    var theCanvas = document.getElementById("canvas1");
-
-    if (theCanvas && theCanvas.getContext) {
-        var shape = theCanvas.getContext("2d");
-        var selection = document.getElementById("select1").value;
-        switch (selection) {
-            case square:
-                var square = document.getElementById('square').values;
-                shape.strokeStyle = "black";
-                shape.lineWidth = "2";
-                shape.strokeRect(25, 25, 25, 25);
-                break;
-
-            case circle:
-                shape.beginPath();
-                shape.arc(75, 75, 100, 0, 2 * Math.PI, true);
-                shape.strokeStyle = "black";
-                shape.stroke();
-                break;
-
-            case rectangle:
-                shape.strokeStyle = "black";
-                shape.lineWidth = "2";
-                shape.strokeRect(25, 25, 100, 100);
-                break;
-        }
-    }
-}) */

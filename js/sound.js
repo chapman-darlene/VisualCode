@@ -11,7 +11,7 @@ const title = document.getElementById("title");
 const date = document.getElementById("date");
 
 var data = {};
-const apod_url = "https://api.nasa.gov/planetary/apod?api_key=" + apiKey;
+const sound_url = "https://api.nasa.gov/planetary/apod?api_key=" + apiKey;
 const arch_url = "https://api.nasa.gov/planetary/apod?api_key=" + apiKey + "&count=20";
 
 
