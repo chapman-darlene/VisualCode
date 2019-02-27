@@ -68,7 +68,7 @@ function haystackGame(number) {
     document.getElementById("haystackResponse").innerHTML = "You found the needle";
   } else
     document.getElementById("haystackResponse").innerHTML = "Sorry, but you didn't find the needle. <br>" +
-    "The number was: " + needle;
+      "The number was: " + needle;
 }
 
 //switch statement example
@@ -134,7 +134,7 @@ function mapArray() {
   var mapArray = new Array(3);
   for (i = 0; i < 3; i++) {
     mapArray[i] = new Array(3)
-    for (j = 0; j < 3; j++) {}
+    for (j = 0; j < 3; j++) { }
   }
 
   mapArray[0][0] = "You are in the main lobby";
@@ -170,49 +170,49 @@ function assocArray() {
 /* ************************************* */
 //JSON HTML SCRIPT
 var books = [{
-    ISBN: "9781420922530",
-    Title: "Hamlet",
-    Author: "William Shakespeare",
-    Description: "Considered one of Shakespeare's most rich and enduring plays, the depiction of its hero Hamlet as he vows to avenge the murder of his father by his brother Claudius is both powerful and complex. As Hamlet tries to find out the truth of the situation, his troubled relationship with his mother comes to the fore, as do the paradoxes in his personality. A play of carefully crafted conflict and tragedy, Shakespeare's intricate dialogue continues to fascinate audiences to this day.",
-    Published: "1603",
-    Rating: "4.5 stars"
-  },
+  ISBN: "9781420922530",
+  Title: "Hamlet",
+  Author: "William Shakespeare",
+  Description: "Considered one of Shakespeare's most rich and enduring plays, the depiction of its hero Hamlet as he vows to avenge the murder of his father by his brother Claudius is both powerful and complex. As Hamlet tries to find out the truth of the situation, his troubled relationship with his mother comes to the fore, as do the paradoxes in his personality. A play of carefully crafted conflict and tragedy, Shakespeare's intricate dialogue continues to fascinate audiences to this day.",
+  Published: "1603",
+  Rating: "4.5 stars"
+},
 
-  {
-    ISBN: "9780199535569",
-    Title: "Pride and Prejudice",
-    Author: "Jane Austen",
-    Description: "Known to Jane Austin as \"her own darling child\", Pride and Prejudice is a brilliant work that compares to no other. It is a romantic clash between the opinionated Elizabeth Bennet, and her proud beau, Mr. Darcy. Austen's radiant wit sparkles as she weaves a story of the most superb comedy of Regency England manners.",
-    Published: "1813",
-    Rating: "5 stars"
-  },
+{
+  ISBN: "9780199535569",
+  Title: "Pride and Prejudice",
+  Author: "Jane Austen",
+  Description: "Known to Jane Austin as \"her own darling child\", Pride and Prejudice is a brilliant work that compares to no other. It is a romantic clash between the opinionated Elizabeth Bennet, and her proud beau, Mr. Darcy. Austen's radiant wit sparkles as she weaves a story of the most superb comedy of Regency England manners.",
+  Published: "1813",
+  Rating: "5 stars"
+},
 
-  {
-    ISBN: "9780141321103",
-    Title: "The Adventures of Tom Sawyer",
-    Author: "Mark Twain",
-    Description: "Tom Sawyer is sure to find trouble where the river leads him. On the banks of the Mississippi River, Tom and his friends seek out adventure at every turn.",
-    Published: "1876",
-    Rating: "4 stars"
-  },
+{
+  ISBN: "9780141321103",
+  Title: "The Adventures of Tom Sawyer",
+  Author: "Mark Twain",
+  Description: "Tom Sawyer is sure to find trouble where the river leads him. On the banks of the Mississippi River, Tom and his friends seek out adventure at every turn.",
+  Published: "1876",
+  Rating: "4 stars"
+},
 
-  {
-    ISBN: "9781853260391",
-    Title: "A Tale of Two Cities",
-    Author: "Charles Dickens",
-    Description: "'Liberty, equality, fraternity, or death; -- the last much the easiest to bestow, O Guilotine!' After eighteen years as a political prisoner in the Bastille, the ageing Doctor Manette is finally released and reunited with this daughter in England. From the tranquil roads of London, they are drawn against their will to the vengeful, bloodstained streets of Paris.",
-    Published: "1859",
-    Rating: "4 stars"
-  },
+{
+  ISBN: "9781853260391",
+  Title: "A Tale of Two Cities",
+  Author: "Charles Dickens",
+  Description: "'Liberty, equality, fraternity, or death; -- the last much the easiest to bestow, O Guilotine!' After eighteen years as a political prisoner in the Bastille, the ageing Doctor Manette is finally released and reunited with this daughter in England. From the tranquil roads of London, they are drawn against their will to the vengeful, bloodstained streets of Paris.",
+  Published: "1859",
+  Rating: "4 stars"
+},
 
-  {
-    ISBN: "9781853260193",
-    Title: "Vanity Fair",
-    Author: "William Makepeace Thackeray",
-    Description: "A novel that chronicles the lives of two women who could not be more different: Becky Sharp, an orphan whose only resources are her vast ambitions, her native wit, and her loose morals; and her schoolmate, Amelia Sedley, a typically naive Victorian heroine, the pampered daughter of a wealthy family",
-    Published: "1859",
-    Rating: "4 stars"
-  },
+{
+  ISBN: "9781853260193",
+  Title: "Vanity Fair",
+  Author: "William Makepeace Thackeray",
+  Description: "A novel that chronicles the lives of two women who could not be more different: Becky Sharp, an orphan whose only resources are her vast ambitions, her native wit, and her loose morals; and her schoolmate, Amelia Sedley, a typically naive Victorian heroine, the pampered daughter of a wealthy family",
+  Published: "1859",
+  Rating: "4 stars"
+},
 
 ];
 
@@ -237,33 +237,33 @@ function selection() {
 function autoStringify() {
 
   var autos = [{
-      style: "hybrid",
-      name: "Toyota Prius c",
-      model: "LE",
-      year: "2019",
-      basePrice: "$22,955"
-    },
-    {
-      style: "hybrid",
-      name: "Honda Insight Touring",
-      model: "E-CVT",
-      year: "2019",
-      basePrice: "$28,190"
-    },
-    {
-      style: "hybrid",
-      name: "Chevy Malibu",
-      model: "FWD Hybrid",
-      year: "2019",
-      basePrice: "$28,590"
-    },
-    {
-      style: "hybrid",
-      name: "Subaru Crosstrek",
-      model: "hybrid",
-      year: "2019",
-      basePrice: "$38,470"
-    }
+    style: "hybrid",
+    name: "Toyota Prius c",
+    model: "LE",
+    year: "2019",
+    basePrice: "$22,955"
+  },
+  {
+    style: "hybrid",
+    name: "Honda Insight Touring",
+    model: "E-CVT",
+    year: "2019",
+    basePrice: "$28,190"
+  },
+  {
+    style: "hybrid",
+    name: "Chevy Malibu",
+    model: "FWD Hybrid",
+    year: "2019",
+    basePrice: "$28,590"
+  },
+  {
+    style: "hybrid",
+    name: "Subaru Crosstrek",
+    model: "hybrid",
+    year: "2019",
+    basePrice: "$38,470"
+  }
   ];
 
   document.getElementById("autoOutput").innerHTML = JSON.stringify(autos);
@@ -274,3 +274,42 @@ function autoStringify() {
 function json_stringify() {
   document.getElementById("json_stringify").innerHTML = JSON.stringify(books);
 }
+
+function editShape(x, y, w, h, fill) {
+  this.x = x || 0;
+}
+
+function selectShape() {
+  var selection = document.getElementById("select1").value;
+  var theCanvas = document.getElementById("canvas1");
+  var shape = theCanvas.getContext("2d");
+
+  switch (selection) {
+    case "square":
+      shape.strokeStyle = "black";
+      shape.lineWidth = "2";
+      shape.fillStyle = "#fbbc3c";
+      shape.fill();
+      shape.strokeRect(25, 25, 25, 25);
+      break;
+
+    case "circle":
+      shape.beginPath();
+      shape.arc(145, 75, 20, 0, 2 * Math.PI, true);
+      shape.fillStyle = "#3a6b96";
+      shape.strokeStyle = "black";
+      shape.fill();
+      shape.stroke();
+      break;
+
+    case "rectangle":
+      //shape.rect(225, 20, 50, 85);           
+      shape.strokeStyle = "black";
+      shape.lineWidth = "1.5";
+      shape.fillStyle = "#d88960";
+      shape.fill();
+      shape.strokeRect(225, 20, 50, 85);
+      break;
+  }
+}
+

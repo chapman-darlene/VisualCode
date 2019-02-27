@@ -20,7 +20,9 @@
     font-family: 'Raleway';
     src: url("/fonts/Raleway-ExtraBold.ttf");
     font-family: 'Spaceman';
-    src: url("/fonts/SPACEMAN.TTF")
+    src: url("/fonts/SPACEMAN.TTF");
+    font-family: 'Raleway Dots';
+    src: url("/fonts/RalewayDots-Regular.ttf");
 
 }
 
@@ -176,14 +178,19 @@ img {
     flex-direction: column;
     justify-content: space-around;
     margin: 0 4em;
+   
 }
+
 
 .apod-img {
+    justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 50%;
     height: auto;
-
+    -webkit-transition: width 2s ease-in;
+    transition: width 2s ease-in;
 }
+
 
 iframe {
     width: 640px;
@@ -277,4 +284,34 @@ video{
     font-size: 1.25em;
     font-family: 'Lato';
     color: #6486a3;
+}
+
+
+#loading-image{
+    display: none;
+    position: fixed;
+    width: 100%;
+    animation: changes 5s ease-out;
+}
+
+@keyframes changes {
+    0% {
+        opacity: 1;
+    }
+    100%{opacity: 0}
+}
+
+
+#loading{
+    display: none;
+    position: fixed;
+    width: 100%;
+    animation: blackout 5s ease-out;
+}
+
+@keyframes blackout {
+    0% {
+        opacity: 1;
+    }
+    100%{opacity: 0}
 }

@@ -15,12 +15,21 @@ var startDate = d.toISOString().slice(0, 10);
 var priorDate = d.setDate(d.toISOString().slice(0, 10) - 30);
 
 console.log(startDate + priorDate); */
-window.onload = function () {
-    document.getElementById("loading").style.display = "none";
+
+function loadingScreenActivate() {
+
+    document.getElementById("loading-image").style.display = "block";
 }
+
+function loadingScreenDeactivate() {
+
+    document.getElementById("loading-image").style.display = "none";
+}
+
 const arch_url = "https://api.nasa.gov/planetary/apod?api_key=" + apiKey + "&count=10";
 
 function arch_load() {
+    loadingScreenActivate();
     const arch = new XMLHttpRequest();
     arch.open("GET", arch_url, true);
     //onload of window load status and parse data
@@ -28,10 +37,11 @@ function arch_load() {
 
     arch.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
+            loadingScreenDeactivate();
             data = JSON.parse(this.responseText);
             console.log(data);
 
-            DataStorage(data);
+            dataStorage(data);
 
             var select = document.getElementById("dateSelect")
             for (var j = 0; j < data.length; j++) {
@@ -55,18 +65,23 @@ function arch_load() {
                                 images.appendChild(nasaImg);
                             }
                         } */
+        } else {
+            loadingScreenActivate();
         }
     };
+
     arch.send();
 }
 arch_load();
 
-function DataStorage(data) {
-    var dataArray = [];
-    dataArray.push(data);
-    localStorage.setItem('data_key', JSON.stringify(dataArray));
-    //console.log(dataArray);
+function dataStorage(data) {
+    var d = [];
+    for (var i = 0; i > d.length; i++) {
+        d.push(dataArray[i]);
 
+        localStorage.setItem('data_key', JSON.stringify(dataArray));
+        console.log(dataArray[i]);
+    }
     //dataArray = JSON.parse(localStorage.getItem('data_key'));
 }
 
@@ -78,6 +93,7 @@ function imgGallery(data) {
             var nasaImg = document.createElement("img");
             nasaImg.src = data[x].url;
             nasaImg.alt = data[x].title;
+            //nasaImg.addEventListener('mouseover', imgMouseOver(this), false);
             images.appendChild(nasaImg);
         }
     }
@@ -93,13 +109,16 @@ function addInfo() {
     document.getElementById("explanation").innerHTML = data[selection].explanation;
 }
 
+/* 
+function imgMouseOver(data) {
+    console.log(data);
+} */
 
 document.querySelector('#nasaImg').addEventListener('mouseover', function (e) {
-    console.dir(e);
+    console.log(e);
     if (e.target.tagName === "IMG") {
+        var images = this.querySelectorAll('IMG');
 
-        var images = this.querySelectorAll('IMG').length;
-        console.log(images);
     }
 }, false);
 
@@ -112,11 +131,12 @@ document.querySelector('.grid').addEventListener('click', function (e) {
         var howMany = this.querySelectorAll('IMG').length;
         console.log(howMany);
         if (howMany > 1) {
-            var alt = e.target.alt;
+
             var li = e.target;
             var listItems = document.querySelector("li");
             var ul = document.getElementById("ul");
             li.parentNode.removeChild(li);
+            var alt = document.getElementById('nasaImg').firstChild.alt;
             document.getElementById('imgResult').innerHTML = "You chose " + alt + " as your favorite image.";
         }
     }

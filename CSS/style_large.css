@@ -21,11 +21,9 @@ and open the template in the editor.
 
 @font-face {
     font-family: 'Lato';
-    src: url("fonts/Lato-Regular.ttf");
-    font-face: 'Lato-Light';
-    src: url("fonts/Lato-Light.ttf");
+    src: url("/fonts/Lato-Regular.ttf");
     font-family: 'Army';
-    scr: url(fonts/Army_Wide.ttf);
+    scr: url('/fonts/Army_Wide.ttf');
 }
 
 html {
@@ -45,7 +43,7 @@ body {
 
 
 .navigation {
-    font-family: 'Lato-Light';
+    font-family: 'Lato';
     list-style-type: none;
     display: flex;
     flex-flow: row wrap;
@@ -119,7 +117,7 @@ p {
 }
 
 li {
-    font-family: 'Lato-Light';
+    font-family: 'Lato';
 }
 
 #listTag {
