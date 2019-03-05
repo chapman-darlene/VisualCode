@@ -13,6 +13,7 @@ var data = {};
 
 function textOnload() {
     document.getElementById("loading-text").style.display = "block";
+    document.getElementById("loading-text").style.fontSize = "4vmax";
 }
 
 function loadComplete() {
