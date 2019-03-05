@@ -35,43 +35,22 @@ editor: DChapman
         <h1>Coding Bootcamp</h1>
     </header>
 
-    <h2>Canvas Playground</h2>
-    <h3>Play with CSS Transitions, Transformations, and Animation</h3>
-    <div class="
-        flex-container-canvas">
+    <h2>Draw with Canvas</h2>
+    <div class="flex-container-canvas">
         <div class="row1-canvas">
             <!--row1, column 1-->
             <div class="col1">
                 <label>Select a Shape</label>
                 <br>
                 <select id="select1" onclick="selectShape()">
-                    <option id="shape" selected>Select Shape</option>
+                    <option selected>Select Shape</option>
                     <option value="circle" id="circle">Circle</option>
                     <option value="square" id="square">Square</option>
                     <option value="rectangle" id="rectangle">Rectangle</option>
                 </select>
             </div>
             <!--row1, column 2-->
-            <div class="col2">
-                <label>Move object</label>
-                <br>
-                <select class="select2">
-                    <option id="move" selected>Move Object</option>
-                    <option value="lr" id="lr">Left to Right</option>
-                    <option value="ud" id="ud">Up Down</option>
 
-                </select>
-            </div>
-            <!--row1, column 3-->
-            <div class="col3">
-                <label>Transform the shape</label>
-                <br>
-                <select class="select3">
-                    <option value="scale" id="scale">Scale</option>
-                    <option value="rotate" id="rotate">Rotate</option>
-                    <option value="skew" id="skew">Skew</option>
-                </select>
-            </div>
         </div>
     </div>
     <!--end flex-container-->
@@ -79,7 +58,6 @@ editor: DChapman
     <div class="canvas-container">
         <canvas id="canvas1">Your browser does not support canvas</canvas>
     </div>
-
 
     <footer>
 

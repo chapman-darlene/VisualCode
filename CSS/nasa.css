@@ -32,12 +32,51 @@ body {
     margin: 0 2em;
 }
 
-.heading-container {
+.slide-container {
     background-image: url("../img/apod.jpg");
     background-repeat: no-repeat;
+    opacity: 1;
     background-size: 100%;
-    height: 300px;
+    height: 40vh;
     margin: 0;
+    animation: slides 50s ease-in-out infinite;
+}
+
+@keyframes slides{
+    0% {        
+        background-image: url("../img/apod.jpg");
+        background-repeat: no-repeat;
+        
+    }
+    12% {
+        background-image: url("../img/nebula2.jpg");
+        background-repeat: no-repeat;
+    }
+    27%{
+        background-image: url("../img/nebula3.jpg");
+        background-repeat: no-repeat;
+    }
+    42%{
+        background-image: url("../img/nebula4.jpg");
+        background-repeat: no-repeat;        
+    }
+    57%{
+        background-image: url("../img/nebula5.jpg");
+        background-repeat: no-repeat;       
+    }
+    72%{
+        background-image: url("../img/nebula6.jpg");
+        background-repeat: no-repeat;
+    }
+    87%{
+        background-image: url("../img/nebula7.jpg");
+        background-repeat: no-repeat;
+    }
+}
+
+.headTitle{
+    padding-top: 6vh;
+    vertical-align: middle;
 }
 
 
@@ -63,7 +102,7 @@ header {
 }
 
 a {
-    color: #f74914;
+    color: #6486a3;
     text-decoration: none;
 }
 
@@ -73,12 +112,17 @@ a:hover {
 }
 
 a:visited {
-    color: #ecc74c;
+    color: #e25954;
     text-decoration: none;
 }
-
-a:active {
+a:visited:hover{
+    color: #f0a612;
     text-decoration: underline;
+}
+
+
+a.aChange {
+    color: rgb(198, 234, 245);
 }
 
 .navigation li {
@@ -93,7 +137,8 @@ h1 {
 }
 
 h2 {
-    color: #6486a3;
+    /*color: #397bb4;*/
+    color:  #3a6b96;
     font-size: 2.5em;
     font-family: 'Lato';
 }
@@ -103,17 +148,16 @@ h3 {
     font-size: 1.5em;
     font-weight: bold;
     font-family: 'Lato';
-
 }
 
 h4 {
-    color: #6486a3;
+    color:  #e3effa;
     font-size: 1.10em;
     font-family: 'Lato'
 }
 
 p {
-    color: #f0ecec;
+    color: #e3effa;
     font-family: 'Lato';
     font-size: 1em;
 }
@@ -236,13 +280,19 @@ td#title {
     margin: 0 auto;
 }
 
-.grid {
-    display: inline-block;
+.grid{
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    padding: 0 1em;
 }
 
-ul {
-    margin: 0 auto;
-    padding: 0;
+
+.grid-img {
+    margin-top: 2em;
+    vertical-align: middle;
+    cursor: pointer;
+    width: 40%;
 }
 
 ul li {
@@ -256,12 +306,6 @@ ul li img {
     border: 1px solid #6486a3;
 }
 
-#loading {
-    width: 50%;
-    height: auto;
-    display: block;
-    z-index: 99;
-}
 
 audio {
     padding-bottom: 2em;
@@ -287,31 +331,55 @@ video{
 }
 
 
-#loading-image{
-    display: none;
-    position: fixed;
-    width: 100%;
-    animation: changes 5s ease-out;
+#loading-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    animation: blink 4s ease infinite;
 }
 
-@keyframes changes {
+
+@keyframes blink {
     0% {
         opacity: 1;
     }
-    100%{opacity: 0}
-}
-
-
-#loading{
-    display: none;
-    position: fixed;
-    width: 100%;
-    animation: blackout 5s ease-out;
-}
-
-@keyframes blackout {
-    0% {
-        opacity: 1;
+    25%{
+        opacity: 0
     }
-    100%{opacity: 0}
+    50%{
+        opacity: 1
+    }
+    75%{
+        opacity: 1
+    }
+    100%{
+        opacity: 1
+    }
 }
+
+#object{
+    display: flex;
+    flex-direction: row;
+    flex-flow: nowrap;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+#randomTitle{
+    flex-shrink: 1;
+    padding: .5em;
+}
+
+#randomUrl {
+    flex-shrink: 1;
+    padding: .5em;
+}
+
+#randomExplanation{
+    flex-grow: 2;
+    padding: .5em;
+}
+
+/*------slide show -------*/
+

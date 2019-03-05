@@ -10,38 +10,28 @@ const title = document.getElementById("title");
 const date = document.getElementById("date");
 
 var data = {};
-/* var d = new Date();
-var startDate = d.toISOString().slice(0, 10);
-var priorDate = d.setDate(d.toISOString().slice(0, 10) - 30);
 
-console.log(startDate + priorDate); */
-
-function loadingScreenActivate() {
-
-    document.getElementById("loading-image").style.display = "block";
+function textOnload() {
+    document.getElementById("loading-text").style.display = "block";
 }
 
-function loadingScreenDeactivate() {
-
-    document.getElementById("loading-image").style.display = "none";
+function loadComplete() {
+    document.getElementById("loading-text").style.display = "none";
 }
 
 const arch_url = "https://api.nasa.gov/planetary/apod?api_key=" + apiKey + "&count=10";
 
 function arch_load() {
-    loadingScreenActivate();
+    textOnload();
     const arch = new XMLHttpRequest();
     arch.open("GET", arch_url, true);
+
     //onload of window load status and parse data
-
-
     arch.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
-            loadingScreenDeactivate();
+            loadComplete();
             data = JSON.parse(this.responseText);
-            console.log(data);
-
-            dataStorage(data);
+            //console.log(data);
 
             var select = document.getElementById("dateSelect")
             for (var j = 0; j < data.length; j++) {
@@ -55,18 +45,17 @@ function arch_load() {
             }
 
             imgGallery(data);
-            /* 
-                        var images = document.getElementById("nasaImg");
-                        for (var x = 0; x < data.length; x++) {
-                            if (data[x].media_type == "image") {
-                                var nasaImg = document.createElement("img");
-                                nasaImg.src = data[x].url;
-                                nasaImg.alt = data[x].title;
-                                images.appendChild(nasaImg);
-                            }
-                        } */
-        } else {
-            loadingScreenActivate();
+            apod(data);
+
+            function dataStorage() {
+                console.log(data);
+                var dataArray = JSON.stringify(data);
+                //console.log(dataArray);            
+                localStorage.setItem('data_key', dataArray);
+                var jsObject = localStorage.getItem('dataArray');
+            }
+            dataStorage();
+
         }
     };
 
@@ -74,19 +63,8 @@ function arch_load() {
 }
 arch_load();
 
-function dataStorage(data) {
-    var d = [];
-    for (var i = 0; i > d.length; i++) {
-        d.push(dataArray[i]);
-
-        localStorage.setItem('data_key', JSON.stringify(dataArray));
-        console.log(dataArray[i]);
-    }
-    //dataArray = JSON.parse(localStorage.getItem('data_key'));
-}
-
 function imgGallery(data) {
-    console.log(data);
+    //console.log(data);
     var images = document.getElementById("nasaImg");
     for (var x = 0; x < data.length; x++) {
         if (data[x].media_type == "image") {
@@ -99,8 +77,6 @@ function imgGallery(data) {
     }
 }
 
-
-
 function addInfo() {
     var selection = document.getElementById("dateSelect").value;
     data[selection];
@@ -109,19 +85,13 @@ function addInfo() {
     document.getElementById("explanation").innerHTML = data[selection].explanation;
 }
 
-/* 
-function imgMouseOver(data) {
-    console.log(data);
-} */
-
 document.querySelector('#nasaImg').addEventListener('mouseover', function (e) {
-    console.log(e);
+    //console.log(e);
     if (e.target.tagName === "IMG") {
         var images = this.querySelectorAll('IMG');
-
+        images = e.target
     }
 }, false);
-
 
 
 document.querySelector('.grid').addEventListener('click', function (e) {
@@ -129,7 +99,7 @@ document.querySelector('.grid').addEventListener('click', function (e) {
     if (e.target.tagName === "IMG") {
 
         var howMany = this.querySelectorAll('IMG').length;
-        console.log(howMany);
+        //console.log(howMany);
         if (howMany > 1) {
 
             var li = e.target;
@@ -143,54 +113,78 @@ document.querySelector('.grid').addEventListener('click', function (e) {
 }, false);
 
 
+function apod(data) {
+    var imgObject = [];
+    var counter = 0;
+    for (var x = 0; x < data.length; x++) {
+        if (data[x].media_type === "image") {
+            imgObject[counter] = new objectConstructor(data[x].title, data[x].url, data[x].explanation);
+            counter++;
+        }
+    }
 
+    var random = Math.floor(Math.random() * imgObject.length);
+
+    document.getElementById("randomTitle").innerHTML = imgObject[random].title;
+    document.getElementById("randomUrl").src = imgObject[random].url;
+    document.getElementById("randomExplanation").innerHTML = imgObject[random].explanation;
+}
+
+
+function objectConstructor(title, url, explanation) {
+    this.date = date;
+    this.title = title;
+    this.url = url;
+    this.explanation = explanation;
+    //console.log(url);
+}
 
 
 
 /* function slideshow() {
 
-    var listArray = localStorage.getItem("listArray");
-    var imagePaths = JSON.parse(listArray);
-    //var images = document.getElementById("images");
-    for (var i = 0; i < imagePaths.length; i++) {
-        var image = document.createElement("img");
-        image.src = imagePaths[i].url;
+var listArray = localStorage.getItem("listArray");
+var imagePaths = JSON.parse(listArray);
+//var images = document.getElementById("images");
+for (var i = 0; i < imagePaths.length; i++) {
+    var image = document.createElement("img");
+    image.src = imagePaths[i].url;
 
-    }
-    var showCanvas = null;
-    var showCanvasCtx = null;
-    var currentImage = 0;
-    var revealTimer;
+}
+var showCanvas = null;
+var showCanvasCtx = null;
+var currentImage = 0;
+var revealTimer;
 
-    window.onload = function () {
-        showCanvas = document.getElementById('showCanvas');
-        showCanvasCtx = showCanvas.getContext('2d');
+window.onload = function () {
+    showCanvas = document.getElementById('showCanvas');
+    showCanvasCtx = showCanvas.getContext('2d');
 
-        img.setAttribute('width', '600');
-        img.setAttribute('height', '400');
-        switchImage();
+    img.setAttribute('width', '600');
+    img.setAttribute('height', '400');
+    switchImage();
 
-        // start the animation
-        setInterval(switchImage, 3000);
-    }
+    // start the animation
+    setInterval(switchImage, 3000);
+}
 
-    function switchImage() {
-        img.setAttribute('src', imagePaths[currentImage++]);
-        if (currentImage >= imagePaths.length)
-            currentImage = 0;
+function switchImage() {
+    img.setAttribute('src', imagePaths[currentImage++]);
+    if (currentImage >= imagePaths.length)
+        currentImage = 0;
 
-        showCanvasCtx.globalAlpha = 0.1;
-        revealTimer = setInterval(revealImage, 100);
-    }
+    showCanvasCtx.globalAlpha = 0.1;
+    revealTimer = setInterval(revealImage, 100);
+}
 
-    function revealImage() {
-        showCanvasCtx.save();
-        showCanvasCtx.drawImage(img, 0, 0, 600, 400);
-        showCanvasCtx.globalAlpha += 0.1;
-        if (showCanvasCtx.globalAlpha >= 1.0)
-            clearInterval(revealTimer);
-        showCanvasCtx.restore();
-    }
+function revealImage() {
+    showCanvasCtx.save();
+    showCanvasCtx.drawImage(img, 0, 0, 600, 400);
+    showCanvasCtx.globalAlpha += 0.1;
+    if (showCanvasCtx.globalAlpha >= 1.0)
+        clearInterval(revealTimer);
+    showCanvasCtx.restore();
+}
 
 }
 slideshow(); */

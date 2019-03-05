@@ -17,34 +17,37 @@ editor: DChapman
 </head>
 
 <body>
-    <img id="loading-image" src="img/solar.gif" />
-    <div class="heading-container">
-        <nav>
-            <hr />
-            <ul class="navigation">
-                <li><a href="index.html">Main</a></li>
-                <li><a href="nasa_home.html">Nasa Home</a></li>
-                <li><a href="apod.html">Image of the Day</a></li>
-                <li><a href="nasa_archive.html">Archive</a></li>
-                <li><a href="nasa_library.html">Audio/Video Library</a></li>
-                <li><a href="techport.html">Techport</a></li>
-            </ul>
-        </nav>
+    <hr />
+    <ul class="navigation">
+        <li><a href="index.html">Main</a></li>
+        <li><a href="nasa_home.html">Nasa Home</a></li>
+        <li><a href="apod.html">Image of the Day</a></li>
+        <li><a href="nasa_archive.html">Archive</a></li>
+        <li><a href="nasa_library.html">Audio/Video Library</a></li>
+        <li><a href="techport.html">Techport</a></li>
+    </ul>
+    </nav>
+    <div class="slide-container">
         <header class="heading">
-            <h1>Space Exploration</h1>
+            <h1 class="headTitle">Space Exploration</h1>
         </header>
     </div>
 
     <hr>
-    <div id="loading">
-        <img src="img/solar.gif" alt="swirling galaxy" id="loading-image" />
-    </div>
 
+    <p id="loading-text">...Communicating with NASA</p>
+    <h2 id="select">View Archived NASA Information</h2>
 
-    <h2>View Archived NASA Information</h2>
+    <ul class="ul-none">
+        <li class="indentOne"><a href="select" class="aChange">Select images from a specific date</a></li>
+        <li class="indentOne"><a href="choose" class="aChange">Choose your favorite image</a></li>
+        <li class="indentOne"><a href="object" class="aChange">See a random image from time past.</a></li>
+    </ul>
+
+    <h3 id="select">Enjoy NASA data from the past</h3>
     <div class="row-container">
         <div class="flex-row">
-            <p>Select a date to see the image chosen for that day</p>
+            <h4>Select a date to see the image chosen for that day in time</h4>
             <br>
             <div class="flex-item">
                 <select id="dateSelect" class="dateSelect" onChange="addInfo()">
@@ -66,16 +69,23 @@ editor: DChapman
 
 
     <hr>
-    <h2>Gallery</h2>
+    <h2 id="choose">Image Gallery</h2>
     <div id="gallery">
-        <p>Pick your favorite picture through the process of elimination. <br>
-            Click on the image you like least and wish to remove.</p>
-        <ul class="grid">
-            <li id="nasaImg"></li>
-        </ul>
+        <h3>Pick your favorite picture through the process of elimination.</h3>
+        <p>Click on the image you like least and wish to remove.</p>
+        <div class="grid">
+            <div id="nasaImg"></div>
+        </div>
+
         <p id="imgResult"></p>
     </div>
 
+    <h2>Random Image of the Day</h2>
+    <div id="object">
+        <div id="randomTitle"></div>
+        <img id="randomUrl" />
+        <div id="randomExplanation"></div>
+    </div>
 
     <footer>
 

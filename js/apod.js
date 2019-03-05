@@ -12,27 +12,24 @@ const date = document.getElementById("date");
 
 var data = {};
 const apod_url = "https://api.nasa.gov/planetary/apod?api_key=" + apiKey;
-//const arch_url = "https://api.nasa.gov/planetary/apod?api_key=" + apiKey + "&count=20";
 
 
-function loadingScreenActivate() {
-
-    document.getElementById("loading").style.display = "block";
+function textOnload() {
+    document.getElementById("loading-text").style.display = "block";
 }
 
-function loadingScreenDeactivate() {
-
-    document.getElementById("loading").style.display = "none";
+function loadComplete() {
+    document.getElementById("loading-text").style.display = "none";
 }
 
 
 function apod_load() {
-    loadingScreenActivate();
+    textOnload();
     const apod = new XMLHttpRequest();
     apod.onload = function () {
 
         if (this.readyState === 4 && this.status === 200) {
-            loadingScreenDeactivate();
+            loadComplete();
             data = JSON.parse(this.response);
             console.log(data);
             if (data.media_type == "image") {
@@ -44,8 +41,6 @@ function apod_load() {
             }
             explanation.innerText = data.explanation;
             title.innerText = data.title;
-        } else {
-            loadingScreenActivate();
         }
     };
 
