@@ -8,7 +8,8 @@ editor: DChapman
     <title>Coding Bootcamp for CIT261</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<script src="js/nasa.js" defer></script> -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway+Dots" rel="stylesheet">
+    <script src="js/epic.js" defer></script>
     <!-- <link rel="stylesheet" href="css/style_small.css" />
     <link rel="stylesheet" href="css/style_med.css" /> -->
     <link rel="stylesheet" href="css/nasa.css" />
@@ -23,7 +24,7 @@ editor: DChapman
         <li><a href="apod.html">Image of the Day</a></li>
         <li><a href="nasa_archive.html">Archive</a></li>
         <li><a href="nasa_library.html">Audio/Video Library</a></li>
-        <li><a href="techport.html">Techport</a></li>
+        <li><a href="epic.html">EPIC Images</a></li>
     </ul>
     </nav>
     <div class="slide-container">
@@ -34,7 +35,19 @@ editor: DChapman
 
     <hr>
     <div>
-        <h2>Currently Under Construction</h2>
+        <button onclick="bodyColor()" class="buttonColor">Toggle background style</button>
+    </div>
+    <br>
+    <!-- <div>
+        <div id="epicImage"></div>
+    </div> -->
+    <div>
+        <label>Slide to change the image styles</label><br>
+        <input type="range" value="1" min="1" max="10" name="color" oninput="changeImg(this.value)"
+            onchange="changeImg(this.value)">
+    </div>
+    <div>
+        <img id="changeImg" src="img/swirl-galaxy.png">
     </div>
     <footer>
 

@@ -1,2 +1,0 @@
-var headerImg = new Object();
-

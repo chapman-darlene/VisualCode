@@ -1,0 +1,403 @@
+/*
+  Created on : Jan 14, 2019, 1:51:55 PM
+  Author     : D Chapman
+
+  color scheme:
+  #000000 -- black
+  #3a6b96 -- blue
+  #808080 -- Grey
+  #fbbc3c -- yellow
+  #d88960 -- rust
+  #ffffff -- white
+  #64704C -- green
+*/
+
+@media screen and (min-width: 300px) and (max-width: 812px) {
+    @font-face {
+        font-family: 'Lato';
+        src: url('/fonts/Lato-Regular.ttf' );
+        font-face: 'Lato-Light';
+        src: url('/fonts/Lato-Light.ttf');
+        font-family: 'Raleway';
+        src: url('/fonts/Raleway-ExtraBold.ttf');
+        font-family: 'Spaceman';
+        src: url('/fonts/Spaceman.woff');
+        font-family: 'Raleway Dots', cursive;
+        src: url('/fonts/RalewayDots-Regular.woff');
+    }
+
+    body {
+        background-color: #000;
+        color: #f0ecec;
+        margin: 0 2em;
+    }
+
+    .bodyElement{
+        background-image: url("/img/stars.jpg");
+        background-repeat: no-repeat;
+        background-blend-mode: luminosity;
+        color: #f0ecec;
+        margin: 0 2em;
+    }
+
+    .buttonColor{
+        font-size: 2vw;
+        height: 44em;
+    }
+
+    .slide-container {
+        background-image: url("../img/apod.jpg");
+        background-repeat: no-repeat;
+        opacity: 1;
+        background-size: 100%;
+        margin: 0;
+        animation: slides 50s ease-in-out infinite;
+    }
+
+    @keyframes slides{
+        0% {        
+            background-image: url("../img/apod.jpg");
+            background-repeat: no-repeat;
+            
+        }
+        12% {
+            background-image: url("../img/nebula2.jpg");
+            background-repeat: no-repeat;
+        }
+        27%{
+            background-image: url("../img/nebula3.jpg");
+            background-repeat: no-repeat;
+        }
+        42%{
+            background-image: url("../img/nebula4.jpg");
+            background-repeat: no-repeat;        
+        }
+        57%{
+            background-image: url("../img/nebula5.jpg");
+            background-repeat: no-repeat;       
+        }
+        72%{
+            background-image: url("../img/nebula6.jpg");
+            background-repeat: no-repeat;
+        }
+        87%{
+            background-image: url("../img/nebula7.jpg");
+            background-repeat: no-repeat;
+        }
+    }
+
+    .headTitle h1{
+        vertical-align: middle;
+        font-family: 'Spaceman';
+        font-size: 6vw;
+    }
+
+
+    .navigation {
+        font-family: 'Lato';
+        list-style-type: none;
+        display: flex;
+        flex-flow: column;
+        justify-content: flex-start;
+        font-size: 1em;
+        font-style: thin;
+        padding-right: 1em;
+        padding-left: .25em;
+    }
+
+    header {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0em;
+        /*filter: alpha(opacity=60);*/
+    }
+
+    a {
+        color: #6486a3;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #f0a612;
+        text-decoration: underline;
+    }
+
+    a:visited {
+        color: #e25954;
+        text-decoration: none;
+    }
+    a:visited:hover{
+        color: #f0a612;
+        text-decoration: underline;
+    }
+
+
+    a.aChange {
+        color: rgb(198, 234, 245);
+    }
+
+    .navigation li {
+        padding-right: 1em;
+    }
+
+    h1 {
+        color: #f0ecec;
+        font-family: 'Spaceman';
+        font-size: 4em;
+        font-style: bold;
+    }
+
+    h2 {
+        /*color: #397bb4;*/
+        color:  #3a6b96;
+        font-size: 2.5em;
+        font-family: 'Raleway Dots';
+    }
+
+    h3 {
+        color: #e25954;
+        font-size: 1.5em;
+        font-weight: bold;
+        font-family: 'Lato';
+    }
+
+    h4 {
+        color:  #e3effa;
+        font-size: 1.10em;
+        font-family: 'Lato'
+    }
+
+    p {
+        color: #e3effa;
+        font-family: 'Lato';
+        font-size: 1em;
+    }
+
+    li {
+        font-family: 'Lato';
+    }
+
+    .ul-none {
+        list-style: none;
+    }
+
+
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+
+    .flex-item {
+        justify-items: center;
+    }
+
+
+    .row-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: row wrap;
+
+        padding: 0 4px;
+        margin: 0 1em;
+    }
+
+    .flex-figure {
+        justify-content: space-between;
+        max-width: 500px;
+        max-height: auto;
+        margin-right: 0;
+        padding: 0 4px;
+        cursor: pointer;
+    }
+
+    .flex-figure img {
+        vertical-align: center;
+    }
+
+    figcaption {
+        justify-items: center;
+    }
+
+    img {
+        justify-content: center;
+        justify-self: center;
+        width: 100%;
+        height: auto;
+    }
+
+    .apod-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin: 0 4em;
+    
+    }
+
+
+    .apod-img {
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        height: auto;
+        -webkit-transition: width 2s ease-in;
+        transition: width 2s ease-in;
+    }
+
+
+    iframe {
+        width: 640px;
+        height: 385px;
+        border: #808080 solid 1em;
+    }
+
+
+    .dateSelect {
+        margin: 0;
+        padding: .5em;
+        color: #f0ecec;
+        font-family: 'Lato';
+        font-size: 1em;
+        background-color: #6486a3;
+        size: 3em;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    table td {
+        padding-right: 1em;
+        padding-top: 1.5em;
+        font-family: 'Lato';
+        text-align: left;
+        vertical-align: top;
+
+    }
+
+    td img {
+        width: 400px;
+        height: auto;
+    }
+
+    td#title {
+        width: 10%;
+    }
+
+    #gallery {
+        width: 500px;
+        margin: 0 auto;
+    }
+
+    .grid{
+        display: flex;
+        flex-direction: row;
+        flex-flow: wrap;
+        padding: 0 1em;
+    }
+
+
+    .grid-img {
+        margin-top: 2em;
+        vertical-align: middle;
+        cursor: pointer;
+        width: 40%;
+    }
+
+
+    ul li {
+        list-style: none;
+        /*display: inline-block;*/
+        cursor: pointer;
+    }
+
+    ul li img {
+        width: 400px;
+        border: 1px solid #6486a3;
+    }
+
+
+    audio {
+        padding-bottom: 2em;
+        width: 25%;
+    }
+
+    .audioTags li{
+        font-size: 1.25em;
+        color: #6486a3;
+        font-family: 'Lato';
+    }
+
+    video{
+        width: 25%;
+        height: auto;
+        padding-bottom: 2em;
+    }
+
+    .videoTags li{
+        font-size: 1.25em;
+        font-family: 'Lato';
+        color: #6486a3;
+    }
+
+
+    #loading-text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: blink 4s ease infinite;
+    }
+
+
+    @keyframes blink {
+        0% {
+            opacity: 1;
+        }
+        25%{
+            opacity: 0
+        }
+        50%{
+            opacity: 1
+        }
+        75%{
+            opacity: 1
+        }
+        100%{
+            opacity: 1
+        }
+    }
+
+    #object{
+        display: flex;
+        flex-direction: row;
+        flex-flow: nowrap;
+        justify-content: space-between;
+        padding: 1em;
+    }
+
+    #randomTitle{
+        flex-shrink: 1;
+        padding: .5em;
+    }
+
+    #randomUrl {
+        flex-shrink: 1;
+        padding: .5em;
+    }
+
+    #randomExplanation{
+        flex-grow: 2;
+        padding: .5em;
+    }
+
+    #changeImg{
+        display: absolute;
+        margin: auto;
+        justify-content: center;
+        width: 50vmax;
+    }
+}

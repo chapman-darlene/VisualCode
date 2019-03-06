@@ -72,7 +72,6 @@ function imgGallery(data) {
             var nasaImg = document.createElement("img");
             nasaImg.src = data[x].url;
             nasaImg.alt = data[x].title;
-            //nasaImg.addEventListener('mouseover', imgMouseOver(this), false);
             images.appendChild(nasaImg);
         }
     }
@@ -87,11 +86,9 @@ function addInfo() {
 }
 
 document.querySelector('#nasaImg').addEventListener('mouseover', function (e) {
-    //console.log(e);
-    if (e.target.tagName === "IMG") {
-        var images = this.querySelectorAll('IMG');
-        images = e.target
-    }
+    console.log(e);
+
+
 }, false);
 
 
@@ -100,9 +97,7 @@ document.querySelector('.grid').addEventListener('click', function (e) {
     if (e.target.tagName === "IMG") {
 
         var howMany = this.querySelectorAll('IMG').length;
-        //console.log(howMany);
         if (howMany > 1) {
-
             var li = e.target;
             var listItems = document.querySelector("li");
             var ul = document.getElementById("ul");
@@ -139,53 +134,3 @@ function objectConstructor(title, url, explanation) {
     this.explanation = explanation;
     //console.log(url);
 }
-
-
-
-/* function slideshow() {
-
-var listArray = localStorage.getItem("listArray");
-var imagePaths = JSON.parse(listArray);
-//var images = document.getElementById("images");
-for (var i = 0; i < imagePaths.length; i++) {
-    var image = document.createElement("img");
-    image.src = imagePaths[i].url;
-
-}
-var showCanvas = null;
-var showCanvasCtx = null;
-var currentImage = 0;
-var revealTimer;
-
-window.onload = function () {
-    showCanvas = document.getElementById('showCanvas');
-    showCanvasCtx = showCanvas.getContext('2d');
-
-    img.setAttribute('width', '600');
-    img.setAttribute('height', '400');
-    switchImage();
-
-    // start the animation
-    setInterval(switchImage, 3000);
-}
-
-function switchImage() {
-    img.setAttribute('src', imagePaths[currentImage++]);
-    if (currentImage >= imagePaths.length)
-        currentImage = 0;
-
-    showCanvasCtx.globalAlpha = 0.1;
-    revealTimer = setInterval(revealImage, 100);
-}
-
-function revealImage() {
-    showCanvasCtx.save();
-    showCanvasCtx.drawImage(img, 0, 0, 600, 400);
-    showCanvasCtx.globalAlpha += 0.1;
-    if (showCanvasCtx.globalAlpha >= 1.0)
-        clearInterval(revealTimer);
-    showCanvasCtx.restore();
-}
-
-}
-slideshow(); */

@@ -20,9 +20,9 @@
     font-family: 'Raleway';
     src: url("/fonts/Raleway-ExtraBold.ttf");
     font-family: 'Spaceman';
-    src: url("/fonts/SPACEMAN.TTF");
-    font-family: 'Raleway Dots';
-    src: url("/fonts/RalewayDots-Regular.ttf");
+    src: url("/fonts/Spaceman.woff");
+    font-family: 'Raleway Dots', cursive;
+    src: url("/fonts/RalewayDots-Regular.woff");
 
 }
 
@@ -32,12 +32,25 @@ body {
     margin: 0 2em;
 }
 
+.bodyElement{
+    background-image: url("/img/stars.jpg");
+    background-repeat: no-repeat;
+    background-blend-mode: luminosity;
+    color: #f0ecec;
+    margin: 0 2em;
+}
+
+.buttonColor{
+    font-size: 2vw;
+    height: 44px;
+}
+
 .slide-container {
     background-image: url("../img/apod.jpg");
     background-repeat: no-repeat;
     opacity: 1;
     background-size: 100%;
-    height: 40vh;
+    height: 50vh;
     margin: 0;
     animation: slides 50s ease-in-out infinite;
 }
@@ -74,9 +87,11 @@ body {
     }
 }
 
-.headTitle{
+.headTitle h1{
     padding-top: 6vh;
     vertical-align: middle;
+    font-family: 'Spaceman';
+    font-size: 6vw;
 }
 
 
@@ -140,7 +155,7 @@ h2 {
     /*color: #397bb4;*/
     color:  #3a6b96;
     font-size: 2.5em;
-    font-family: 'Lato';
+    font-family: 'Raleway Dots';
 }
 
 h3 {
@@ -295,6 +310,7 @@ td#title {
     width: 40%;
 }
 
+
 ul li {
     list-style: none;
     /*display: inline-block;*/
@@ -380,5 +396,9 @@ video{
     padding: .5em;
 }
 
-/*------slide show -------*/
-
+#changeImg{
+    display: absolute;
+    margin: auto;
+    justify-content: center;
+    width: 50vmax;
+}
