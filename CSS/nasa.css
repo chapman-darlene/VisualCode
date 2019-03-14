@@ -38,7 +38,7 @@
         width: 100%;
         height: 25vmax;
         margin: 0;
-        animation: slides 50s ease-in-out infinite;
+        animation: slides 50s infinite;
     }
 
     @keyframes slides{
@@ -47,29 +47,33 @@
             background-repeat: no-repeat;
             
         }
-        12% {
+        25% {
             background-image: url("../img/nebula2.png");
             background-repeat: no-repeat;
         }
-        27%{
+       /*  27%{
             background-image: url("../img/nebula3.png");
             background-repeat: no-repeat;
         }
         42%{
             background-image: url("../img/nebula4.png");
             background-repeat: no-repeat;        
-        }
-        57%{
+        } */
+       /*  57%{
             background-image: url("../img/nebula5.png");
             background-repeat: no-repeat;       
-        }
-        72%{
+        } */
+        50%{
             background-image: url("../img/nebula6.png");
             background-repeat: no-repeat;
         }
-        87%{
+        75%{
             background-image: url("../img/nebula7.png");
             background-repeat: no-repeat;
+        }
+        100%{
+            background-image: url("../img/nebula4.png");
+            background-repeat: no-repeat;   
         }
     }
 
@@ -851,38 +855,50 @@
         background-size: 100%;
         height: 20vmax;
         margin: 0;
-        animation: slides 50s ease-in infinite;
+        animation: slides 50s infinite;
+        /*position: relative*/
         display: grid;
     }
+/*
+    .slide-container img{
+        /*position absolute;
+        opacity: 0;
+    }
+*/
 
     @keyframes slides{
         0% {        
-            background-image: url("../img/apod.png");
-            background-repeat: no-repeat;            
+            background-image: url("../img/apod.jpg");
+            background-repeat: no-repeat;   
+            /*opacity change*/         
         }
         12% {
-            background-image: url("../img/nebula2.png");
+            background-image: url("../img/nebula2.jpg");
             background-repeat: no-repeat;
         }
-        27%{
-            background-image: url("../img/nebula3.png");
+        /* 27%{
+            background-image: url("../img/nebula3.jpg");
             background-repeat: no-repeat;
-        }
-        42%{
-            background-image: url("../img/nebula4.png");
+        } */
+       /*  42%{
+            background-image: url("../img/nebula4.jpg");
             background-repeat: no-repeat;        
-        }
+        } */
         57%{
-            background-image: url("../img/nebula5.png");
+            background-image: url("../img/nebula5.jpg");
             background-repeat: no-repeat;       
         }
         72%{
-            background-image: url("../img/nebula6.png");
+            background-image: url("../img/nebula6.jpg");
             background-repeat: no-repeat;
         }
         87%{
-            background-image: url("../img/nebula7.png");
+            background-image: url("../img/nebula7.jpg");
             background-repeat: no-repeat;
+        }
+        100%{
+            background-image: url("../img/apod.png");
+            background-repeat: no-repeat;   
         }
     }
 
@@ -1041,6 +1057,7 @@
     .flex-item {
         align-items: center;
         flex-direction: column;
+        padding: .5em;
     }
     
     img {
@@ -1183,7 +1200,7 @@
     #object{
         display: flex;
         flex-direction: column;
-        padding: 1em;
+        padding: 2em 0;
     }
 
     #randomUrl img{

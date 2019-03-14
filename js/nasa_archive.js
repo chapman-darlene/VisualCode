@@ -95,9 +95,7 @@ function myHover(ele) {
 
 
 document.querySelector('.grid').addEventListener('click', function (e) {
-
     if (e.target.tagName === "IMG") {
-
         var howMany = this.querySelectorAll('IMG').length;
         if (howMany > 1) {
             var li = e.target;
@@ -109,6 +107,28 @@ document.querySelector('.grid').addEventListener('click', function (e) {
         }
     }
 }, false);
+
+//pull images from local storage
+//create an object
+//when they click on the object array item, push that item into local storage
+
+/* 
+document.querySelector('.grid').addEventListener('click', function (e) {
+    if (e.target.tagName === "IMG") {
+        var howMany = this.querySelectorAll('IMG').length;
+        if (howMany > 1) {
+            var li = e.target;
+            var listItems = document.querySelector("li");
+            var ul = document.getElementById("ul");
+            console.log();
+
+            var favImg = {};
+            .stringify(ul);
+            localStorage.setItem()
+            li.parentNode.appendChild('nasaImg').firstChild.alt;
+        }
+    }
+}, false); */
 
 
 function apod(data) {
