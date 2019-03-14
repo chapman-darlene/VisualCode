@@ -9,13 +9,14 @@ editor: DChapman
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Raleway+Dots" rel="stylesheet">
-    <script src="js/nasa_archive.js" defer></script>
+    <script src="js/nasa_apod.js" defer></script>
+    <script src="js/nasa_main.js" defer></script>
     <link rel="stylesheet" href="css/nasa.css" />
-
 
 </head>
 
 <body>
+
     <hr />
     <nav>
         <ul class="navigation">
@@ -46,60 +47,22 @@ editor: DChapman
     </div>
 
     <hr>
-
     <p id="loading-text">...Communicating with NASA</p>
-    <h2 id="select">View Archived NASA Information</h2>
-
-    <h3 id="select">Enjoy NASA data from the past</h3>
-    <div class="flex-container">
-        <div class="flex-row">
-            <h4>Select a date to see the image chosen for that day in time</h4>
-            <br>
-            <div class="flex-item">
-                <select id="dateSelect" class="dateSelect" onChange="addInfo()">
-                    <option selected>Archive Date</option>
-                </select>
-            </div>
-            <div id="flex-item">
-                <table>
-                    <tr id="tableRow">
-                        <td id="title"></td>
-                        <td><img id="url" /></td>
-                        <td id="explanation"></td>
-                    </tr>
-                </table>
-            </div>
+    <div class="apod-container">
+        <h2>NASA'S Picture of the Day</h2>
+        <div class="flex-item">
+            <h3 id="title"></h3>
+            <p id="explanation"></p>
+        </div>
+        <div class="flex-item">
+            <img id="image" class="apod-img">
+        </div>
+        <div class="flex-item">
+            <iframe id="video" type="text/html"></iframe>
         </div>
     </div>
 
-
-    <hr>
-    <h2 id="choose">Image Gallery</h2>
-    <h3>Pick your favorite picture through the process of elimination.</h3>
-    <div>
-        <h4>Click on the image you like least and wish to remove.</h4>
-        <div class="grid">
-            <div id="nasaImg" class="alt"></div>
-        </div>
-
-        <h4 id="imgResult"></h4>
-    </div>
-
-    <hr>
-    <h2>Random Image of the Day</h2>
-    <div id="object">
-        <div class="flex-container">
-            <div class="flex-item">
-                <div id="randomTitle"></div>
-            </div>
-            <div class="flex-item">
-                <img id="randomUrl" />
-            </div>
-            <div class="flex-item">
-                <div id="randomExplanation"></div>
-            </div>
-        </div>
-    </div>
+    <!--end table-container-->
     <footer>
         <p>Images, video and audio are provided by <a href="https://images.nasa.gov/">NASA's Video and Image Library</a>
         </p>

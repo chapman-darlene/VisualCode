@@ -100,3 +100,31 @@ function changeImg(value) {
         }
     }
 } */
+
+
+/* 
+window.attachEvent('onresize', function () {
+    if (window.width <= 820) {
+        //hide old nav
+        //show new nav dropdown
+    }
+});
+ */
+
+function openNav() {
+    document.getElementById("sidebar").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("sidebar").style.width = "0";
+}
+
+function localFavorite() {
+    var fav = document.getElementById("favImg").src;
+    //save local storage with different key as push into array
+    //load item from local storage
+    //click on it to save it back into storage
+    //read local storage
+    //create element to put images in favorite section on page
+
+}

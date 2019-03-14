@@ -16,6 +16,7 @@ const apod_url = "https://api.nasa.gov/planetary/apod?api_key=" + apiKey;
 
 function textOnload() {
     document.getElementById("loading-text").style.display = "block";
+    document.getElementById("loading-text").style.fontSize = "4vmax";
 }
 
 function loadComplete() {

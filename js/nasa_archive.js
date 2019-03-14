@@ -70,8 +70,10 @@ function imgGallery(data) {
     for (var x = 0; x < data.length; x++) {
         if (data[x].media_type == "image") {
             var nasaImg = document.createElement("img");
+            nasaImg.id = "img" + x;
             nasaImg.src = data[x].url;
             nasaImg.alt = data[x].title;
+            nasaImg.addEventListener('mouseover', myHover("img" + x));
             images.appendChild(nasaImg);
         }
     }
@@ -85,11 +87,11 @@ function addInfo() {
     document.getElementById("explanation").innerHTML = data[selection].explanation;
 }
 
-document.querySelector('#nasaImg').addEventListener('mouseover', function (e) {
-    console.log(e);
+function myHover(ele) {
+    var e = document.getElementById(ele);
+    //document.getElementById('nasaImg');
+}
 
-
-}, false);
 
 
 document.querySelector('.grid').addEventListener('click', function (e) {
@@ -132,5 +134,32 @@ function objectConstructor(title, url, explanation) {
     this.title = title;
     this.url = url;
     this.explanation = explanation;
-    //console.log(url);
 }
+
+/* 
+window.attachEvent('onresize', function () {
+    if (window.width <= 820) {
+        //hide old nav
+        //show new nav dropdown
+    }
+});
+ */
+
+function openNav() {
+    document.getElementById("sidebar").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("sidebar").style.width = "0";
+}
+
+function localFavorite() {
+    var fav = document.getElementById("favImg").src;
+    //save local storage with different key as push into array
+    //load item from local storage
+    //click on it to save it back into storage
+    //read local storage
+    //create element to put images in favorite section on page
+
+}
+

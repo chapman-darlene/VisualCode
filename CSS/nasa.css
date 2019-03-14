@@ -12,393 +12,1227 @@
   #64704C -- green
 */
 
-@font-face {
-    font-family: 'Lato';
-    src: url("/fonts/Lato-Regular.ttf");
-    font-face: 'Lato-Light';
-    src: url("/fonts/Lato-Light.ttf");
-    font-family: 'Raleway';
-    src: url("/fonts/Raleway-ExtraBold.ttf");
-    font-family: 'Spaceman';
-    src: url("/fonts/Spaceman.woff");
-    font-family: 'Raleway Dots', cursive;
-    src: url("/fonts/RalewayDots-Regular.woff");
 
-}
+/*--START LARGE MEDIA DEVICE--*/
 
-body {
-    background-color: #000;
-    color: #f0ecec;
-    margin: 0 2em;
-}
+@media screen and (min-width: 1367px){
+    /* ---ALL PAGES ---*/
+    html{
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
 
-.bodyElement{
-    background-image: url("/img/stars.jpg");
-    background-repeat: no-repeat;
-    background-blend-mode: luminosity;
-    color: #f0ecec;
-    margin: 0 2em;
-}
+    body {
+        background-color: #000;
+        color: #f0ecec;
+        margin: 0 2em;
+        font-family: 'Lato', sans-serif;
+    }
 
-.buttonColor{
-    font-size: 2vw;
-    height: 44px;
-}
-
-.slide-container {
-    background-image: url("../img/apod.jpg");
-    background-repeat: no-repeat;
-    opacity: 1;
-    background-size: 100%;
-    height: 50vh;
-    margin: 0;
-    animation: slides 50s ease-in-out infinite;
-}
-
-@keyframes slides{
-    0% {        
-        background-image: url("../img/apod.jpg");
+    .slide-container {
+        background-image: url("../img/apod.png");
         background-repeat: no-repeat;
-        
-    }
-    12% {
-        background-image: url("../img/nebula2.jpg");
-        background-repeat: no-repeat;
-    }
-    27%{
-        background-image: url("../img/nebula3.jpg");
-        background-repeat: no-repeat;
-    }
-    42%{
-        background-image: url("../img/nebula4.jpg");
-        background-repeat: no-repeat;        
-    }
-    57%{
-        background-image: url("../img/nebula5.jpg");
-        background-repeat: no-repeat;       
-    }
-    72%{
-        background-image: url("../img/nebula6.jpg");
-        background-repeat: no-repeat;
-    }
-    87%{
-        background-image: url("../img/nebula7.jpg");
-        background-repeat: no-repeat;
-    }
-}
-
-.headTitle h1{
-    padding-top: 6vh;
-    vertical-align: middle;
-    font-family: 'Spaceman';
-    font-size: 6vw;
-}
-
-
-.navigation {
-    font-family: 'Lato';
-    list-style-type: none;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-end;
-    font-size: 1em;
-    font-style: thin;
-    padding-right: 1em;
-    padding-left: .25em;
-}
-
-header {
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0em;
-    /*filter: alpha(opacity=60);*/
-}
-
-a {
-    color: #6486a3;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #f0a612;
-    text-decoration: underline;
-}
-
-a:visited {
-    color: #e25954;
-    text-decoration: none;
-}
-a:visited:hover{
-    color: #f0a612;
-    text-decoration: underline;
-}
-
-
-a.aChange {
-    color: rgb(198, 234, 245);
-}
-
-.navigation li {
-    padding-right: 1em;
-}
-
-h1 {
-    color: #f0ecec;
-    font-family: 'Spaceman';
-    font-size: 4em;
-    font-style: bold;
-}
-
-h2 {
-    /*color: #397bb4;*/
-    color:  #3a6b96;
-    font-size: 2.5em;
-    font-family: 'Raleway Dots';
-}
-
-h3 {
-    color: #e25954;
-    font-size: 1.5em;
-    font-weight: bold;
-    font-family: 'Lato';
-}
-
-h4 {
-    color:  #e3effa;
-    font-size: 1.10em;
-    font-family: 'Lato'
-}
-
-p {
-    color: #e3effa;
-    font-family: 'Lato';
-    font-size: 1em;
-}
-
-li {
-    font-family: 'Lato';
-}
-
-.ul-none {
-    list-style: none;
-}
-
-
-.flex-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 2em;
-    margin-right: 2em;
-}
-
-.flex-item {
-    justify-items: center;
-}
-
-
-.row-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: row wrap;
-
-    padding: 0 4px;
-    margin: 0 1em;
-}
-
-.flex-figure {
-    justify-content: space-between;
-    max-width: 500px;
-    max-height: auto;
-    margin-right: 0;
-    padding: 0 4px;
-    cursor: pointer;
-}
-
-.flex-figure img {
-    vertical-align: center;
-}
-
-figcaption {
-    justify-items: center;
-}
-
-img {
-    justify-content: center;
-    justify-self: center;
-    width: 100%;
-    height: auto;
-}
-
-.apod-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin: 0 4em;
-   
-}
-
-
-.apod-img {
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    height: auto;
-    -webkit-transition: width 2s ease-in;
-    transition: width 2s ease-in;
-}
-
-
-iframe {
-    width: 640px;
-    height: 385px;
-    border: #808080 solid 1em;
-}
-
-
-.dateSelect {
-    margin: 0;
-    padding: .5em;
-    color: #f0ecec;
-    font-family: 'Lato';
-    font-size: 1em;
-    background-color: #6486a3;
-    size: 3em;
-}
-
-table {
-    width: 100%;
-}
-
-table td {
-    padding-right: 1em;
-    padding-top: 1.5em;
-    font-family: 'Lato';
-    text-align: left;
-    vertical-align: top;
-
-}
-
-td img {
-    width: 400px;
-    height: auto;
-}
-
-td#title {
-    width: 10%;
-}
-
-#gallery {
-    width: 500px;
-    margin: 0 auto;
-}
-
-.grid{
-    display: flex;
-    flex-direction: row;
-    flex-flow: wrap;
-    padding: 0 1em;
-}
-
-
-.grid-img {
-    margin-top: 2em;
-    vertical-align: middle;
-    cursor: pointer;
-    width: 40%;
-}
-
-
-ul li {
-    list-style: none;
-    /*display: inline-block;*/
-    cursor: pointer;
-}
-
-ul li img {
-    width: 400px;
-    border: 1px solid #6486a3;
-}
-
-
-audio {
-    padding-bottom: 2em;
-    width: 25%;
-}
-
-.audioTags li{
-    font-size: 1.25em;
-    color: #6486a3;
-    font-family: 'Lato';
-}
-
-video{
-    width: 25%;
-    height: auto;
-    padding-bottom: 2em;
-}
-
-.videoTags li{
-    font-size: 1.25em;
-    font-family: 'Lato';
-    color: #6486a3;
-}
-
-
-#loading-text{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: blink 4s ease infinite;
-}
-
-
-@keyframes blink {
-    0% {
         opacity: 1;
+        background-size: 100%;
+        width: 100%;
+        height: 25vmax;
+        margin: 0;
+        animation: slides 50s ease-in-out infinite;
     }
-    25%{
-        opacity: 0
+
+    @keyframes slides{
+        0% {        
+            background-image: url("../img/apod.png");
+            background-repeat: no-repeat;
+            
+        }
+        12% {
+            background-image: url("../img/nebula2.png");
+            background-repeat: no-repeat;
+        }
+        27%{
+            background-image: url("../img/nebula3.png");
+            background-repeat: no-repeat;
+        }
+        42%{
+            background-image: url("../img/nebula4.png");
+            background-repeat: no-repeat;        
+        }
+        57%{
+            background-image: url("../img/nebula5.png");
+            background-repeat: no-repeat;       
+        }
+        72%{
+            background-image: url("../img/nebula6.png");
+            background-repeat: no-repeat;
+        }
+        87%{
+            background-image: url("../img/nebula7.png");
+            background-repeat: no-repeat;
+        }
     }
-    50%{
-        opacity: 1
+
+    .headTitle{
+        margin: 0;
+        vertical-align: middle;
+        font-family: 'Raleway Dots', cursive;
+        font-size: 6vmax;
     }
-    75%{
-        opacity: 1
+
+    .navigation {
+        font-family: 'Lato', cursive;
+        list-style-type: none;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-end;
+        font-size: 2vmin;
+        padding-right: 1em;
+        padding-left: .25em;
     }
-    100%{
-        opacity: 1
+
+    .navigation li {
+        padding-right: 1em;
     }
+
+    #sidebar{
+        display: none;
+        visibility: hidden;
+    }
+
+    .closeButton{
+        display: none;
+        visibility: hidden;
+    }
+
+    .openButton{
+        display: none;
+        visibility: hidden;
+    }
+
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0em;
+        width: 100%;
+        height: 10vmax;
+    }
+
+    a{
+        font-size: 2vmin;
+    }
+
+    a:link {
+        color: #6486a3;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #f0a612;
+        text-decoration: underline;
+    }
+
+    a:visited {
+        color: #e25954;
+        text-decoration: none;
+    }
+    a:visited:hover{
+        color: #f0a612;
+        text-decoration: underline;
+    }
+
+    aChange {
+        color: rgb(198, 234, 245);
+    }
+
+    h1 {
+        color: #f0ecec;
+        font-family: 'Raleway Dots', cursive;
+        font-size: 5vmax;
+        font-style: bold;
+    }
+
+    h2 {
+        /*color: #397bb4;*/
+        color:  #3a6b96;
+        font-size: 2.5em;
+        font-family: 'Raleway Dots', cursive;
+    }
+
+    h3 {
+        color: #e25954;
+        font-size: 1.5em;
+        font-weight: bold;
+        font-family: 'Raleway Dots', cursive;
+    }
+
+    h4 {
+        color:  #e3effa;
+        font-size: 1.10em;
+        font-family: 'Lato', sans-serif;
+    }
+
+    p {
+        color: #e3effa;
+        font-family: 'Lato', sans-serif;
+        font-size: 1.5vmax;
+    }
+
+    li {
+        font-family: 'Lato', sans-serif;
+    }
+
+    ul{
+        padding: 0 1em;
+    }
+    
+    ul li {
+        list-style: none;
+        cursor: pointer;
+    }
+
+    
+    img {
+        justify-content: center;
+        justify-self: center;
+        width: 100%;
+        height: auto;
+    }
+
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0 1em;
+    }
+
+    .flex-item {
+        align-items: center;
+        padding: .5em;
+    }
+
+    .row-container {
+        display: flex;
+        flex-direction: row;
+        padding: 0 4px;
+        margin: 0 1em;
+    }
+
+    /*---NASA_HOME.HTML---*/
+
+    .figure-container {
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 1em;
+        margin: 0 .5em;
+        justify-content: space-between;
+        padding: 5em 2.5em;
+    }
+
+    .flex-figure {
+        align-content: center;        
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        padding: 0 1em;
+        cursor: pointer;
+    }
+
+    .flex-figure img {
+        vertical-align: center;
+    }
+
+    figcaption {
+        align-items: center;
+        font-size: 2vmax;
+    }
+
+    /*--APOD--*/
+
+    .apod-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin: 0 4em;
+    
+    }
+
+    .apod-img {
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        height: auto;
+        -webkit-transition: width 2s ease-in;
+        transition: width 2s ease-in;
+    }
+
+    iframe {
+        width: 640px;
+        height: 385px;
+        border: #808080 solid 1em;
+    }
+
+    /*--NASA_ARCHIVE--*/
+
+    .dateSelect {
+        margin: 0;
+        padding: .5em;
+        color: #f0ecec;
+        font-family: 'Lato', sans-serif;
+        font-size: 1em;
+        background-color: #6486a3;
+        size: 3em;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    table td {
+        padding-right: 1em;
+        padding-top: 1.5em;
+        font-family: 'Lato', sans-serif;
+        text-align: left;
+        vertical-align: top;
+    }
+
+
+    .grid{
+        display: grid;
+        grid-template-columns: repeat(4, fr);
+        grid-gap: 1em;
+        width: 100%;
+    }
+  
+    .alt img{
+        cursor: pointer;
+        width: 25%;
+        height: auto;
+        justify-self: stretch;
+        align-self: baseline;
+    }
+
+    #loading-text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: blink 4s ease infinite;
+    }
+
+    @keyframes blink {
+        0% {
+            opacity: 1;
+        }
+        25%{
+            opacity: 0
+        }
+        50%{
+            opacity: 1
+        }
+        75%{
+            opacity: 1
+        }
+        100%{
+            opacity: 1
+        }
+    }
+    
+    #object{
+        display: flex;
+        flex-direction: row;
+        flex-flow: nowrap;
+        justify-content: space-between;
+        padding: 1em;
+    }
+
+    .flex-item #randomUrl {       
+        width: 100%;
+        height: auto;       
+    }
+  
+    /*--NASA_LIBRARY--*/
+    audio {
+        padding-bottom: 2em;
+        width: 25%;
+        height: 3vmax;
+    }
+
+    video{
+        width: 50%;
+        height: auto;
+        padding-top: .5em;
+        padding-bottom: .5em;
+        background-color: rgba(191, 204, 230, 0.25);
+    }
+
+    /*--EPIC--*/
+    #changeImg{
+        display: absolute;
+        margin: auto;
+        justify-content: center;
+        width: 50vmax;
+    }
+
+    .bodyElement{
+        background-image: url("/img/stars.jpg");
+        background-repeat: no-repeat;
+        background-blend-mode: luminosity;
+        color: #f0ecec;
+        margin: 0 2em;
+    }
+
+    button{
+        background-color: #6486a3;
+        color: #f0ecec;
+    }
+
+    button{
+        background-color: #6486a3;
+        color: #f0ecec;
+    }
+
+    .buttonColor{
+        font-size: 2vw;
+        height: 44px;
+    }
+
+    footer{
+        background-image: url("/img/orion_bubble.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%;
+        height: 10vmax;
+    }
+
+    footer p{        
+        padding-top: 5em;
+        padding-left: 2em;
+        margin-left: 3em;
+        align-self: center;
+        font-size: 1vmax;
+    }
+
+    /*--END LG MEDIA DEVICE--*/
 }
 
-#object{
-    display: flex;
-    flex-direction: row;
-    flex-flow: nowrap;
-    justify-content: space-between;
-    padding: 1em;
-}
 
-#randomTitle{
-    flex-shrink: 1;
-    padding: .5em;
-}
+/*---START SMALL MEDIA DEVICE---*/
 
-#randomUrl {
-    flex-shrink: 1;
-    padding: .5em;
-}
+@media screen and (max-width: 420px) {
+    html{
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
 
-#randomExplanation{
-    flex-grow: 2;
-    padding: .5em;
-}
+    body {
+        background-color: #000;
+        color: #f0ecec;
+        margin: 0 1.5em;
+        font-family: 'Lato', sans-serif;
+    }
+    
+    .slide-container {
+        background-image: url("../img/apod.png");
+        background-repeat: no-repeat;
+        opacity: 1;
+        background-size: 100%;
+        width: 100%;
+        height: 125px;
+        margin: 0;
+        animation: slides 50s ease-in infinite;
+    }
 
-#changeImg{
-    display: absolute;
-    margin: auto;
-    justify-content: center;
-    width: 50vmax;
+    @keyframes slides{
+        0% {        
+            background-image: url("../img/apod.png");
+            background-repeat: no-repeat;            
+        }
+        12% {
+            background-image: url("../img/nebula2.png");
+            background-repeat: no-repeat;
+        }
+        27%{
+            background-image: url("../img/nebula3.png");
+            background-repeat: no-repeat;
+        }
+        42%{
+            background-image: url("../img/nebula4.png");
+            background-repeat: no-repeat;        
+        }
+        57%{
+            background-image: url("../img/nebula5.png");
+            background-repeat: no-repeat;       
+        }
+        72%{
+            background-image: url("../img/nebula6.png");
+            background-repeat: no-repeat;
+        }
+        87%{
+            background-image: url("../img/nebula7.png");
+            background-repeat: no-repeat;
+        }
+    }
+
+    .headTitle h1{
+        padding-top: 2vh;
+    }
+
+    nav{
+        margin-top: 0;
+    }
+
+    .navigation {
+        visibility: hidden;
+        display: none;
+    }
+
+    .side-nav a{
+        padding: 5px 5px 5px 32px;
+        text-decoration: none;
+        font-size: 2vmax;
+        color: #6486a3;
+        display: block;
+        visibility: visible;
+        font-family: 'Lato', cursive;
+        cursor: pointer;
+        transition: .3s;
+    }
+
+    .side-nav a:hover{
+        color: #f0a612;
+    }
+
+    .side-nav .closeButton{
+        position: absolute;
+        display: block;
+        visibility: visible;
+        color: #fff;
+        top: 0;
+        right: .5vmax;
+        font-size: 2vmin;
+        padding-top: 1vmax;
+        padding-right: 1vmax;
+    }
+
+
+    .openButton{
+        display: block;
+        visibility: visible;
+        font-size: 2vm;
+        cursor: pointer;
+        background-color: #000;
+        padding: 10px 15px;
+        border: none;
+    }
+
+
+    #sidebar{
+        display: block;
+        visibility: visible;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        height: 300px;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, .5);       
+        overflow-x: hidden;
+        transition: .5s;
+        padding-top: 60px;
+    }
+
+    header {
+        display: flex;
+        justify-content: center;
+        padding: 0em;
+    }
+
+    a {
+        font-size: 1vmax;
+    }
+
+    a:link {
+        color: #6486a3;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #f0a612;
+        text-decoration: underline;
+    }
+
+    a:visited {
+        color: #e25954;
+        text-decoration: none;
+    }
+
+    a:visited:hover{
+        color: #f0a612;
+        text-decoration: underline;
+    }
+
+
+    aChange {
+        color: rgb(198, 234, 245);
+        padding: 0;
+    }
+
+
+    h1 {
+        color: #f0ecec;
+        font-family: 'Raleway Dots', cursive;
+        font-size: 4vmax;
+        font-style: bold;
+    }
+
+    h2 {
+        /*color: #397bb4;*/
+        color:  #3a6b96;
+        font-size: 2.25vmax;
+        font-family: 'Raleway Dots', cursive;
+    }
+
+    h3 {
+        color: #e25954;
+        font-size: 1.5vmax;
+        font-weight: bold;
+        font-family: 'Raleway Dots', cursive;
+    }
+
+    h4 {
+        color:  #e3effa;
+        font-size: 1.25vmax;
+        font-family: 'Lato', sans-serif;
+    }
+
+    p {
+        color: #e3effa;
+        font-family: 'Lato', sans-serif;
+        font-size: 1vmax;
+    }
+
+    li {
+        font-family: 'Lato', sans-serif;
+    }
+
+    ul li {
+        list-style: none;
+        font-size: 3vw;
+        cursor: pointer;
+    }
+
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin:0;        
+    }
+
+    .flex-item {
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    img {
+        justify-content: center;
+        justify-self: center;
+        width: 100%;
+        height: auto;
+    }
+
+    /*--NASA_HOME--*/
+    
+    .figure-container {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin:0;
+    }
+
+    figure img {
+        vertical-align: center;
+        width: 100%;
+        height: auto;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    /*--APOD--*/
+    .apod-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin: 0 1em;
+    
+    }
+
+    .apod-img {
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        height: auto;
+        -webkit-transition: width 2s ease-in;
+        transition: width 2s ease-in;
+    }
+
+    iframe {
+        width: 640px;
+        height: 385px;
+        border: #808080 solid 1em;
+    }
+
+    /*--NASA_ARCHIVE--*/
+
+    .dateSelect {
+        margin: 0;
+        padding: .5em;
+        color: #f0ecec;
+        font-family: 'Lato', sans-serif;
+        font-size: 1em;
+        background-color: #6486a3;
+        size: 3em;
+    }
+
+    table {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-top: .5em;
+    }
+
+    table td{
+        display: flex;
+        flex-direction: column;
+        font-family: 'Lato', sans-serif;
+        padding-top: .5em;
+    }
+
+    table td img {
+        width: 100%;
+        height: auto;
+    }
+
+
+    .grid{
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        margin: 0 1em;
+        width: 60%;
+    }
+
+    .grid #nasaImg {
+        margin-top: 1em;
+        cursor: pointer;
+        width: 100%;
+        height: auto;
+    }
+
+    /*--NASA_LIBRARY--*/
+    audio {
+        padding-bottom: 2em;
+        width: 75%;
+        max-height: 25px
+    }
+
+    video{
+        width: 50%;
+        height: auto;
+        padding-top: .5em;
+        padding-bottom: .5em;
+        background-color: rgba(191, 204, 230, 0.25);
+    }
+
+
+    /*--NASA_ARCHIVE--*/
+    #loading-text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: blink 4s ease infinite;
+    }
+
+    @keyframes blink {
+        0% {
+            opacity: 1;
+        }
+        25%{
+            opacity: 0
+        }
+        50%{
+            opacity: 1
+        }
+        75%{
+            opacity: 1
+        }
+        100%{
+            opacity: 1
+        }
+    }
+
+    #object{
+        display: flex;
+        flex-direction: column;
+        padding: 1em;
+    }
+
+    #randomUrl img{
+        width: 100%;
+        height: auto;
+    }
+
+    /*--EPIC--*/
+
+    #changeImg{
+        display: absolute;
+        margin: auto;
+        justify-content: center;
+        width: 50vmax;
+    }
+
+    .bodyElement{
+        background-image: url("/img/stars.jpg");
+        background-repeat: no-repeat;
+        background-blend-mode: luminosity;
+        color: #f0ecec;
+        margin: 0 2em;
+    }
+
+    button{
+        background-color: #6486a3;
+        color: #f0ecec;
+    }
+
+    .buttonColor{
+        font-size: 2vw;
+        height: 44px;
+    }
+    footer{
+        background-image: url("/img/orion_bubble.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%;
+        height: 10vmax;
+    }
+
+    footer p{        
+        padding-top: 5em;
+        padding-left: 2em;
+        margin: 1em;
+        align-self: center;
+        font-size: 1vmax;
+        color: #f0ecec;
+    }
+
+}/*--END SMALL MEDIA--*/
+
+
+/*--START MEDIUM MEDIA --*/
+@media screen and (min-width: 421px) and (max-width: 1367px) {
+    html{
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    body {
+        background-color: #000;
+        color: #f0ecec;
+        margin: 0 1.5em;
+        font-family: 'Lato', sans-serif;
+    }
+    
+    .slide-container {
+        background-image: url("../img/apod.png");
+        background-repeat: no-repeat;
+        opacity: 1;
+        background-size: 100%;
+        height: 20vmax;
+        margin: 0;
+        animation: slides 50s ease-in infinite;
+        display: grid;
+    }
+
+    @keyframes slides{
+        0% {        
+            background-image: url("../img/apod.png");
+            background-repeat: no-repeat;            
+        }
+        12% {
+            background-image: url("../img/nebula2.png");
+            background-repeat: no-repeat;
+        }
+        27%{
+            background-image: url("../img/nebula3.png");
+            background-repeat: no-repeat;
+        }
+        42%{
+            background-image: url("../img/nebula4.png");
+            background-repeat: no-repeat;        
+        }
+        57%{
+            background-image: url("../img/nebula5.png");
+            background-repeat: no-repeat;       
+        }
+        72%{
+            background-image: url("../img/nebula6.png");
+            background-repeat: no-repeat;
+        }
+        87%{
+            background-image: url("../img/nebula7.png");
+            background-repeat: no-repeat;
+        }
+    }
+
+    .headTitle h1{
+        padding-top: 2vh;
+    }
+
+    .navigation {
+        visibility: hidden;
+        display: none;
+    }
+
+
+    .side-nav a{
+        padding: 5px 5px 5px 32px;
+        text-decoration: none;
+        font-size: 2vmax;
+        color: #6486a3;
+        display: block;
+        visibility: visible;
+        font-family: 'Lato', cursive;
+        cursor: pointer;
+        transition: .3s;
+    }
+
+    .side-nav a:hover{
+        color: #f0a612;
+    }
+
+    .side-nav .closeButton{
+        position: absolute;
+        display: block;
+        visibility: visible;
+        color: #fff;
+        top: 0;
+        right: .5vmax;
+        font-size: 2vmin;
+        padding-top: 1vmax;
+        padding-right: 1vmax;
+    }
+
+
+    .openButton{
+        display: block;
+        visibility: visible;
+        font-size: 2vm;
+        cursor: pointer;
+        background-color: #000;
+        padding: 10px 15px;
+        border: none;
+    }
+
+
+    #sidebar{
+        display: block;
+        visibility: visible;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        height: 300px;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, .5);       
+        overflow-x: hidden;
+        transition: .5s;
+        padding-top: 60px;
+    }
+
+    header {
+        display: flex;
+        justify-content: center;
+        padding: 0em;
+    }
+
+    a {
+        font-size: 1.5vmax;
+    }
+
+    a:link {
+        color: #6486a3;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #f0a612;
+        text-decoration: underline;
+    }
+
+    a:visited {
+        color: #e25954;
+        text-decoration: none;
+    }
+
+    a:visited:hover{
+        color: #f0a612;
+        text-decoration: underline;
+    }
+
+
+    aChange {
+        color: rgb(198, 234, 245);
+        padding: 0;
+    }
+
+
+    h1 {
+        color: #f0ecec;
+        font-family: 'Raleway Dots', cursive;
+        font-size: 4.5vmax;
+        font-style: bold;
+    }
+
+    h2 {
+        /*color: #397bb4;*/
+        color:  #3a6b96;
+        font-size: 2.25vmax;
+        font-family: 'Raleway Dots', cursive;
+    }
+
+    h3 {
+        color: #e25954;
+        font-size: 1.75vmax;
+        font-weight: bold;
+        font-family: 'Raleway Dots', cursive;
+    }
+
+    h4 {
+        color:  #e3effa;
+        font-size: 1.5vmax;
+        font-family: 'Lato', sans-serif;
+    }
+
+    p {
+        color: #e3effa;
+        font-family: 'Lato', sans-serif;
+        font-size: 1vw;
+    }
+
+    li {
+        font-family: 'Lato', sans-serif;
+    }
+
+    ul li {
+        list-style: none;
+        font-size: 3vw;
+        cursor: pointer;
+    }
+
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin:0;        
+    }
+
+    .flex-item {
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    img {
+        justify-content: center;
+        justify-self: center;
+        width: 100%;
+        height: auto;
+    }
+
+    /*--NASA_HOME--*/
+    
+    .figure-container {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin:0;
+    }
+
+    figure img {
+        vertical-align: center;
+        width: 100%;
+        height: auto;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    /*--APOD--*/
+    .apod-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin: 0 1em;
+    
+    }
+
+    .apod-img {
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        height: auto;
+        -webkit-transition: width 2s ease-in;
+        transition: width 2s ease-in;
+    }
+
+
+    iframe {
+        width: 640px;
+        height: 385px;
+        border: #808080 solid 1em;
+    }
+
+    /*--NASA_ARCHIVE--*/
+
+    .dateSelect {
+        margin: 0;
+        padding: .5em;
+        color: #f0ecec;
+        font-family: 'Lato', sans-serif;
+        font-size: 1em;
+        background-color: #6486a3;
+        size: 3em;
+    }
+
+    table {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    table td{
+        display: flex;
+        flex-direction: column;
+        font-family: 'Lato', sans-serif;
+    }
+
+    table td img {
+        width: 100%;
+        height: auto;
+    }
+
+
+    .grid{
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        margin: 0 1em;
+    }
+
+
+    .grid #nasaImg {
+        margin-top: 1em;
+        cursor: pointer;
+        width: 100%;
+        height: auto;
+    }
+
+    /*--NASA_LIBRARY--*/
+    audio {
+        padding-bottom: 2em;
+        width: 75%;
+        max-height: 25px;
+    }
+
+
+    video{
+        width: 50%;
+        height: auto;
+        padding-top: .5em;
+        padding-bottom: .5em;
+        background-color: rgba(191, 204, 230, 0.25);
+    }
+
+
+    /*--NASA_ARCHIVE--*/
+    #loading-text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: blink 4s ease infinite;
+    }
+
+    @keyframes blink {
+        0% {
+            opacity: 1;
+        }
+        25%{
+            opacity: 0
+        }
+        50%{
+            opacity: 1
+        }
+        75%{
+            opacity: 1
+        }
+        100%{
+            opacity: 1
+        }
+    }
+
+    #object{
+        display: flex;
+        flex-direction: column;
+        padding: 1em;
+    }
+
+    #randomUrl img{
+        width: 100%;
+        height: auto;
+    }
+
+    /*--EPIC--*/
+
+    #changeImg{
+        display: absolute;
+        margin: auto;
+        justify-content: center;
+        width: 50vmax;
+    }
+
+    .bodyElement{
+        background-image: url("/img/stars.jpg");
+        background-repeat: no-repeat;
+        background-blend-mode: luminosity;
+        color: #f0ecec;
+        margin: 0 2em;
+    }
+
+    button{
+        background-color: #6486a3;
+        color: #f0ecec;
+    }
+
+    .buttonColor{
+        font-size: 2vw;
+        height: 44px;
+    }
+    
+    footer{
+        background-image: url("/img/orion_bubble.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%;
+        height: 15vmax;
+    }
+
+    footer p{        
+        padding-top: 2em;
+        padding-bottom: 2em;
+        padding-left: 3em;
+        margin: 0;
+        font-size: 1.5vmax;
+        color: #f0ecec;
+    }
+   
 }
