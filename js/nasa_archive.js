@@ -44,18 +44,11 @@ function arch_load() {
                     select.appendChild(obj);
                 }
             }
-
+            dataStorage(data)
             imgGallery(data);
             apod(data);
+            //imgHover(data);
 
-            function dataStorage() {
-                console.log(data);
-                var dataArray = JSON.stringify(data);
-                //console.log(dataArray);            
-                localStorage.setItem('data_key', dataArray);
-                var jsObject = localStorage.getItem('dataArray');
-            }
-            dataStorage();
 
         }
     };
@@ -64,8 +57,17 @@ function arch_load() {
 }
 arch_load();
 
+
+function dataStorage(data) {
+    //console.log(data);
+    var dataArray = JSON.stringify(data);
+    //console.log(dataArray);
+    localStorage.setItem('data_key', dataArray);
+}
+
 function imgGallery(data) {
     //console.log(data);
+
     var images = document.getElementById("nasaImg");
     for (var x = 0; x < data.length; x++) {
         if (data[x].media_type == "image") {
@@ -73,10 +75,60 @@ function imgGallery(data) {
             nasaImg.id = "img" + x;
             nasaImg.src = data[x].url;
             nasaImg.alt = data[x].title;
-            nasaImg.addEventListener('mouseover', myHover("img" + x));
-            images.appendChild(nasaImg);
+            nasaImg.exp = data[x].explanation;
+            var imgObject = { id: x, date: data[x].date, src: data[x].url, alt: data[x].title, exp: data[x].explanation }
+
+
+            var imgContainer = document.createElement('div');
+            imgContainer.className = "img-container";
+
+            var imgTitle = document.createElement('p');
+            imgTitle.appendChild(document.createTextNode(data[x].title));
+            imgTitle.className = "fav-title";
+
+            var caption = document.createElement('p');
+            caption.appendChild(document.createTextNode("Image Title: "));
+            caption.className = "fav-caption";
+
+            var btn = document.createElement('button');
+            btn.className = "fav-button";
+            btn.innerHTML = "Add to Favorite Images";
+            btn.setAttribute("data-imgObject", JSON.stringify(imgObject));
+
+
+            btn.onclick = function (event) {
+                let imageInfo = event.target.getAttribute("data-imgObject");
+                var favArray = JSON.parse(localStorage.getItem('fav_key'));
+                if (favArray) {
+                    favArray.push(imageInfo);
+                    localStorage.setItem("fav_key", JSON.stringify(favArray));
+                } else {
+                    var favArray = new Array();
+                    favArray.push(imageInfo);
+                    localStorage.setItem("fav_key", JSON.stringify(favArray));
+                }
+            }
+
+            var exp = document.createElement('p');
+            exp.appendChild(document.createTextNode(data[x].explanation));
+            exp.className = "fav-exp";
+
+            var textBox = document.createElement('div');
+            textBox.className = "text-box";
+
+            var lineBreak = document.createElement('br');
+
+            imgContainer.appendChild(nasaImg);
+            textBox.appendChild(caption);
+            textBox.appendChild(imgTitle);
+            textBox.appendChild(lineBreak);
+            textBox.appendChild(btn);
+            textBox.appendChild(exp);
+            imgContainer.appendChild(textBox);
+            images.appendChild(imgContainer);
         }
     }
+
 }
 
 function addInfo() {
@@ -87,14 +139,9 @@ function addInfo() {
     document.getElementById("explanation").innerHTML = data[selection].explanation;
 }
 
-function myHover(ele) {
-    var e = document.getElementById(ele);
-    //document.getElementById('nasaImg');
-}
-
-
-
+/* 
 document.querySelector('.grid').addEventListener('click', function (e) {
+    console.log(e);
     if (e.target.tagName === "IMG") {
         var howMany = this.querySelectorAll('IMG').length;
         if (howMany > 1) {
@@ -104,28 +151,6 @@ document.querySelector('.grid').addEventListener('click', function (e) {
             li.parentNode.removeChild(li);
             var alt = document.getElementById('nasaImg').firstChild.alt;
             document.getElementById('imgResult').innerHTML = "You chose " + alt + " as your favorite image.";
-        }
-    }
-}, false);
-
-//pull images from local storage
-//create an object
-//when they click on the object array item, push that item into local storage
-
-/* 
-document.querySelector('.grid').addEventListener('click', function (e) {
-    if (e.target.tagName === "IMG") {
-        var howMany = this.querySelectorAll('IMG').length;
-        if (howMany > 1) {
-            var li = e.target;
-            var listItems = document.querySelector("li");
-            var ul = document.getElementById("ul");
-            console.log();
-
-            var favImg = {};
-            .stringify(ul);
-            localStorage.setItem()
-            li.parentNode.appendChild('nasaImg').firstChild.alt;
         }
     }
 }, false); */
@@ -140,14 +165,11 @@ function apod(data) {
             counter++;
         }
     }
-
     var random = Math.floor(Math.random() * imgObject.length);
-
     document.getElementById("randomTitle").innerHTML = imgObject[random].title;
     document.getElementById("randomUrl").src = imgObject[random].url;
     document.getElementById("randomExplanation").innerHTML = imgObject[random].explanation;
 }
-
 
 function objectConstructor(title, url, explanation) {
     this.date = date;
@@ -155,31 +177,3 @@ function objectConstructor(title, url, explanation) {
     this.url = url;
     this.explanation = explanation;
 }
-
-/* 
-window.attachEvent('onresize', function () {
-    if (window.width <= 820) {
-        //hide old nav
-        //show new nav dropdown
-    }
-});
- */
-
-function openNav() {
-    document.getElementById("sidebar").style.width = "250px";
-}
-
-function closeNav() {
-    document.getElementById("sidebar").style.width = "0";
-}
-
-function localFavorite() {
-    var fav = document.getElementById("favImg").src;
-    //save local storage with different key as push into array
-    //load item from local storage
-    //click on it to save it back into storage
-    //read local storage
-    //create element to put images in favorite section on page
-
-}
-

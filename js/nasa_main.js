@@ -45,6 +45,20 @@ function tech_load() {
 tech_load(); */
 
 
+/* function epicGallery(data) {
+    //console.log(data);
+    var images = document.getElementById("epicImage");
+    for (var x = 0; x < data.length; x++) {
+        if (data[x].image) {
+            var epicImage = document.createElement("img");
+            epicImage.src = data[x].image + ".jpg";
+            //epicImage.alt = data[x].caption;
+            images.appendChild(epicImage);
+        }
+    }
+} */
+
+
 function bodyColor() {
     document.body.classList.toggle('bodyElement');
 }
@@ -88,29 +102,6 @@ function changeImg(value) {
 
 }
 
-/* function epicGallery(data) {
-    //console.log(data);
-    var images = document.getElementById("epicImage");
-    for (var x = 0; x < data.length; x++) {
-        if (data[x].image) {
-            var epicImage = document.createElement("img");
-            epicImage.src = data[x].image + ".jpg";
-            //epicImage.alt = data[x].caption;
-            images.appendChild(epicImage);
-        }
-    }
-} */
-
-
-/* 
-window.attachEvent('onresize', function () {
-    if (window.width <= 820) {
-        //hide old nav
-        //show new nav dropdown
-    }
-});
- */
-
 function openNav() {
     document.getElementById("sidebar").style.width = "250px";
 }
@@ -121,6 +112,10 @@ function closeNav() {
 
 function localFavorite() {
     var fav = document.getElementById("favImg").src;
+
+    var favImg = localStorage.getItem('fav');
+    JSON.parse(favImg);
+    console.log(favImg);
     //save local storage with different key as push into array
     //load item from local storage
     //click on it to save it back into storage
@@ -128,3 +123,4 @@ function localFavorite() {
     //create element to put images in favorite section on page
 
 }
+
