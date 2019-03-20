@@ -1,67 +1,6 @@
-//create data api object
-/* const apiKey = "TBPAWefnugRohG08ksGuLaquIuQiYOeEb7hAuY4M";
-
-
-var data = {}; */
-/* 
-function textOnload() {
-    document.getElementById("loading-text").style.display = "block";
-    document.getElementById("loading-text").style.fontSize = "4vmax";
-}
-
-function loadComplete() {
-    document.getElementById("loading-text").style.display = "none";
-} */
-
-/* const tech_url = "https://api.nasa.gov/EPIC/api/enhanced/images?api_key=" + apiKey;
-
-function tech_load() {
-    //textOnload();
-    const tech = new XMLHttpRequest();
-    tech.open("GET", tech_url, true);
-
-    //onload of window load status and parse data
-    tech.onreadystatechange = function () {
-        if (this.readyState === 4 && this.status === 200) {
-            //loadComplete();
-            data = JSON.parse(this.responseText);
-            console.log(data);
-
-            function dataStorage() {
-
-                var techArray = JSON.stringify(data);
-                //console.log(techArray);            
-                localStorage.setItem('tech', techArray);
-                var jsObject = localStorage.getItem('techArray');
-            }
-            dataStorage();
-            epicGallery(data);
-
-        }
-    };
-
-    tech.send();
-}
-tech_load(); */
-
-
-/* function epicGallery(data) {
-    //console.log(data);
-    var images = document.getElementById("epicImage");
-    for (var x = 0; x < data.length; x++) {
-        if (data[x].image) {
-            var epicImage = document.createElement("img");
-            epicImage.src = data[x].image + ".jpg";
-            //epicImage.alt = data[x].caption;
-            images.appendChild(epicImage);
-        }
-    }
-} */
-
-
-function bodyColor() {
+/* function bodyColor() {
     document.body.classList.toggle('bodyElement');
-}
+} */
 
 function changeImg(value) {
 
@@ -103,7 +42,7 @@ function changeImg(value) {
 }
 
 function openNav() {
-    document.getElementById("sidebar").style.width = "250px";
+    document.getElementById("sidebar").style.width = "200px";
 }
 
 function closeNav() {
@@ -111,16 +50,11 @@ function closeNav() {
 }
 
 function localFavorite() {
-    var fav = document.getElementById("favImg").src;
+    //var favArray = localStorage.getItem("fav_key");
+    console.log(localStorage.getItem("fav_key"));
 
-    var favImg = localStorage.getItem('fav');
-    JSON.parse(favImg);
-    console.log(favImg);
-    //save local storage with different key as push into array
     //load item from local storage
-    //click on it to save it back into storage
-    //read local storage
-    //create element to put images in favorite section on page
-
+    //click on element to save to computer
+    //use slider to experiment with image
 }
 

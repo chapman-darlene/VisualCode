@@ -87,25 +87,87 @@ function imgGallery(data) {
             imgTitle.className = "fav-title";
 
             var caption = document.createElement('p');
-            caption.appendChild(document.createTextNode("Image Title: "));
+            caption.appendChild(document.createTextNode("Image Title:"));
             caption.className = "fav-caption";
 
             var btn = document.createElement('button');
             btn.className = "fav-button";
             btn.innerHTML = "Add to Favorite Images";
             btn.setAttribute("data-imgObject", JSON.stringify(imgObject));
+            btn.setAttribute("id", nasaImg.id);
+
+            var btnTwo = document.createElement('button');
+            btnTwo.ClassName = 'fav-button';
+            btnTwo.innerHTML = "Remove from Favorites";
+            btnTwo.setAttribute("data-imgObject", JSON.stringify(imgObject));
+            btnTwo.setAttribute("id", nasaImg.id);
 
 
             btn.onclick = function (event) {
                 let imageInfo = event.target.getAttribute("data-imgObject");
-                var favArray = JSON.parse(localStorage.getItem('fav_key'));
+                let imgId = event.target.getAttribute("id");
+                imageInfo = JSON.parse(imageInfo);
+                let date = imageInfo.date;
+
+                //date = JSON.stringify(date);
+                //console.log(imageInfo);
+
+                var favArray = JSON.parse(localStorage.getItem("fav_key"));
+
                 if (favArray) {
-                    favArray.push(imageInfo);
-                    localStorage.setItem("fav_key", JSON.stringify(favArray));
+                    //check if image is already there by date
+                    //if image is already saved return message else push onto array and 
+                    var duplicate = false;
+                    for (var i = 0; i < favArray.length; i++) {
+                        //console.log(favArray[i]["date"]);
+                        if (date == favArray[i]["date"]) {
+                            duplicate = true;
+                            var message = document.createElement('p');
+                            message.appendChild(document.createTextNode("You have already saved this image in your favorites"));
+                            message.className = "errorMessage";
+                            document.getElementById(imgId).parentElement.childNodes[1].appendChild(message);
+                        }
+                    }
+                    if (duplicate != true) {
+                        favArray.push(imageInfo);
+                        localStorage.setItem("fav_key", JSON.stringify(favArray));
+                    }
                 } else {
                     var favArray = new Array();
                     favArray.push(imageInfo);
                     localStorage.setItem("fav_key", JSON.stringify(favArray));
+
+                }
+            }
+
+
+            btnTwo.onclick = function (event) {
+                let imageInfo = event.target.getAttribute("data-imgObject");
+                let imgId = event.target.getAttribute("id");
+                imageInfo = JSON.parse(imageInfo);
+                let date = imageInfo.date;
+
+                //date = JSON.stringify(date);
+                //console.log(imageInfo);
+
+                var removeArray = JSON.parse(localStorage.getItem("fav_key"));
+
+                if (removeArray) {
+                    //check if image is already there by date
+                    //if image is already saved return message else push onto array and 
+                    var remove = false;
+                    for (var i = 0; i < removeArray.length; i++) {
+                        //console.log(favArray[i]["date"]);
+                        if (date == removeArray[i]["date"]) {
+                            remove = true;
+                            removeArray.splice(i, 1);
+                        }
+                    }
+                } else {
+                    var message = document.createElement('p');
+                    message.appendChild(document.createTextNode("This image is not saved in your favorites."));
+                    message.className = "errorMessage";
+                    document.getElementById(imgId).parentElement.childNodes[1].appendChild(message);
                 }
             }
 
@@ -122,14 +184,16 @@ function imgGallery(data) {
             textBox.appendChild(caption);
             textBox.appendChild(imgTitle);
             textBox.appendChild(lineBreak);
-            textBox.appendChild(btn);
             textBox.appendChild(exp);
+            textBox.appendChild(btn);
+            textBox.appendChild(btnTwo);
             imgContainer.appendChild(textBox);
             images.appendChild(imgContainer);
         }
     }
 
 }
+
 
 function addInfo() {
     var selection = document.getElementById("dateSelect").value;
