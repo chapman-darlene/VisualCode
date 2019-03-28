@@ -13,6 +13,7 @@
 */
 
 
+
 /*--START LARGE MEDIA DEVICE--*/
 
 @media screen and (min-width: 1367px){
@@ -30,16 +31,16 @@
         font-family: 'Lato', sans-serif;
     }
 
-    .slide-container {
+    .head-container {
         opacity: 1;
         background-size: 100%;
         width: 100%;
-        height: 25vmax;
+        height: 20vmax;
         margin: 0;
-        animation: slides 50s ease infinite;
+        animation: autoSlides 50s ease infinite;
     }
 
-    @keyframes slides{
+    @keyframes autoSlides{
         0% {        
             background-image: url("../img/apod.png");
             background-repeat: no-repeat;            
@@ -123,7 +124,7 @@
         color: #e25954;
         text-decoration: none;
     }
-    
+
     a:visited:hover{
         color: #f0a612;
         text-decoration: underline;
@@ -296,12 +297,14 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
-        padding-bottom: 1em;        
+        padding-bottom: 1em;
+        min-height: 400px; 
+           
     }
 
     #nasaImg img{
         width: 50%;
-        height: auto;
+        height: 50%;
         justify-content: flex-start;
     }
   
@@ -309,7 +312,7 @@
   /* Bottom right text */
     .text-box{
         background-color: #000;
-        padding-left: 5em;
+        padding-left: 1.5em;
         color: white;
         font-size: 2vmin;
         width: 40%;
@@ -334,7 +337,7 @@
     }
 
     .fav-exp{
-        font-size: 2.5vmin;
+        font-size: 2vmin;
         padding-top: .5em;
     }
 
@@ -345,34 +348,34 @@
         text-align: center;
         text-decoration: none;
         margin-top: 1em;
-        margin-left: .5em;
-        font-size: 1.2vmax;
-        padding: 1em .5em;
+        font-size: 1vmax;
+        padding: .25em;
     }
 
-    
-    .errorMessage{
-        color: #f0a612;
-        display: hidden;
-        animation: error 3s ease;
+
+    .message{
+        color: #6486a3;
+        animation: alert 5s ease;
         padding: .5em .5em;
+        border: #4b4b4b solid .15em;
+        background: #f3f3f3;
+        text-align: center;
     }
 
-    @keyframes error{
+    @keyframes alert {
         0%{
+            display: block;
             opacity: .5;
             transform: scale(.75);
         }
-        90%{
+        100%{
             display: block;
             transform: scale(1);
             opacity: 1;
         }
-        100%{
-            display: hidden;
-        }
     }
 
+   
     #loading-text{
         display: flex;
         justify-content: center;
@@ -426,7 +429,7 @@
         background-color: rgba(191, 204, 230, 0.25);
     }
 
-    /*--EPIC--*/
+    /*--favorites--*/
     #changeImg{
         display: absolute;
         margin: auto;
@@ -438,25 +441,131 @@
         background-image: url("/img/stars.jpg");
         background-repeat: no-repeat;
         background-blend-mode: luminosity;
+        backdrop-filter: opacity(.25%);
         color: #f0ecec;
         margin: 0 2em;
     }
+    
+    .download-btn{
+        display: inline-block;
+        color: #fff;
+        text-decoration: none;
+        position: relative;
+        background: transparent;
+        border: #000 solid .5em;
+        text-align: center;
+        font-size: 1vmax;
+        padding: .25em;
+        text-transform: uppercase;
+        transition: color 0.1s linear 0.05s;
 
-    button{
-        background-color: #6486a3;
-        color: #f0ecec;
     }
 
+    * {
+        box-sizing: border-box;
+    }
+    .slideContainer{
+        position: relative;
+    }
+
+    .slideImage{
+        display: none;
+    }
+
+    .prev,
+    .next {
+    cursor: pointer;
+    position: absolute;
+    width: auto;
+    color: white;
+    font-weight: bold;
+    font-size: 10vmax;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+    }
+
+
+    .download-btn:before{
+        background-color:#fff
+    }
+
+    .download-btn:after {
+        transition: border .1s linear .05s;
+    }
+
+    .btn-inner {
+        position: relative;
+        z-index: 2;
+    }
+
+    .btn-inner:hover{
+        color: #808080;
+        transition: color 0.1s linear 0s;
+    }
+
+    .btn-inner:before{
+        top: 0;
+        height: 100%;
+        opacity: 1;
+        transition: height 0.2s ease, top 0.2s ease, opacity 0s linear 0s;
+    }
+
+    .btn-inner:after{
+        border-color: #373737;
+        transition:border 0.1s linear 0s;
+    }
+    
+/* 
     button{
         background-color: #6486a3;
         color: #f0ecec;
+       text-align: center;
     }
 
     .buttonColor{
-        font-size: 2vw;
-        height: 44px;
+        font-size: 2vmax;
+        padding: .25em .25em;
+    }
+ */
+
+
+    /*--slideShow---*/
+
+    .slideButton{
+        display: inline-block;
+        padding: .5em, 1em;
+        color: #fff;
+        text-decoration: none;
+        position: relative;
+        background: transparent;
+        border: .25em solid #f1f1f1;
+        font-family: 'Lato';
+        font-weight: lighter;
+        font-size: 1vh;
+        letter-spacing: .4em;
+        text-transform: uppercase;
+        transition: color .1s linear .05s;
+        text-align: center;
     }
 
+    .slideButton::before{
+        content: "";
+
+    }
+
+    #slideContainer{
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+
+    .currentImage{
+        align-content: center;
+        width: 100%;
+
+    }
+
+    /*-----footer-----*/
     footer{
         background-image: url("/img/orion_bubble.png");
         background-repeat: no-repeat;
@@ -495,18 +604,17 @@
         font-family: 'Lato', sans-serif;
     }
     
-    .slide-container {
-        /*background-image: url("../img/apod.png");*/
+    .head-container {
         background-repeat: no-repeat;
         opacity: 1;
         background-size: 100%;
         width: 100%;
-        height: 125px;
+        height: 15vmax;
         margin: 0;
-        animation: slides 50s ease infinite;
+        animation: autoSlides 50s ease infinite;
     }
 
-    @keyframes slides{
+    @keyframes autoSlides{
         0% {        
             background-image: url("../img/apod.png");
             background-repeat: no-repeat;            
@@ -577,7 +685,7 @@
         font-size: 2vm;
         cursor: pointer;
         background-color: #000;
-        padding: 1em 0;
+        padding: .5em 0;
         border: none;
     }
 
@@ -585,7 +693,7 @@
     #sidebar{
         display: block;
         visibility: visible;
-        width: 5em;
+        width: 20vmax;
         position: fixed;
         z-index: 1;
         height: 300px;
@@ -833,22 +941,28 @@
     }
 
 
-.errorMessage{
+.message{
     color: #f0a612;
     display: hidden;
-    animation: error 3s ease;
+    animation: alert 3s ease;
     padding: .5em .5em;
+    border: #4b4b4b solid .25em;
+    background: #808080;
+    text-align: center;
 }
 
-@keyframes error{
+@keyframes alert {
     0%{
         opacity: .5;
         transform: scale(.75);
     }
-    100%{
+    75%{
         display: block;
         transform: scale(1);
         opacity: 1;
+    }
+    100%{
+        display: hidden;        
     }
 }
 
@@ -907,7 +1021,7 @@
 
  
 
-    /*--EPIC--*/
+    /*--favorites--*/
 
     #changeImg{
         display: absolute;
@@ -927,12 +1041,14 @@
     button{
         background-color: #6486a3;
         color: #f0ecec;
+        text-align: center;
     }
 
     .buttonColor{
         font-size: 2vw;
         height: 44px;
     }
+
     footer{
         background-image: url("/img/orion_bubble.png");
         background-repeat: no-repeat;
@@ -969,25 +1085,19 @@
         font-family: 'Lato', sans-serif;
     }
     
-    .slide-container {
-        /*background-image: url("../img/apod.png");*/
+    .head-container {
         background-repeat: no-repeat;
         opacity: 1;
         background-size: 100%;
         height: 20vmax;
         margin: 0;
-        animation: slides 50s infinite;
-        /*position: relative*/
+        animation: autoSlides 50s ease-in-out infinite;        
         display: grid;
     }
-/*
-    .slide-container img{
-        /*position absolute;
-        opacity: 0;
-    }
-*/
 
-    @keyframes slides{
+
+    @keyframes autoSlides
+    {
         0% {        
             background-image: url("../img/apod.png");
             background-repeat: no-repeat;   
@@ -1064,7 +1174,7 @@
     #sidebar{
         display: block;
         visibility: visible;
-        width: 5em;
+        width: 22vmax;
         position: fixed;
         z-index: 1;
         height: 300px;
@@ -1081,7 +1191,6 @@
         justify-content: center;
         padding: 0em;
     }
-
 
     a:link {
         color:#6486a3;
@@ -1279,7 +1388,32 @@
     }
 
 
-    /*--NASA_ARCHIVE--*/
+    /*--NASA_ARCHIVE--*/        
+    .message{
+        color: #f0a612;
+        display: hidden;
+        animation: alert 3s ease;
+        padding: .5em .5em;
+        border: #4b4b4b solid .25em;
+        background: #808080;
+        text-align: center;
+    }
+
+    @keyframes alert {
+        0%{
+            opacity: .5;
+            transform: scale(.75);
+        }
+        75%{
+            display: block;
+            transform: scale(1);
+            opacity: 1;
+        }
+        100%{
+            display: hidden;        
+        }
+    }
+
     #loading-text{
         display: flex;
         justify-content: center;
@@ -1316,7 +1450,7 @@
         height: auto;
     }
 
-    /*--EPIC--*/
+    /*--favorites--*/
 
     #changeImg{
         display: absolute;
@@ -1342,6 +1476,7 @@
         font-size: 2vw;
         height: 44px;
     }
+
     
     footer{
         background-image: url("/img/orion_bubble.png");

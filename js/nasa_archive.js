@@ -71,6 +71,7 @@ function imgGallery(data) {
     var images = document.getElementById("nasaImg");
     for (var x = 0; x < data.length; x++) {
         if (data[x].media_type == "image") {
+
             var nasaImg = document.createElement("img");
             nasaImg.id = "img" + x;
             nasaImg.src = data[x].url;
@@ -90,6 +91,13 @@ function imgGallery(data) {
             caption.appendChild(document.createTextNode("Image Title:"));
             caption.className = "fav-caption";
 
+            var exp = document.createElement('p');
+            exp.appendChild(document.createTextNode(data[x].explanation));
+            exp.className = "fav-exp";
+            var textBox = document.createElement('div');
+            textBox.className = "text-box";
+            var lineBreak = document.createElement('br');
+
             var btn = document.createElement('button');
             btn.className = "fav-button";
             btn.innerHTML = "Add to Favorite Images";
@@ -102,16 +110,18 @@ function imgGallery(data) {
             btnTwo.setAttribute("data-imgObject", JSON.stringify(imgObject));
             btnTwo.setAttribute("id", nasaImg.id);
 
+            var eMessage = document.createElement('p');
+            eMessage.className = "eMessage";
+            eMessage.innerHTML = "You've already saved this image in your favorites."
+
+
 
             btn.onclick = function (event) {
+
                 let imageInfo = event.target.getAttribute("data-imgObject");
-                let imgId = event.target.getAttribute("id");
+                var imgId = event.target.getAttribute("id");
                 imageInfo = JSON.parse(imageInfo);
                 let date = imageInfo.date;
-
-                //date = JSON.stringify(date);
-                //console.log(imageInfo);
-
                 var favArray = JSON.parse(localStorage.getItem("fav_key"));
 
                 if (favArray) {
@@ -119,26 +129,25 @@ function imgGallery(data) {
                     //if image is already saved return message else push onto array and 
                     var duplicate = false;
                     for (var i = 0; i < favArray.length; i++) {
-                        //console.log(favArray[i]["date"]);
                         if (date == favArray[i]["date"]) {
                             duplicate = true;
-                            var message = document.createElement('p');
-                            message.appendChild(document.createTextNode("You have already saved this image in your favorites"));
-                            message.className = "errorMessage";
-                            document.getElementById(imgId).parentElement.childNodes[1].appendChild(message);
+                            document.getElementsByClassName('eMessage')[0].classList.add("showEMessage");
                         }
                     }
                     if (duplicate != true) {
                         favArray.push(imageInfo);
                         localStorage.setItem("fav_key", JSON.stringify(favArray));
+                        alert("This image is now saved in your favorites.")
+
                     }
                 } else {
                     var favArray = new Array();
                     favArray.push(imageInfo);
                     localStorage.setItem("fav_key", JSON.stringify(favArray));
-
+                    alert("This image is now saved in your favorites.")
                 }
             }
+
 
 
             btnTwo.onclick = function (event) {
@@ -156,29 +165,23 @@ function imgGallery(data) {
                     //check if image is already there by date
                     //if image is already saved return message else push onto array and 
                     var remove = false;
-                    for (var i = 0; i < removeArray.length; i++) {
-                        //console.log(favArray[i]["date"]);
-                        if (date == removeArray[i]["date"]) {
+                    for (var i = removeArray.length - 1; i >= 0 && remove == false; i--) {
+                        var dateId = removeArray[i].date;
+                        //console.log(removeArray[i]["date"]);
+                        if (date == dateId) {
                             remove = true;
                             removeArray.splice(i, 1);
+                            localStorage.setItem("fav_key", JSON.stringify(removeArray));
                         }
                     }
                 } else {
-                    var message = document.createElement('p');
-                    message.appendChild(document.createTextNode("This image is not saved in your favorites."));
-                    message.className = "errorMessage";
-                    document.getElementById(imgId).parentElement.childNodes[1].appendChild(message);
+                    var eMessage = document.createElement('p');
+                    eMessage.appendChild(document.createTextNode("This image is not saved in your favorites."));
+                    eMessage.className = "eMessage";
+                    document.getElementById(imgId).parentElement.childNodes[1].appendChild(eMessage);
                 }
             }
 
-            var exp = document.createElement('p');
-            exp.appendChild(document.createTextNode(data[x].explanation));
-            exp.className = "fav-exp";
-
-            var textBox = document.createElement('div');
-            textBox.className = "text-box";
-
-            var lineBreak = document.createElement('br');
 
             imgContainer.appendChild(nasaImg);
             textBox.appendChild(caption);
@@ -187,6 +190,7 @@ function imgGallery(data) {
             textBox.appendChild(exp);
             textBox.appendChild(btn);
             textBox.appendChild(btnTwo);
+            textBox.appendChild(eMessage);
             imgContainer.appendChild(textBox);
             images.appendChild(imgContainer);
         }
@@ -194,6 +198,9 @@ function imgGallery(data) {
 
 }
 
+function moreImages() {
+    arch_load();
+}
 
 function addInfo() {
     var selection = document.getElementById("dateSelect").value;
@@ -236,7 +243,6 @@ function apod(data) {
 }
 
 function objectConstructor(title, url, explanation) {
-    this.date = date;
     this.title = title;
     this.url = url;
     this.explanation = explanation;

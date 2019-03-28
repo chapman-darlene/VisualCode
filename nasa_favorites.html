@@ -37,9 +37,7 @@ editor: DChapman
     <button class="openButton" onclick="openNav()"><img src="img/white_bars.png"
             alt="open side navigation button"></button>
 
-
-
-    <div class="slide-container">
+    <div class="head-container">
         <header class="heading">
             <h1 class="headTitle">NASA Space Exploration</h1>
         </header>
@@ -48,18 +46,28 @@ editor: DChapman
     <hr>
 
     <h2>Favorite Images</h2>
-    <div id="fav-image"></div>
+    <section id="slideContainer">
+        <div><a class="prev" onclick="plusSlides(-1)">&#10094;</a></div>
+        <div id="slideImage"><img id="currentImage"></div>
+        <div><a class="next" onclick="plusSlides(1)">&#10095;</a></div>
+    </section>
+
+    <div id="slideContent">
+        <p id="title"></p>
+        <p id="description"></p>
+        <button onclick="saveImage(url)" id="download" class="download-btn"><span
+                class="btn-inner">Download</span></button>
+    </div>
 
 
 
+    <!-- 
     <div>
         <button onclick="bodyColor()" class="buttonColor">Toggle background style</button>
     </div>
-    <br>
-    <!-- <div>
-        <div id="epicImage"></div>
-    </div> -->
-    <div>
+    <br> -->
+
+    <!--  <div>
         <label>Slide to change the image styles</label><br>
         <input type="range" value="1" min="1" max="10" name="color" oninput="changeImg(this.value)"
             onchange="changeImg(this.value)">
@@ -70,7 +78,7 @@ editor: DChapman
     <footer>
         <p>Images, video and audio are provided by <a href="https://images.nasa.gov/">NASA's Video and Image Library</a>
         </p>
-    </footer>
+    </footer> -->
 </body>
 
 </html>
