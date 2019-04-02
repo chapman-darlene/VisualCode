@@ -48,15 +48,19 @@ editor: DChapman
     <h2>Favorite Images</h2>
     <section id="slideContainer">
         <div><a class="prev" onclick="plusSlides(-1)">&#10094;</a></div>
-        <div id="slideImage"><img id="currentImage"></div>
+        <div id="slideImage">
+            <a href="nasa_archive.html" id="currentLink"><img id="currentImage" src="img/placeholder.jpg"></a>
+        </div>
         <div><a class="next" onclick="plusSlides(1)">&#10095;</a></div>
     </section>
 
     <div id="slideContent">
+        <div id="btn-container"><a href='' id="link" download=""><button id="download" class="download-btn">
+                    <span class="btn-inner">Download</span></button></a>
+        </div>
         <p id="title"></p>
         <p id="description"></p>
-        <button onclick="saveImage(url)" id="download" class="download-btn"><span
-                class="btn-inner">Download</span></button>
+
     </div>
 
 
@@ -67,18 +71,20 @@ editor: DChapman
     </div>
     <br> -->
 
-    <!--  <div>
+    <!-- <div>
         <label>Slide to change the image styles</label><br>
         <input type="range" value="1" min="1" max="10" name="color" oninput="changeImg(this.value)"
             onchange="changeImg(this.value)">
     </div>
     <div>
         <img id="changeImg" src="img/swirl-galaxy.png">
-    </div>
+    </div> -->
+
     <footer>
+        <img src="img/orion_bubble.png" alt="image of orion's bubble">
         <p>Images, video and audio are provided by <a href="https://images.nasa.gov/">NASA's Video and Image Library</a>
         </p>
-    </footer> -->
+    </footer>
 </body>
 
 </html>

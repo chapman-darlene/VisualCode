@@ -22,8 +22,10 @@ function loadComplete() {
 
 const arch_url = "https://api.nasa.gov/planetary/apod?api_key=" + apiKey + "&count=10";
 
-function arch_load() {
+
+function arch_load(number) {
     textOnload();
+
     const arch = new XMLHttpRequest();
     arch.open("GET", arch_url, true);
 
@@ -34,7 +36,7 @@ function arch_load() {
             data = JSON.parse(this.responseText);
             //console.log(data);
 
-            var select = document.getElementById("dateSelect")
+            /* var select = document.getElementById("dateSelect")
             for (var j = 0; j < data.length; j++) {
                 if (data[j].media_type == "image") {
                     //select.innerHTML = select.innerHTML + '<option value ="' + j + '">' + data[j].date + '</option>';
@@ -43,22 +45,32 @@ function arch_load() {
                     obj.innerHTML = data[j].date;
                     select.appendChild(obj);
                 }
+            } */
+
+            dataStorage(data);
+            var localData = JSON.parse(localStorage.getItem('data_key'));
+
+            if (number == 0) {
+                imgGallery(data);
+            } else {
+                moreImagesTwo(data);
             }
-            dataStorage(data)
-            imgGallery(data);
             apod(data);
-            //imgHover(data);
-
-
         }
     };
 
     arch.send();
 }
-arch_load();
+arch_load(0);
 
 
 function dataStorage(data) {
+    /* var localData = JSON.parse(localStorage.getItem('data_key'));
+    if(localData){
+        var addData = [];
+        favArray.push(imageInfo);
+        
+    } */
     //console.log(data);
     var dataArray = JSON.stringify(data);
     //console.log(dataArray);
@@ -66,37 +78,41 @@ function dataStorage(data) {
 }
 
 function imgGallery(data) {
-    //console.log(data);
 
+    var counter = 0;
     var images = document.getElementById("nasaImg");
-    for (var x = 0; x < data.length; x++) {
+    for (var x = 0; x < data.length; x++ , counter++) {
         if (data[x].media_type == "image") {
 
             var nasaImg = document.createElement("img");
-            nasaImg.id = "img" + x;
+            nasaImg.id = 'img' + x;
             nasaImg.src = data[x].url;
             nasaImg.alt = data[x].title;
             nasaImg.exp = data[x].explanation;
             var imgObject = { id: x, date: data[x].date, src: data[x].url, alt: data[x].title, exp: data[x].explanation }
-
+            //console.log(imgObject)
 
             var imgContainer = document.createElement('div');
             imgContainer.className = "img-container";
 
             var imgTitle = document.createElement('p');
             imgTitle.appendChild(document.createTextNode(data[x].title));
-            imgTitle.className = "fav-title";
+            imgTitle.className = "fav-title" + x;
 
             var caption = document.createElement('p');
             caption.appendChild(document.createTextNode("Image Title:"));
             caption.className = "fav-caption";
 
+            var imgDate = document.createElement('p');
+            imgDate.appendChild(document.createTextNode("Date image captured: " + data[x].date));
+            imgDate.className = "fav-date" + x;
+
             var exp = document.createElement('p');
             exp.appendChild(document.createTextNode(data[x].explanation));
-            exp.className = "fav-exp";
+            exp.className = "fav-exp" + x;
+
             var textBox = document.createElement('div');
             textBox.className = "text-box";
-            var lineBreak = document.createElement('br');
 
             var btn = document.createElement('button');
             btn.className = "fav-button";
@@ -111,17 +127,20 @@ function imgGallery(data) {
             btnTwo.setAttribute("id", nasaImg.id);
 
             var eMessage = document.createElement('p');
+            eMessage.appendChild(document.createTextNode(""));
             eMessage.className = "eMessage";
-            eMessage.innerHTML = "You've already saved this image in your favorites."
-
-
+            eMessage.id = 'p' + nasaImg.id;
+            //console.log(eMessage.id);
 
             btn.onclick = function (event) {
-
                 let imageInfo = event.target.getAttribute("data-imgObject");
                 var imgId = event.target.getAttribute("id");
+
+                //console.log(imgId);
                 imageInfo = JSON.parse(imageInfo);
                 let date = imageInfo.date;
+
+                //console.log(id);
                 var favArray = JSON.parse(localStorage.getItem("fav_key"));
 
                 if (favArray) {
@@ -131,34 +150,45 @@ function imgGallery(data) {
                     for (var i = 0; i < favArray.length; i++) {
                         if (date == favArray[i]["date"]) {
                             duplicate = true;
-                            document.getElementsByClassName('eMessage')[0].classList.add("showEMessage");
+                            // var eMessage = document.getElementById("imgId");
+                            //document.getElementsByClassName('eMessage')[imgId].classList.add("show-eMessage");
+                            document.getElementById('p' + imgId).classList.add("show-eMessage");
+                            document.getElementById('p' + imgId).innerHTML = "You've already saved this image in your favorites.";
+                            console.log(eMessage.innerHTML);
+                            // eMessage.style.display = 'inline-block';
+                            //console.log(imgId);
                         }
                     }
                     if (duplicate != true) {
                         favArray.push(imageInfo);
                         localStorage.setItem("fav_key", JSON.stringify(favArray));
-                        alert("This image is now saved in your favorites.")
-
+                        //document.getElementsByClassName('eMessage')[imgId].classList.add("show-eMessage");
+                        //  var eMessage = document.getElementById("imgId");
+                        document.getElementById('p' + imgId).classList.add("show-eMessage");
+                        document.getElementById('p' + imgId).innerHTML = "This image is now saved in your favorites.";
+                        //  eMessage.innerHTML = "This image is now saved in your favorites.";
+                        // eMessage.style.display = 'inline-block';
                     }
                 } else {
                     var favArray = new Array();
                     favArray.push(imageInfo);
                     localStorage.setItem("fav_key", JSON.stringify(favArray));
-                    alert("This image is now saved in your favorites.")
+                    //document.getElementsByClassName('eMessage')[imgId].classList.add("show-eMessage");
+                    // var eMessage = document.getElementById("imgId");
+                    document.getElementById('p' + imgId).classList.add("show-eMessage");
+                    document.getElementById('p' + imgId).innerHTML = "This image is now saved in your favorites.";
+                    // eMessage.style.display = 'inline-block';
+                    console.log(eMessage.innerHTML);
                 }
             }
-
-
 
             btnTwo.onclick = function (event) {
                 let imageInfo = event.target.getAttribute("data-imgObject");
                 let imgId = event.target.getAttribute("id");
                 imageInfo = JSON.parse(imageInfo);
                 let date = imageInfo.date;
-
                 //date = JSON.stringify(date);
                 //console.log(imageInfo);
-
                 var removeArray = JSON.parse(localStorage.getItem("fav_key"));
 
                 if (removeArray) {
@@ -172,21 +202,24 @@ function imgGallery(data) {
                             remove = true;
                             removeArray.splice(i, 1);
                             localStorage.setItem("fav_key", JSON.stringify(removeArray));
+                            /* document.getElementsByClassName('eMessage')[imgId].classList.add("show-eMessage");
+                            eMessage.innerHTML = "This image has been removed from your favorite"; */
+
+                            document.getElementById('p' + imgId).classList.add("show-eMessage");
+                            document.getElementById('p' + imgId).innerHTML = "This image has been removed from your favorite.";
                         }
                     }
                 } else {
-                    var eMessage = document.createElement('p');
-                    eMessage.appendChild(document.createTextNode("This image is not saved in your favorites."));
-                    eMessage.className = "eMessage";
-                    document.getElementById(imgId).parentElement.childNodes[1].appendChild(eMessage);
+                    /*  document.getElementsByClassName('eMessage')[imgId].classList.add("show-eMessage");
+                     eMessage.innerHTML = "This image is now saved in your favorites."; */
+                    //document.getElementById(imgId).parentElement.childNodes[0].appendChild(eMessage);
                 }
             }
-
 
             imgContainer.appendChild(nasaImg);
             textBox.appendChild(caption);
             textBox.appendChild(imgTitle);
-            textBox.appendChild(lineBreak);
+            textBox.appendChild(imgDate);
             textBox.appendChild(exp);
             textBox.appendChild(btn);
             textBox.appendChild(btnTwo);
@@ -199,7 +232,20 @@ function imgGallery(data) {
 }
 
 function moreImages() {
-    arch_load();
+    arch_load(1);
+}
+
+function moreImagesTwo(data) {
+    console.log(data);
+    for (var i = 0; i <= 9; i++) {
+        if (data[i].media_type == "image") {
+            document.getElementById('img' + i).src = data[i].url;
+            document.getElementById('img' + i).alt = data[i].title;
+            document.getElementsByClassName('fav-title' + i).innerHTML = data[i].title;
+            document.getElementsByClassName('fav-date' + i).innerHTML = data[i].date;
+            document.getElementsByClassName('fav-exp' + i).innerHTML = data[i].exp;
+        }
+    }
 }
 
 function addInfo() {

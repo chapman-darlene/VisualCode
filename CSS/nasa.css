@@ -188,6 +188,17 @@
         height: auto;
     }
 
+    button{
+        background-color: #6486a3;
+        border: #000 solid .5em;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        margin-top: 1em;
+        font-size: 1vmax;
+        padding: .25em;
+    }
+
     .flex-container {
         display: flex;
         flex-direction: row;
@@ -234,6 +245,14 @@
     figcaption {
         align-items: center;
         font-size: 1.5vmax;
+    }
+
+    .opening {
+        padding: .5em 4em;
+    }
+
+    .opening a{
+        color: #6486a3;
     }
 
     /*--APOD--*/
@@ -321,11 +340,11 @@
     .fav-title{
         border: none;
         color: white;
-        text-align: center;
         text-decoration: none;
-        display: inline-block;
+        display: block;
         margin: 0;
         font-size: 1vmax;
+        padding-top: .5em;
     }
 
     .fav-caption{
@@ -336,9 +355,24 @@
         padding-bottom: .15em;
     }
 
-    .fav-exp{
-        font-size: 2vmin;
+    .fav-date{
+        border: none;
+        color: white;
+        text-decoration: none;
+        display: block;
+        margin: 0;
+        font-size: 1vmax;
         padding-top: .5em;
+    }
+
+    .fav-exp{
+        font-size: .75vmax;
+        padding-top : .5em;
+    }
+
+    .buttonDiv{
+        display: flex;
+        justify-content: center;
     }
 
     .text-box button{
@@ -353,13 +387,16 @@
     }
 
 
-    .message{
-        color: #6486a3;
-        animation: alert 5s ease;
-        padding: .5em .5em;
-        border: #4b4b4b solid .15em;
-        background: #f3f3f3;
+    .eMessage{       
+        display: none;
+        color: #fff;
+        animation: alert 2s ease;
+        background: #000;
         text-align: center;
+    }
+
+    .show-eMessage{
+        display: block;
     }
 
     @keyframes alert {
@@ -430,13 +467,13 @@
     }
 
     /*--favorites--*/
-    #changeImg{
+  /*   #changeImg{
         display: absolute;
         margin: auto;
         justify-content: center;
         width: 50vmax;
-    }
-
+    } */
+/* 
     .bodyElement{
         background-image: url("/img/stars.jpg");
         background-repeat: no-repeat;
@@ -444,54 +481,34 @@
         backdrop-filter: opacity(.25%);
         color: #f0ecec;
         margin: 0 2em;
+    } */
+  
+    /*--slideShow---*/
+
+    #slideContainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    #currentImage{
+        align-self: center;
+        max-width: 100%;
+        cursor: pointer;
     }
     
-    .download-btn{
-        display: inline-block;
-        color: #fff;
-        text-decoration: none;
-        position: relative;
-        background: transparent;
-        border: #000 solid .5em;
-        text-align: center;
-        font-size: 1vmax;
-        padding: .25em;
-        text-transform: uppercase;
-        transition: color 0.1s linear 0.05s;
-
-    }
-
-    * {
-        box-sizing: border-box;
-    }
-    .slideContainer{
-        position: relative;
-    }
-
-    .slideImage{
-        display: none;
-    }
-
-    .prev,
-    .next {
-    cursor: pointer;
-    position: absolute;
-    width: auto;
-    color: white;
-    font-weight: bold;
-    font-size: 10vmax;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-    -webkit-user-select: none;
-    }
-
-
-    .download-btn:before{
-        background-color:#fff
-    }
-
-    .download-btn:after {
-        transition: border .1s linear .05s;
+    .prev, .next{
+        display: inline-flex;
+        cursor: pointer;
+        width: auto;
+        color: white;
+        font-weight: bold;
+        font-size: 3vmax;
+        border-radius: 0 3vw 3vw 0;
+        transition: all 1s ease;
+        user-select: none;
+        -webkit-user-select: none;
+        padding: 5em 1em 0 1em;
     }
 
     .btn-inner {
@@ -515,73 +532,65 @@
         border-color: #373737;
         transition:border 0.1s linear 0s;
     }
-    
-/* 
-    button{
-        background-color: #6486a3;
-        color: #f0ecec;
-       text-align: center;
+
+    #slideContent{
+        display: flex;
+        flex-direction: column;
+        padding: 2em 1em;
     }
 
-    .buttonColor{
-        font-size: 2vmax;
-        padding: .25em .25em;
-    }
- */
-
-
-    /*--slideShow---*/
-
-    .slideButton{
-        display: inline-block;
-        padding: .5em, 1em;
-        color: #fff;
-        text-decoration: none;
-        position: relative;
-        background: transparent;
-        border: .25em solid #f1f1f1;
-        font-family: 'Lato';
-        font-weight: lighter;
-        font-size: 1vh;
-        letter-spacing: .4em;
-        text-transform: uppercase;
-        transition: color .1s linear .05s;
-        text-align: center;
-    }
-
-    .slideButton::before{
-        content: "";
-
-    }
-
-    #slideContainer{
-        display: grid;
-        grid-template-columns: auto auto auto;
-    }
-
-    .currentImage{
-        align-content: center;
-        width: 100%;
-
-    }
-
-    /*-----footer-----*/
-    footer{
-        background-image: url("/img/orion_bubble.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        backdrop-filter: opacity(50%);
-        margin: 3em 0 0 0;
-        width: 100%;
-        height: 10vmax;
+    #btn-container{
         display: flex;
         justify-content: center;
     }
+    
+    .download-btn{
+        color: #fff;       
+        text-decoration: none;
+        background: transparent;
+        /*border: .1em solid #f1f1f1;*/
+        font-family: 'Lato';
+        font-weight: lighter;
+        font-size: 2vmax;
+        letter-spacing: .4em;
+        text-transform: uppercase;
+        transition: all .1s linear .05s;
+        text-align: center;
+    }
+
+    .download-btn:hover{
+        background-color:#fff;
+        color: #3a6b96;
+        font-size: 3vmax;
+    }
+
+
+
+    /*-----footer-----*/
+    footer{
+        position: relative;
+        border-radius: 2.5em;
+        margin: 6em 0 0 0;
+    }
 
     footer p{        
-       
-        align-self: center;
+        position: absolute;
+        top: 40%;
+        left: 35%;
+        /* transform: translate(-25%, -25%);  */       
         font-size: 1vmax;
+        transition: all 1s ease-in-out;
+        -webkit-transition:  all 1s ease-in-out;
+    }
+
+    footer p:hover{
+        transform: scale(1.25);
+    }
+
+    footer img{
+        width: 100%;
+        height: 10vmax;
+        opacity: .5;
     }
 
     /*--END LG MEDIA DEVICE--*/
@@ -1049,22 +1058,31 @@
         height: 44px;
     }
 
+    /*-----footer-----*/
     footer{
-        background-image: url("/img/orion_bubble.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        backdrop-filter: opacity(50%);
-        margin: 3em 0 0 0;
-        width: 100%;
-        height: 10vmax;
-        display: flex;
-        justify-content: center;
+        position: relative;
+        border-radius: 2.5em;
+        margin: 6em 0 0 0;
     }
 
     footer p{        
-       
-        align-self: center;
+        position: absolute;
+        top: 40%;
+        left: 35%;
+        /* transform: translate(-25%, -25%);  */       
         font-size: 1vmax;
+        transition: all 1s ease-in-out;
+        -webkit-transition:  all 1s ease-in-out;
+    }
+
+    footer p:hover{
+        transform: scale(1.25);
+    }
+
+    footer img{
+        width: 100%;
+        height: 10vmax;
+        opacity: .5;
     }
 
 }/*--END SMALL MEDIA--*/
@@ -1476,24 +1494,32 @@
         font-size: 2vw;
         height: 44px;
     }
-
     
+    /*-----footer-----*/
     footer{
-        background-image: url("/img/orion_bubble.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        backdrop-filter: opacity(50%);
-        margin: 3em 0 0 0;
-        width: 100%;
-        height: 12vmax;
-        display: flex;
-        justify-content: center;
+        position: relative;
+        border-radius: 2.5em;
+        margin: 6em 0 0 0;
     }
 
     footer p{        
-        padding: 2em .25em;
-        align-items: center;
-        font-size: 1vmin;
+        position: absolute;
+        top: 40%;
+        left: 35%;
+        /* transform: translate(-25%, -25%);  */       
+        font-size: 1vmax;
+        transition: all 1s ease-in-out;
+        -webkit-transition:  all 1s ease-in-out;
+    }
+
+    footer p:hover{
+        transform: scale(1.25);
+    }
+
+    footer img{
+        width: 100%;
+        height: 10vmax;
+        opacity: .5;
     }
    
 }

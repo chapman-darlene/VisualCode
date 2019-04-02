@@ -53,32 +53,24 @@ function getArray(index){
         i += index;    
         var imgObject = { id: index, src: imgArray[i].src, alt: imgArray[i].alt, exp: imgArray[i].exp };  
         slideImages(imgObject);
+
 }
-
-
 
 function slideImages(imgObject){
     
-        //create variable and get favorites from local storage
-       /*  var imgArray = JSON.parse(localStorage.getItem('fav_key'));
-        var imgObject = {};
-        var id = 0;
-        console.log(imgArray)
-        for(var i = 0; i < imgArray.length; i++){
-            imgObject = { id: id, src: imgArray[i].src, alt: imgArray[i].alt, exp: imgArray[i].exp }            
-            id++;
-            console.log(imgObject);
-        var slideIndex = imgObject[0].id;
-     */
         if (imgObject) {
             var slideImage = document.getElementById('slideImage');
             var currentImage = document.getElementById('currentImage');
             currentImage.src = imgObject.src;
+            currentLink.href = "";
+            document.getElementById("link").download = currentImage.src;
             slideImage.appendChild(currentImage);
             
             document.getElementById("title").innerHTML= imgObject.alt;
             document.getElementById('description').innerHTML = imgObject.exp;
-        }     
+        } else{           
+           document.getElementById('currentLink').href = "nasa_archive.html";
+        }
 }
 
 getArray(0);
@@ -86,6 +78,7 @@ getArray(0);
 function plusSlides(n) {
     getArray(n);
 }
+
 
 
         //make sure it is not the last image
@@ -160,3 +153,17 @@ function plusSlides(n) {
 /* function bodyColor() {
     document.body.classList.toggle('bodyElement');
 }*/
+
+
+
+        //create variable and get favorites from local storage
+       /*  var imgArray = JSON.parse(localStorage.getItem('fav_key'));
+        var imgObject = {};
+        var id = 0;
+        console.log(imgArray)
+        for(var i = 0; i < imgArray.length; i++){
+            imgObject = { id: id, src: imgArray[i].src, alt: imgArray[i].alt, exp: imgArray[i].exp }            
+            id++;
+            console.log(imgObject);
+        var slideIndex = imgObject[0].id;
+     */

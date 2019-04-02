@@ -54,7 +54,7 @@ editor: DChapman
     <h3 id="select">Enjoy NASA data from the past</h3>
     <div class="flex-container">
         <div class="flex-row">
-            <h4>Select a date to see the image chosen for that day in time</h4>
+            <!--  <h4>Select a date to see the image chosen for that day in time</h4>
             <br>
             <div class="flex-item">
                 <select id="dateSelect" class="dateSelect" onChange="addInfo()">
@@ -68,24 +68,24 @@ editor: DChapman
                         <td><img id="url" /></td>
                         <td id="explanation"></td>
                     </tr>
-                </table>
-            </div>
+                </table> -->
         </div>
+    </div>
     </div>
 
 
     <hr>
     <h2 id="choose">Image Gallery</h2>
-    <h3>Choose your favorite picture.</h3>
+    <h3>View Images from the past. Choose the ones you like most.</h3>
 
     <div class="grid">
-        <div id="nasaImg" class="alt"></div>
 
-        <button onclick="moreImages()">View more Images</button>
+        <div id="nasaImg" class="alt"></div>
+        <button onclick="moreImages()" id="fav-button">View more Images</button>
     </div>
 
     <hr>
-    <h2>Random Image of the Day</h2>
+    <!--   <h2>Random Image of the Day</h2>
     <div id="object">
         <div class="flex-container">
             <div class="flex-item">
@@ -100,8 +100,10 @@ editor: DChapman
         </div>
     </div>
 
-    <hr>
+    <hr> -->
+
     <footer>
+        <img src="img/orion_bubble.png" alt="image of orion's bubble">
         <p>Images, video and audio are provided by <a href="https://images.nasa.gov/">NASA's Video and Image Library</a>
         </p>
     </footer>
