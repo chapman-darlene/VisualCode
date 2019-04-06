@@ -69,11 +69,11 @@ function imgGallery(data) {
             var textBox = document.createElement('div');
             textBox.className = "text-box";
 
-            var imgTitle = document.createElement('p');
+            var imgTitle = document.createElement('h4');
             imgTitle.appendChild(document.createTextNode("Image Title:  " + data[x].title));
             imgTitle.className = "fav-title" + x;
 
-            var imgDate = document.createElement('p');
+            var imgDate = document.createElement('h4');
             imgDate.appendChild(document.createTextNode("Date Image Captured:  " + data[x].date));
             imgDate.className = "fav-date" + x;
 

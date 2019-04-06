@@ -52,6 +52,8 @@
         width: 100%;
         height: 15vmax;
         margin-top: 3em;
+        -moz-animation: autoSlides 50s ease infinite;
+        -webkit-animation: autoSlides 50s ease infinite;
         animation: autoSlides 50s ease infinite;
     }
 
@@ -181,7 +183,7 @@
     }
 
     h4 {
-        color:  #f1f1f1;
+        color:  #9CC1E2;
         font-size: 1.10em;
         font-family: 'Lato', sans-serif;
     }
@@ -222,6 +224,8 @@
         font-size: 2vmin;
         letter-spacing: .2em;
         text-transform: uppercase;
+        -moz-transition: all .1s linear .05s;
+        -webkit-transition: all .1s linear .05s;
         transition: all .1s linear .05s;
         text-align: center;
         padding: 1em;
@@ -306,13 +310,19 @@
         justify-content: center;
     }
 
-    .apod-img {
+    #imgDiv{
+        display: flex;
         justify-content: center;
-        align-items: center;
+    }
+
+    #image {
+        padding: 1em 0;
         width: 50%;
-        height: auto;
-        -webkit-transition: width 2s ease-in;
-        transition: width 2s ease-in;
+        transition: all 2s ease;
+    }
+
+    #image:hover {
+        width: 85%;
     }
 
     iframe {
@@ -416,6 +426,7 @@
         font-size: 2vmin;
         letter-spacing: .2em;
         text-transform: uppercase;
+        -webkit-transition: all .1s linear .05s;
         transition: all .1s linear .05s;
         text-align: center;
         padding: 1em;
@@ -425,6 +436,8 @@
     .eMessage{       
         display: none;
         color: #3a6b96;
+        -moz-animation: alert 2s ease;
+        -webkit-animation: alert 2s ease;
         animation: alert 2s ease;
         background: #000;
         text-align: center;
@@ -451,6 +464,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        -moz-animation: blink 4s ease infinite;
+        -webkit-animation: blink 4s ease infinite;
         animation: blink 4s ease infinite;
     }
 
@@ -486,19 +501,23 @@
     }
   
     /*--NASA_LIBRARY--*/
+
     audio {
         padding-bottom: 2em;
-        width: 25%;
-        height: 3vmax;
+        width: 30%;
+        max-height: 3vmax;
+        margin: 1.5em;
     }
-
+    
     video{
         width: 50%;
         height: auto;
         padding-top: .5em;
         padding-bottom: .5em;
+        margin: 1.5em;
         background-color: rgba(191, 204, 230, 0.25);
-    }
+        border: #808080 .5em solid;        
+    } 
   
     /*--slideShow---*/
 
@@ -506,6 +525,7 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
+        padding: 1.5em 0;
     }
 
     
@@ -514,6 +534,8 @@
         max-width: 100%;
         cursor: pointer;       
         overflow:hidden;
+        -moz-animation: slider 1s ease;
+        -webkit-animation: slider 1s ease;
         animation: slider 1s ease;
     }
 
@@ -536,6 +558,7 @@
         font-weight: bold;
         font-size: 3vmax;
         border-radius: 0 3vw 3vw 0;
+        -webkit-transition: all 1s ease;
         transition: all 1s ease;
         user-select: none;
         -webkit-user-select: none;
@@ -574,6 +597,7 @@
         font-size: 2vmax;
         letter-spacing: .2em;
         text-transform: uppercase;
+        -webkit-transition: all .1s linear .05s;
         transition: all .1s linear .05s;
         text-align: center;
         padding: .5em;
@@ -591,6 +615,8 @@
 
     .btn-inner:hover{
         color: #808080;
+        -moz-transition: color 0.1s linear 0s;
+        -webkit-transition: color 0.1s linear 0s;
         transition: color 0.1s linear 0s;
     }
 
@@ -598,11 +624,15 @@
         top: 0;
         height: 100%;
         opacity: 1;
+        -moz-transition:  height 0.2s ease, top 0.2s ease, opacity 0s linear 0s;
+        -webkit-transition:  height 0.2s ease, top 0.2s ease, opacity 0s linear 0s;
         transition: height 0.2s ease, top 0.2s ease, opacity 0s linear 0s;
     }
 
     .btn-inner:after{
         border-color: #373737;
+        -moz-transition: border 0.1s linear 0s;
+        -webkit-transition: border 0.1s linear 0s;
         transition:border 0.1s linear 0s;
     }
 
@@ -623,8 +653,9 @@
         padding-left: 2em;
         display: flex;
         justify-content: center;
+        -moz-transition: all 1s ease;
+        -webkit-transition: all 1s ease;
         transition: all 1s ease;
-        -webkit-transition:  all 1s ease;
         width: 100%;
         color: #fff;
         font-size: 1vmax;      
@@ -702,6 +733,8 @@ color scheme:
         width: 100%;
         height: auto;
         margin: 0;
+        -moz-animation: autoSlides 50s ease infinite;
+        -webkit-animation: autoSlides 50s ease infinite;
         animation: autoSlides 50s ease infinite;
         z-index: -1;
     }
@@ -750,7 +783,9 @@ color scheme:
         display: block;
         font-family: 'Lato', cursive;
         cursor: pointer;
-        transition: .3s;
+        -moz-transition: .3s;
+        -webkit-transition:  .3s;
+        transition:  .3s;
     }
 
     .side-nav a:hover{
@@ -791,6 +826,8 @@ color scheme:
         left: 0;
         background-color: rgba(0, 0, 0, .8);       
         overflow-x: hidden;
+        -moz-transition: .5s;
+        -webkit-transition: .5s;
         transition: .5s;
         padding-top: 1em;
     }
@@ -854,7 +891,7 @@ color scheme:
     }
 
     h4 {
-        color:  #f1f1f1;
+        color: #9CC1E2;
         font-size: 1.25vmax;
         font-family: 'Lato', sans-serif;
     }
@@ -917,17 +954,22 @@ color scheme:
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        margin: 0 1em;
-    
+        margin: 0 1em;    
     }
 
-    .apod-img {
+    #imgDiv{
+        display: flex;
         justify-content: center;
-        align-items: center;
+    }
+
+    #image {
+        padding: 1em 0;
         width: 50%;
-        height: auto;
-        -webkit-transition: width 2s ease-in;
-        transition: width 2s ease-in;
+        transition: width 2s ease;
+    }
+
+    #image:hover {
+        width: 100%;
     }
 
     iframe {
@@ -1020,6 +1062,8 @@ color scheme:
         font-size: 2vmin;
         letter-spacing: .2em;
         text-transform: uppercase;
+        -moz-transition: all .1s linear .05s;
+        -webkit-transition: all .1s linear .05s;
         transition: all .1s linear .05s;
         text-align: center;
         padding: 1em;
@@ -1029,7 +1073,9 @@ color scheme:
      
     .eMessage{       
         display: none;
-        color: #3a6b96;    
+        color: #3a6b96;
+        -moz-animation: alert 2s ease;
+        -webkit-animation: alert 2s ease;
         animation: alert 2s ease;
         background: #000;
         text-align: center;
@@ -1056,6 +1102,8 @@ color scheme:
         display: flex;
         justify-content: center;
         align-items: center;
+        -moz-animation: blink 4s ease infinite;
+        -webkit-animation: blink 4s ease infinite;
         animation: blink 4s ease infinite;
     }
 
@@ -1089,17 +1137,20 @@ color scheme:
     }
 
     /*--NASA_LIBRARY--*/
+
     audio {
         padding-bottom: 2em;
         width: 75%;
-        max-height: 25px
+        max-height: 1vmax;
+        margin: 1.5em;
     }
-
+    
     video{
-        width: 95%;
+        width: 75%;
         height: auto;
         padding-top: .5em;
         padding-bottom: .5em;
+        margin: 1.5em;
         background-color: rgba(191, 204, 230, 0.25);
         border: #808080 .5em solid;        
     } 
@@ -1111,6 +1162,7 @@ color scheme:
         display: flex;
         flex-direction: row;
         justify-content: center;
+        padding: 1.5em 0;
     }
  
     #currentImage{
@@ -1118,6 +1170,8 @@ color scheme:
         max-width: 100%;
         cursor: pointer;       
         overflow:hidden;
+        -moz-animation: slider 1s ease;
+        -webkit-animation: slider 1s ease;
         animation: slider 1s ease;
     }
 
@@ -1128,7 +1182,7 @@ color scheme:
         }
         100%{
             transform: translateY(300);
-            transform: rotateX(10deg);
+            transform: rotateX(0deg);
         }
     }
 
@@ -1140,6 +1194,8 @@ color scheme:
         font-weight: bold;
         font-size: 5vmin;
         border-radius: 0 3vw 3vw 0;
+        -moz-transition: all 1s ease;
+        -webkit-transition: all 1s ease;
         transition: all 1s ease;
         user-select: none;
         -webkit-user-select: none;
@@ -1148,8 +1204,6 @@ color scheme:
 
     .prev:hover, .next:hover{
         color: #f0a612;
-        background-color: #3a6b96;
-        transform: scale(.5);
     }
 
     #slideContent{
@@ -1177,6 +1231,8 @@ color scheme:
         font-size: 2.5vmin;
         letter-spacing: .2em;
         text-transform: uppercase;
+        -moz-transition:  all .1s linear .05s;
+        -webkit-transition:  all .1s linear .05s;
         transition: all .1s linear .05s;
         text-align: center;
         padding: 1em;
@@ -1194,6 +1250,8 @@ color scheme:
 
     .btn-inner:hover{
         color: #808080;
+        -moz-transition:  color 0.1s linear 0s;
+        -webkit-transition:  color 0.1s linear 0s;
         transition: color 0.1s linear 0s;
     }
 
@@ -1201,12 +1259,16 @@ color scheme:
         top: 0;
         height: 100%;
         opacity: 1;
+        -moz-transition:  height 0.2s ease, top 0.2s ease, opacity 0s linear 0s;
+        -webkit-transition: height 0.2s ease, top 0.2s ease, opacity 0s linear 0s;
         transition: height 0.2s ease, top 0.2s ease, opacity 0s linear 0s;
     }
 
     .btn-inner:after{
         border-color: #373737;
-        transition:border 0.1s linear 0s;
+        -moz-transition: border 0.1s linear 0s;
+        -webkit-transition: border 0.1s linear 0s;
+        transition: border 0.1s linear 0s;
     }
 
     button{
@@ -1219,6 +1281,8 @@ color scheme:
         font-size: 2vmin;
         letter-spacing: .2em;
         text-transform: uppercase;
+        -moz-transition: all .1s linear .05s;
+        -webkit-transition: all .1s linear .05s;
         transition: all .1s linear .05s;
         text-align: center;
         padding: .5em;
@@ -1240,8 +1304,9 @@ color scheme:
         padding-left: 2em;
         display: flex;
         justify-content: center;
+        -moz-transition: all 1s ease;
+        -webkit-transition: all 1s ease;
         transition: all 1s ease;
-        -webkit-transition:  all 1s ease;
         width: 100%;
         color: #fff;
         font-size: 1vmax;      
@@ -1301,6 +1366,8 @@ color scheme:
         width: 100%;
         height: auto;
         margin: 0;
+        -moz-animation: autoSlides 50s ease infinite;
+        -webkit-animation: autoSlides 50s ease infinite;
         animation: autoSlides 50s ease infinite;
         z-index: -1;
     }
@@ -1349,6 +1416,8 @@ color scheme:
         display: block;
         font-family: 'Lato', cursive;
         cursor: pointer;
+        -moz-transition: .3s;
+        -webkit-transition: .3s;
         transition: .3s;
     }
 
@@ -1390,6 +1459,8 @@ color scheme:
         left: 0;
         background-color: rgba(0, 0, 0, .8);       
         overflow-x: hidden;
+        -moz-transition: .5s;
+        -webkit-transition: .5s;
         transition: .5s;
         padding-top: 1em;
     }
@@ -1453,7 +1524,7 @@ color scheme:
     }
 
     h4 {
-        color:  #f1f1f1;
+        color:  #9CC1E2;
         font-size: 1.25vmax;
         font-family: 'Lato', sans-serif;
     }
@@ -1524,13 +1595,19 @@ color scheme:
         justify-content: center;
     }
 
-    .apod-img {
+  #imgDiv{
+        display: flex;
         justify-content: center;
-        align-items: center;
+    }
+
+    #image {
+        padding: 1em 0;
         width: 50%;
-        height: auto;
-        -webkit-transition: width 2s ease-in;
-        transition: width 2s ease-in;
+        transition: width 2s ease;
+    }
+
+    #image:hover {
+        width:100%;
     }
 
     iframe {
@@ -1623,6 +1700,8 @@ color scheme:
         font-size: 2vmin;
         letter-spacing: .2em;
         text-transform: uppercase;
+        -moz-transition: all .1s linear .05s;
+        -webkit-transition: all .1s linear .05s;
         transition: all .1s linear .05s;
         text-align: center;
         padding: .5em;
@@ -1631,7 +1710,9 @@ color scheme:
   
     .eMessage{       
         display: none;
-        color: #3a6b96;    
+        color: #3a6b96;
+        -moz-animation: alert 2s ease;
+        -webkit-animation: alert 2s ease;
         animation: alert 2s ease;
         background: #000;
         text-align: center;
@@ -1658,6 +1739,8 @@ color scheme:
         display: flex;
         justify-content: center;
         align-items: center;
+        -moz-animation: blink 4s ease infinite;
+        -webkit-animation: blink 4s ease infinite;
         animation: blink 4s ease infinite;
     }
 
@@ -1694,14 +1777,17 @@ color scheme:
     audio {
         padding-bottom: 2em;
         width: 75%;
-        max-height: 25px
+        max-height: 25px;
+        margin: 1.5em;
     }
 
     video{
-        width: 95%;
+        width: 75%;
+        justify-content: center;
         height: auto;
         padding-top: .5em;
         padding-bottom: .5em;
+        margin: 1.5em;
         background-color: rgba(191, 204, 230, 0.25);
         border: #808080 .5em solid;        
     } 
@@ -1712,6 +1798,7 @@ color scheme:
         display: flex;
         flex-direction: row;
         justify-content: center;
+        padding: 1.5em 0;
     }
 
     #currentImage{
@@ -1719,6 +1806,8 @@ color scheme:
         max-width: 100%;
         cursor: pointer;       
         overflow:hidden;
+        -moz-animation: slider 1s ease;
+        -webkit-animation: slider 1s ease;
         animation: slider 1s ease;
     }
 
@@ -1741,6 +1830,8 @@ color scheme:
         font-weight: bold;
         font-size: 5vmin;
         border-radius: 0 3vw 3vw 0;
+        -moz-transition: all 1s ease;
+        -webkit-transition: all 1s ease;
         transition: all 1s ease;
         user-select: none;
         -webkit-user-select: none;
@@ -1749,8 +1840,6 @@ color scheme:
 
     .prev:hover, .next:hover{
         color: #f0a612;
-        background-color: #3a6b96;
-        transform: scale(.5);
     }
 
     .btn-inner {
@@ -1760,6 +1849,8 @@ color scheme:
 
     .btn-inner:hover{
         color: #808080;
+        -moz-transition: background-color 0.1s linear 0s;  
+        -webkit-transition: background-color 0.1s linear 0s;  
         transition: background-color 0.1s linear 0s;    
     }
 
@@ -1767,12 +1858,16 @@ color scheme:
         top: 0;
         height: 100%;
         opacity: 1;
+        -moz-transition: height 0.2s ease, top 0.2s ease, opacity 0s linear 0s;
+        -webkit-transition: height 0.2s ease, top 0.2s ease, opacity 0s linear 0s;
         transition: height 0.2s ease, top 0.2s ease, opacity 0s linear 0s;
     }
 
     .btn-inner:after{
         border-color: #373737;
-        transition:border 0.1s linear 0s;
+        -moz-transition: border 0.1s linear 0s;
+        -webkit-transition: border 0.1s linear 0s;
+        transition: border 0.1s linear 0s;
     }
 
     #slideContent{
@@ -1800,6 +1895,8 @@ color scheme:
         font-size: 2vmin;
         letter-spacing: .2em;
         text-transform: uppercase;
+        -moz-transition: all .1s linear .05s;
+        -webkit-transition: all .1s linear .05s;
         transition: all .1s linear .05s;
         text-align: center;
         padding: .5em;
@@ -1820,6 +1917,8 @@ color scheme:
         font-size: 2vmin;
         letter-spacing: .2em;
         text-transform: uppercase;
+        -moz-transition: all .1s linear .05s;
+        -webkit-transition: all .1s linear .05s;
         transition: all .1s linear .05s;
         text-align: center;
         padding: .5em;
@@ -1835,6 +1934,8 @@ color scheme:
         font-size: 2vmin;
         letter-spacing: .2em;
         text-transform: uppercase;
+        -moz-transition: all .1s linear .05s;
+        -webkit-transition: all .1s linear .05s;
         transition: all .1s linear .05s;
         text-align: center;
     }
@@ -1856,8 +1957,9 @@ color scheme:
         padding-left: 2em;
         display: flex;
         justify-content: center;
-        transition: all 1s ease;
-        -webkit-transition:  all 1s ease;
+        -moz-transition: all 1s ease;
+        -webkit-transition: all 1s ease;
+        transition: all 1s ease;       
         width: 100%;
         color: #fff;
         font-size: 1vmax;      

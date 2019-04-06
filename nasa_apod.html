@@ -54,13 +54,15 @@ editor: DChapman
         <h3 id="title"></h3>
 
         <div class="apod-item">
-            <img id="image" class="apod-img">
+            <div id="imgDiv">
+                <img id="image">
+            </div>
         </div>
         <div class="apod-item">
             <iframe id="video"></iframe>
         </div>
         <div class="apod-item">
-            <h3>Use the slider to change the appearance of this image and see what happens</h3>
+            <h4>Use the slider to change the appearance of this image and see what happens</h4>
             <input type="range" value="1" min="1" max="10" name="color" oninput="changeImg(this.value)"
                 onchange="changeImg(this.value)">
             <p id="styleResult"></p>
