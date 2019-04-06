@@ -10,6 +10,7 @@ editor: DChapman
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Raleway+Dots" rel="stylesheet">
     <script src="js/nasa_main.js" defer></script>
+    <script src="js/favorites.js" defer></script>
     <link rel="stylesheet" href="css/nasa.css" />
 
 </head>
@@ -17,7 +18,7 @@ editor: DChapman
 <body>
     <hr />
     <nav>
-        <ul class="navigation">
+        <ul class="navigation sticky">
             <li><a href="nasa_home.html">Nasa Home</a></li>
             <li><a href="nasa_apod.html">Image of the Day</a></li>
             <li><a href="nasa_archive.html">Archive</a></li>
@@ -26,7 +27,7 @@ editor: DChapman
         </ul>
     </nav>
 
-    <div id="sidebar" class="side-nav">
+    <div id="sidebar" class="side-nav" style="display: none">
         <a href="javascript:void(0)" class="closeButton" onclick="closeNav()">x</a>
         <a href="nasa_home.html">Home</a>
         <a href="nasa_apod.html">APOD</a>
@@ -34,15 +35,14 @@ editor: DChapman
         <a href="nasa_library.html">Library</a>
         <a href="nasa_favorites.html">Favorites</a>
     </div>
-    <button class="openButton" onclick="openNav()"><img src="img/white_bars.png"
-            alt="open side navigation button"></button>
 
     <div class="head-container">
+        <button class="openButton" onclick="openNav()"><img src="img/white_bars.png"
+                alt="open side navigation button"></button>
         <header class="heading">
             <h1 class="headTitle">NASA Space Exploration</h1>
         </header>
     </div>
-
     <hr>
 
     <h2>Favorite Images</h2>
@@ -63,28 +63,12 @@ editor: DChapman
 
     </div>
 
-
-
-    <!-- 
-    <div>
-        <button onclick="bodyColor()" class="buttonColor">Toggle background style</button>
-    </div>
-    <br> -->
-
-    <!-- <div>
-        <label>Slide to change the image styles</label><br>
-        <input type="range" value="1" min="1" max="10" name="color" oninput="changeImg(this.value)"
-            onchange="changeImg(this.value)">
-    </div>
-    <div>
-        <img id="changeImg" src="img/swirl-galaxy.png">
-    </div> -->
-
-    <footer>
-        <img src="img/orion_bubble.png" alt="image of orion's bubble">
-        <p>Images, video and audio are provided by <a href="https://images.nasa.gov/">NASA's Video and Image Library</a>
-        </p>
+    <hr>
+    <footer class="footer">
+        <p>Images, video and audio are provided by <a href="https://images.nasa.gov/">NASA's Video and
+                Image Library</a></p>
     </footer>
+    <hr>
 </body>
 
 </html>

@@ -35,18 +35,43 @@ function arch_load(number) {
             loadComplete();
             data = JSON.parse(this.responseText);
 
+            //var select = document.getElementById("dateSelect")
+            /*  for (var j = 0; j < data.length; j++) {
+                 if (data[j].media_type == "image") {
+                     //select.innerHTML = select.innerHTML + '<option value ="' + j + '">' + data[j].date + '</option>';
+                     var obj = document.createElement("option");
+                     obj.value = j;
+                     obj.innerHTML = data[j].date;
+                     select.appendChild(obj);
+                 }
+             } */
+
+            /*  dataStorage(data);
+             var localData = JSON.parse(localStorage.getItem('data_key')); */
+
             if (number == 0) {
                 imgGallery(data);
             } else {
                 moreImagesTwo(data);
             }
-
+            //apod(data);
         }
     };
 
     arch.send();
 }
 arch_load(0);
+
+/* 
+function dataStorage(data) {
+     var localData;
+     if (localData = JSON.parse(localStorage.getItem('data_key')) == null) {
+         localData.push(data);
+     }
+    //console.log(localData);
+    var dataArray = JSON.stringify(localData);
+    localStorage.setItem('data_key', dataArray);
+} */
 
 function imgGallery(data) {
 
@@ -85,36 +110,112 @@ function imgGallery(data) {
             var textBox = document.createElement('div');
             textBox.className = "text-box";
 
-            var divButton = document.createElement('div');
-            divButton.className = 'divButton';
-
             var btn = document.createElement('button');
             btn.className = "fav-button" + x;
             btn.innerHTML = "Add to Favorite Images";
             btn.setAttribute("data-imgObject", JSON.stringify(imgObject));
             btn.setAttribute("id", nasaImg.id);
-            btn.addEventListener("click", addFavorite);
 
             var btnTwo = document.createElement('button');
             btnTwo.ClassName = 'fav-button' + x;
             btnTwo.innerHTML = "Remove from Favorites";
             btnTwo.setAttribute("data-imgObject", JSON.stringify(imgObject));
             btnTwo.setAttribute("id", nasaImg.id);
-            btnTwo.addEventListener("click", removeFavorite);
 
             var eMessage = document.createElement('p');
             eMessage.appendChild(document.createTextNode(""));
             eMessage.className = "eMessage";
             eMessage.id = 'p' + nasaImg.id;
 
+            btn.onclick = function (event) {
+                let imageInfo = event.target.getAttribute("data-imgObject");
+                var imgId = event.target.getAttribute("id");
+
+                imageInfo = JSON.parse(imageInfo);
+                let date = imageInfo.date;
+
+                var favArray = JSON.parse(localStorage.getItem("fav_key"));
+
+                if (favArray) {
+                    //check if image is already there by date
+                    //if image is already saved return message else push onto array and 
+                    var duplicate = false;
+                    for (var i = 0; i < favArray.length; i++) {
+                        if (date == favArray[i]["date"]) {
+                            duplicate = true;
+                            // var eMessage = document.getElementById("imgId");
+                            //document.getElementsByClassName('eMessage')[imgId].classList.add("show-eMessage");
+                            document.getElementById('p' + imgId).classList.add("show-eMessage");
+                            document.getElementById('p' + imgId).innerHTML = "You've already saved this image in your favorites.";
+                            console.log(eMessage.innerHTML);
+                            // eMessage.style.display = 'inline-block';
+                            //console.log(imgId);
+                        }
+                    }
+                    if (duplicate != true) {
+                        favArray.push(imageInfo);
+                        localStorage.setItem("fav_key", JSON.stringify(favArray));
+                        //document.getElementsByClassName('eMessage')[imgId].classList.add("show-eMessage");
+                        //  var eMessage = document.getElementById("imgId");
+                        document.getElementById('p' + imgId).classList.add("show-eMessage");
+                        document.getElementById('p' + imgId).innerHTML = "This image is now saved in your favorites.";
+                        //  eMessage.innerHTML = "This image is now saved in your favorites.";
+                        // eMessage.style.display = 'inline-block';
+                    }
+                } else {
+                    var favArray = new Array();
+                    favArray.push(imageInfo);
+                    localStorage.setItem("fav_key", JSON.stringify(favArray));
+                    //document.getElementsByClassName('eMessage')[imgId].classList.add("show-eMessage");
+                    // var eMessage = document.getElementById("imgId");
+                    document.getElementById('p' + imgId).classList.add("show-eMessage");
+                    document.getElementById('p' + imgId).innerHTML = "This image is now saved in your favorites.";
+                    // eMessage.style.display = 'inline-block';
+                    console.log(eMessage.innerHTML);
+                }
+            }
+
+            btnTwo.onclick = function (event) {
+                let imageInfo = event.target.getAttribute("data-imgObject");
+                let imgId = event.target.getAttribute("id");
+                imageInfo = JSON.parse(imageInfo);
+                let date = imageInfo.date;
+                //date = JSON.stringify(date);
+                //console.log(imageInfo);
+                var removeArray = JSON.parse(localStorage.getItem("fav_key"));
+
+                if (removeArray) {
+                    //check if image is already there by date
+                    //if image is already saved return message else push onto array and 
+                    var remove = false;
+                    for (var i = removeArray.length - 1; i >= 0 && remove == false; i--) {
+                        var dateId = removeArray[i].date;
+                        //console.log(removeArray[i]["date"]);
+                        if (date == dateId) {
+                            remove = true;
+                            removeArray.splice(i, 1);
+                            localStorage.setItem("fav_key", JSON.stringify(removeArray));
+                            /* document.getElementsByClassName('eMessage')[imgId].classList.add("show-eMessage");
+                            eMessage.innerHTML = "This image has been removed from your favorite"; */
+
+                            document.getElementById('p' + imgId).classList.add("show-eMessage");
+                            document.getElementById('p' + imgId).innerHTML = "This image has been removed from your favorite.";
+                        }
+                    }
+                } else {
+                    /*  document.getElementsByClassName('eMessage')[imgId].classList.add("show-eMessage");
+                     eMessage.innerHTML = "This image is now saved in your favorites."; */
+                    //document.getElementById(imgId).parentElement.childNodes[0].appendChild(eMessage);
+                }
+            }
+
             imgContainer.appendChild(nasaImg);
             textBox.appendChild(caption);
             textBox.appendChild(imgTitle);
             textBox.appendChild(imgDate);
             textBox.appendChild(exp);
-            textBox.appendChild(divButton);
-            divButton.appendChild(btn);
-            divButton.appendChild(btnTwo);
+            textBox.appendChild(btn);
+            textBox.appendChild(btnTwo);
             textBox.appendChild(eMessage);
             imgContainer.appendChild(textBox);
             images.appendChild(imgContainer);
@@ -130,9 +231,7 @@ function moreImages() {
 function moreImagesTwo(data) {
 
     for (var i = 0; i <= 9; i++) {
-        var element = document.getElementsByClassName('eMessage')[i];
-        element.classList.remove("show-eMessage");
-        //console.log(i);
+        console.log(i);
         if (data[i].media_type == "image") {
             document.getElementById('img' + i).src = data[i].url;
             document.getElementById('img' + i).alt = data[i].title;
@@ -140,85 +239,7 @@ function moreImagesTwo(data) {
             document.getElementsByClassName('fav-date' + i)[0].innerHTML = data[i].date;
             document.getElementsByClassName('fav-exp' + i)[0].innerHTML = data[i].explanation;
             document.getElementsByClassName('fav-button' + i)[0].getAttribute("data-imgObject");
-            var imgObject = { id: i, date: data[i].date, src: data[i].url, alt: data[i].title, exp: data[i].explanation }
-            document.getElementsByClassName('fav-button' + i)[0].setAttribute("data-imgObject", JSON.stringify(imgObject));
-
         }
-    }
-}
-
-
-
-function addFavorite(event) {
-    let imageInfo = event.target.getAttribute("data-imgObject");
-    var imgId = event.target.getAttribute("id");
-
-    imageInfo = JSON.parse(imageInfo);
-    let date = imageInfo.date;
-    console.log(date);
-
-    var favArray = JSON.parse(localStorage.getItem("fav_key"));
-
-    if (favArray) {
-        //check if image is already there by date
-        //if image is already saved return message else push onto array and 
-        var duplicate = false;
-        for (var i = 0; i < favArray.length; i++) {
-            if (date == favArray[i]["date"]) {
-                duplicate = true;
-
-                document.getElementById('p' + imgId).classList.add("show-eMessage");
-                document.getElementById('p' + imgId).innerHTML = "You've already saved this image in your favorites.";
-            }
-        }
-        if (duplicate != true) {
-            favArray.push(imageInfo);
-            localStorage.setItem("fav_key", JSON.stringify(favArray));
-            //document.getElementsByClassName('eMessage')[imgId].classList.add("show-eMessage");
-            //  var eMessage = document.getElementById("imgId");
-            document.getElementById('p' + imgId).classList.add("show-eMessage");
-            document.getElementById('p' + imgId).innerHTML = "This image is now saved in your favorites.";
-
-        }
-    } else {
-        var favArray = new Array();
-        favArray.push(imageInfo);
-        localStorage.setItem("fav_key", JSON.stringify(favArray));
-        document.getElementById('p' + imgId).classList.add("show-eMessage");
-        document.getElementById('p' + imgId).innerHTML = "This image is now saved in your favorites.";
-
-    }
-}
-
-function removeFavorite(event) {
-    let imageInfo = event.target.getAttribute("data-imgObject");
-    let imgId = event.target.getAttribute("id");
-    imageInfo = JSON.parse(imageInfo);
-    let date = imageInfo.date;
-    var removeArray = JSON.parse(localStorage.getItem("fav_key"));
-
-    if (removeArray) {
-        //check if image is already there by date
-        //if image is already saved return message else push onto array and 
-        var remove = false;
-        for (var i = removeArray.length - 1; i >= 0 && remove == false; i--) {
-            var dateId = removeArray[i].date;
-
-            if (date == dateId) {
-                remove = true;
-                removeArray.splice(i, 1);
-                localStorage.setItem("fav_key", JSON.stringify(removeArray));
-                /* document.getElementsByClassName('eMessage')[imgId].classList.add("show-eMessage");
-                eMessage.innerHTML = "This image has been removed from your favorite"; */
-
-                document.getElementById('p' + imgId).classList.add("show-eMessage");
-                document.getElementById('p' + imgId).innerHTML = "This image has been removed from your favorite.";
-            }
-        }
-    } else {
-        /*  document.getElementsByClassName('eMessage')[imgId].classList.add("show-eMessage");
-         eMessage.innerHTML = "This image is now saved in your favorites."; */
-        //document.getElementById(imgId).parentElement.childNodes[0].appendChild(eMessage);
     }
 }
 
