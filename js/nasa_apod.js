@@ -73,6 +73,7 @@ function changeImg(value) {
     switch (value) {
         case "1":
             document.getElementById('image').style.filter = "none";
+            document.getElementById('styleResult').innerHTML = "This is the original image"
             break;
         case "2":
             document.getElementById('image').style.filter = "sepia(100%)";

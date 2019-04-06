@@ -5,23 +5,22 @@ function getArray(index) {
     //console.log(imgArray);
     i += index;
     var imgObject = { id: index, src: imgArray[i].src, alt: imgArray[i].alt, exp: imgArray[i].exp };
-    console.log(imgObject);
+    //console.log(imgObject);
     slideImages(imgObject);
 
 }
 
 function slideImages(imgObject) {
 
+
     if (imgObject) {
-        document.getElementById('ifSelected').innerHTML = "Download the images you wish to permanently save to your computer."
-
-        var slider = document.getElementById('slider');
+        var slideImage = document.getElementById('slideImage');
         var currentImage = document.getElementById('currentImage');
-        currentImage.src = imgObject.src;
 
+        currentImage.src = imgObject.src;
         currentLink.href = "";
         document.getElementById("link").download = currentImage.src;
-        slider.appendChild(currentImage);
+        slideImage.appendChild(currentImage);
 
         document.getElementById("title").innerHTML = imgObject.alt;
         document.getElementById('description').innerHTML = imgObject.exp;
@@ -33,9 +32,7 @@ function slideImages(imgObject) {
 getArray(0);
 
 function plusSlides(n) {
-    //document.getElementById('currentImage').style.animation = "none";
     getArray(n);
-    document.getElementById('currentImage').style.animation = "slider 1s ease";
 }
 
 

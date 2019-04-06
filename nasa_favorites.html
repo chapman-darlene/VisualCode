@@ -46,9 +46,13 @@ editor: DChapman
     <hr>
 
     <h2>Favorite Images</h2>
+    <a href=#download>
+        <h3 id="ifSelected"></h3>
+    </a>
+
     <section id="slideContainer">
         <div><a class="prev" onclick="plusSlides(-1)">&#10094;</a></div>
-        <div id="slideImage">
+        <div id="slider">
             <a href="nasa_archive.html" id="currentLink"><img id="currentImage" src="img/placeholder.jpg"></a>
         </div>
         <div><a class="next" onclick="plusSlides(1)">&#10095;</a></div>
@@ -58,10 +62,14 @@ editor: DChapman
         <div id="btn-container"><a href='' id="link" download=""><button id="download" class="download-btn">
                     <span class="btn-inner">Download</span></button></a>
         </div>
+    </div>
+
+    <div class="slideTitle">
         <p id="title"></p>
         <p id="description"></p>
-
     </div>
+
+
 
     <hr>
     <footer class="footer">

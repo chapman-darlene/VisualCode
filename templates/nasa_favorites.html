@@ -9,11 +9,9 @@ editor: DChapman
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Raleway+Dots" rel="stylesheet">
-    <script src="js/nasa_archive.js" defer></script>
     <script src="js/nasa_main.js" defer></script>
-    <!--  <script src="js/nasa_main.js" defer></script> -->
+    <script src="js/favorites.js" defer></script>
     <link rel="stylesheet" href="css/nasa.css" />
-
 
 </head>
 
@@ -47,27 +45,32 @@ editor: DChapman
     </div>
     <hr>
 
-    <p id="loading-text">...Communicating with NASA</p>
-
-
-    <h2 id="choose">View Archived NASA Image Gallery</h2>
-    <h3>View Images from the past. Choose the ones you like most.</h3>
-
-    <div class="grid-parent">
-        <div class="grid">
-            <div id="nasaImg" class="alt"></div>
+    <h2>Favorite Images</h2>
+    <section id="slideContainer">
+        <div><a class="prev" onclick="plusSlides(-1)">&#10094;</a></div>
+        <div id="slideImage">
+            <a href="nasa_archive.html" id="currentLink"><img id="currentImage" src="img/placeholder.jpg"></a>
         </div>
+        <div><a class="next" onclick="plusSlides(1)">&#10095;</a></div>
+    </section>
+
+    <div id="slideContent">
+        <div id="btn-container"><a href='' id="link" download=""><button id="download" class="download-btn">
+                    <span class="btn-inner">Download</span></button></a>
+        </div>
+        <div class="slideTitle">
+            <p id="title"></p>
+            <p id="description"></p>
+        </div>
+
     </div>
-    <div class="fav-button">
-        <button onclick="moreImages()" id="fav-button">View more Images</button>
-    </div>
+
     <hr>
     <footer class="footer">
         <p>Images, video and audio are provided by <a href="https://images.nasa.gov/">NASA's Video and
                 Image Library</a></p>
     </footer>
     <hr>
-
 </body>
 
 </html>

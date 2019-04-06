@@ -66,24 +66,20 @@ function imgGallery(data) {
             var imgContainer = document.createElement('div');
             imgContainer.className = "img-container";
 
+            var textBox = document.createElement('div');
+            textBox.className = "text-box";
+
             var imgTitle = document.createElement('p');
-            imgTitle.appendChild(document.createTextNode(data[x].title));
+            imgTitle.appendChild(document.createTextNode("Image Title:  " + data[x].title));
             imgTitle.className = "fav-title" + x;
 
-            var caption = document.createElement('p');
-            caption.appendChild(document.createTextNode("Image Title:"));
-            caption.className = "fav-caption";
-
             var imgDate = document.createElement('p');
-            imgDate.appendChild(document.createTextNode("Date image captured: " + data[x].date));
+            imgDate.appendChild(document.createTextNode("Date Image Captured:  " + data[x].date));
             imgDate.className = "fav-date" + x;
 
             var exp = document.createElement('p');
             exp.appendChild(document.createTextNode(data[x].explanation));
             exp.className = "fav-exp" + x;
-
-            var textBox = document.createElement('div');
-            textBox.className = "text-box";
 
             var divButton = document.createElement('div');
             divButton.className = 'divButton';
@@ -108,7 +104,6 @@ function imgGallery(data) {
             eMessage.id = 'p' + nasaImg.id;
 
             imgContainer.appendChild(nasaImg);
-            textBox.appendChild(caption);
             textBox.appendChild(imgTitle);
             textBox.appendChild(imgDate);
             textBox.appendChild(exp);

@@ -50,7 +50,7 @@
         opacity: 1;
         background-size: 100%;
         width: 100%;
-        height: 15vmax;
+        height: 20vmax;
         margin-top: 3em;
         animation: autoSlides 50s ease infinite;
     }
@@ -157,7 +157,7 @@
     }
 
     aChange {
-        color: #9CC1E2;
+        color: rgb(198, 234, 245);
     }
 
     h1 {
@@ -327,7 +327,11 @@
         padding-bottom: 2em;
     }
 
+
+
+
     /*--NASA_ARCHIVE--*/
+
 
     .grid-parent {
         display:flex;
@@ -508,11 +512,7 @@
         justify-content: center;
     }
 
-    
-    #currentImage{
-        align-self: center;
-        max-width: 100%;
-        cursor: pointer;       
+    #slider{
         overflow:hidden;
         animation: slider 1s ease;
     }
@@ -523,9 +523,15 @@
             transform: rotateX(90deg);
         }
         100%{
-            transform: translateY(300);
-            transform: rotateX(10deg);
+            transform: none;
         }
+    }
+
+    #currentImage{
+        align-self: center;
+        max-width: 100%;
+        cursor: pointer;
+       
     }
     
     .prev, .next{
@@ -540,23 +546,18 @@
         user-select: none;
         -webkit-user-select: none;
         padding: 5em 1em 0 1em;
-    }
-    
-    .prev:hover, .next:hover{
-        color: #f0a612;
-    }
+    } 
     
     #slideContent{
         display: flex;
         flex-direction: column;
-        justify-content: center;
         padding: .5em;
     }
 
     #btn-container{
         display: flex;
         justify-content: center;
-        padding: 1em 0;
+        padding-top: 2em;
     }
 
     .slideTitle{
@@ -1112,24 +1113,11 @@ color scheme:
         flex-direction: row;
         justify-content: center;
     }
- 
+
     #currentImage{
         align-self: center;
         max-width: 100%;
-        cursor: pointer;       
-        overflow:hidden;
-        animation: slider 1s ease;
-    }
-
-    @keyframes slider{
-        0%{
-            transform: translateY(-300);
-            transform: rotateX(90deg);
-        }
-        100%{
-            transform: translateY(300);
-            transform: rotateX(10deg);
-        }
+        cursor: pointer;
     }
 
     .prev, .next{
@@ -1144,12 +1132,6 @@ color scheme:
         user-select: none;
         -webkit-user-select: none;
         padding: 3em .5em 0 .5em;
-    }
-
-    .prev:hover, .next:hover{
-        color: #f0a612;
-        background-color: #3a6b96;
-        transform: scale(.5);
     }
 
     #slideContent{
@@ -1717,20 +1699,7 @@ color scheme:
     #currentImage{
         align-self: center;
         max-width: 100%;
-        cursor: pointer;       
-        overflow:hidden;
-        animation: slider 1s ease;
-    }
-
-    @keyframes slider{
-        0%{
-            transform: translateY(-300);
-            transform: rotateX(90deg);
-        }
-        100%{
-            transform: translateY(300);
-            transform: rotateX(0deg);
-        }
+        cursor: pointer;
     }
 
     .prev, .next{
@@ -1749,8 +1718,6 @@ color scheme:
 
     .prev:hover, .next:hover{
         color: #f0a612;
-        background-color: #3a6b96;
-        transform: scale(.5);
     }
 
     .btn-inner {
